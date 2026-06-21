@@ -1,20 +1,20 @@
 import logo from "../assets/logo.png";
 
-const navLinks = [
+const navLinks: Array<{label: string; href: string}> = [
   { label: "Inicio", href: "#inicio" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Nosotros", href: "#nosotros" },
 ];
 
-const services = [
+const services: string[] = [
   "Desarrollo web",
   "Aplicaciones móviles",
   "Consultoría técnica",
   "Mantenimiento y soporte",
 ];
 
-const socials = [
+const socials: Array<{label: string; href: string}> = [
   { label: "GitHub", href: "https://github.com/" },
   { label: "LinkedIn", href: "https://linkedin.com/" },
   { label: "X", href: "https://x.com/" },
@@ -46,7 +46,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-[#2a242c] bg-[#0b0a0d] text-[#cfc6e0]">
       {/* Línea de vapor que cruza el borde superior */}
-      <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#c9b8d4]/60 to-transparent" />
+      <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-linear-to-r from-transparent via-[#c9b8d4]/60 to-transparent" />
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-4">
         {/* Marca */}
