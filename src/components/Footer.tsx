@@ -1,10 +1,18 @@
 import logo from "../assets/logo.png";
+import type { ILink } from "../types/links.interface";
+import { FooterLink } from "./FooterLink";
 
-const navLinks: Array<{label: string; href: string}> = [
+const navLinks: Array<ILink> = [
   { label: "Inicio", href: "#inicio" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Nosotros", href: "#nosotros" },
+];
+
+const socials: Array<ILink> = [
+  { label: "GitHub", href: "https://github.com/" },
+  { label: "LinkedIn", href: "https://linkedin.com/" },
+  { label: "X", href: "https://x.com/" },
 ];
 
 const services: string[] = [
@@ -12,12 +20,6 @@ const services: string[] = [
   "Aplicaciones móviles",
   "Consultoría técnica",
   "Mantenimiento y soporte",
-];
-
-const socials: Array<{label: string; href: string}> = [
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "LinkedIn", href: "https://linkedin.com/" },
-  { label: "X", href: "https://x.com/" },
 ];
 
 // Mismo "humito" del navbar, para que la marca se sienta consistente.
@@ -82,12 +84,8 @@ export default function Footer() {
             Navegación
           </h3>
           <ul className="space-y-3">
-            {navLinks.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="text-sm text-[#8d7f99] transition-colors hover:text-[#e3d7d9]">
-                  {l.label}
-                </a>
-              </li>
+            {navLinks.map((link) => (
+              <FooterLink key={link.href} label={link.label} href={link.href} />
             ))}
           </ul>
         </div>

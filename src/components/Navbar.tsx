@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
+import type { ILink } from "../types/links.interface";
+import { NavbarLink } from '../components/NavbarLink.tsx';
 
-const links: Array<{label: string; href: string}> = [ // TODO: Move type to interface
+const links: Array<ILink> = [
   { label: "Inicio", href: "#inicio" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
@@ -59,14 +61,7 @@ export default function Navbar() {
         {/* Links de escritorio */}
         <ul className="relative z-10 hidden items-center gap-7 md:flex">
           {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm font-medium text-[#9a8eb8] transition-colors hover:text-[#e3d7d9]"
-              >
-                {link.label}
-              </a>
-            </li>
+            <NavbarLink key={link.href} label={link.label} href={link.href} />
           ))}
         </ul>
 
@@ -102,7 +97,7 @@ export default function Navbar() {
         }`}
       >
         <ul className="flex flex-col gap-4 px-6 py-5">
-          {links.map((link) => (
+          {links.map((link) => ( /** TODO: Use NavbarLink component */
             <li key={link.href}>
               <a
                 href={link.href}
