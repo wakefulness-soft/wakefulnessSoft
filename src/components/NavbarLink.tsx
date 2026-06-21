@@ -9,7 +9,7 @@ export const NavbarLink = (props: Props) => {
     <li>
         <a
             href={props.href}
-            className="text-sm font-medium text-[#9a8eb8] transition-colors hover:text-[#e3d7d9]"
+            className="text-sm font-medium text-[#c9b8d4] transition-colors hover:text-[#f8f9fa]"
         >
             {props.label}
         </a>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
-import type { ILink } from "../types/links.interface";
-import { NavbarLink } from '../components/NavbarLink.tsx';
+import logo from "../../assets/logo.png";
+import type { ILink } from "../../types/links.interface.ts";
+import { NavbarLink } from '../NavbarLink.tsx';
 
 const links: Array<ILink> = [
   { label: "Inicio", href: "#inicio" },
@@ -25,9 +25,10 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 z-50 w-full px-4 pt-4">
       <nav
-        className={`relative mx-auto flex max-w-5xl items-center justify-between overflow-hidden rounded-full border border-[#2a242c] bg-[#18151c]/80 backdrop-blur-xl transition-all duration-300 ${
-          scrolled ? "px-5 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.5)]" : "px-6 py-3"
-        }`}
+        className={
+          `relative mx-auto flex max-w-5xl items-center justify-between overflow-hidden rounded-2xl border border-[#2a242c] bg-[#18151c]/80 backdrop-blur-xl transition-all duration-300
+          ${scrolled ? "px-5 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.5)]" : "px-6 py-3"}
+          `}
       >
         {/* hilo de vapor ambiental, decorativo, detrás del contenido */}
         <svg
@@ -53,8 +54,8 @@ export default function Navbar() {
             alt="Wakefulness Soft"
             className="wf-ghost-float h-8 w-8 object-contain drop-shadow-[0_0_10px_rgba(201,184,212,0.4)]"
           />
-          <span className="text-base font-semibold tracking-tight text-[#e3d7d9]">
-            Wakefulness<span className="text-[#c9b8d4]"> Soft</span>
+          <span className="text-base font-semibold tracking-tight text-[#e3d7d9] hover:text-[#f8f9fa]">
+            Wakefulness<span className="text-purple-400"> Soft</span>
           </span>
         </a>
 

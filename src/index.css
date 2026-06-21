@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --vacio: #0b0a0d;
+  --surface: #18151c;
+  --border: #2a242c;
+  --bones: #e3d7d9;
+  --gost: #c9b8d4;
+  --off: #8d7f99;
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
