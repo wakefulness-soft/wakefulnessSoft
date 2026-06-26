@@ -1,5 +1,6 @@
-import Navbar from './components/Navbar.tsx'
-import Footer from './components/Footer.tsx'
+import Navbar from './components/Navbar/Navbar.tsx'
+import Footer from './components/Footer/Footer.tsx'
+import { HomePage } from './pages/HomePage.tsx'
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <div className="page-container">
         <Navbar />
         <div className="main-content pt-20">
-          <h1>Wakefulnes Software</h1>
+          <HomePage />
         </div>
         <Footer />
       </div>
