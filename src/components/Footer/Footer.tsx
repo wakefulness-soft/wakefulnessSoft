@@ -1,6 +1,6 @@
-import logo from "../assets/logo.png";
-import type { ILink } from "../types/links.interface";
-import { FooterLink } from "./FooterLink";
+import logo from "../../assets/logo.png";
+import type { ILink } from "../../types/links.interface";
+import { FooterLink } from "../FooterLink";
 
 const navLinks: Array<ILink> = [
   { label: "Inicio", href: "#inicio" },

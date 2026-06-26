@@ -1,5 +1,5 @@
-// TODO: Unused component
-export default function BodyContent() {
+
+export const HeroSection = () => {
   return (
     <>
         <div className="relative mx-auto flex max-w-5xl items-center justify-between overflow-hidden backdrop-blur-xl transition-all px-6 py-3">
