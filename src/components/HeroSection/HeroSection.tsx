@@ -1,22 +1,43 @@
 
 export const HeroSection = () => {
   return (
-    <>
-        <div className="relative mx-auto flex max-w-5xl items-center justify-between overflow-hidden backdrop-blur-xl transition-all px-6 py-3">
-            <section>
-                <h1 className="mt-6 text-balance font-heading text-5xl font-bold leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
-                    We build software the <span className="text-gradient text-purple-400">world relies on</span>
+    <section id="top" className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-4 pb-20 pt-36">
+            <div className="mx-auto max-w-3xl text-center">
+                {/* <div className="inline-flex items-center gap-2 rounded-full border border-border bg-pool px-3.5 py-1.5 text-xs font-medium backdrop-blur-lg">
+                    banner de AI
+                </div> */}
+                
+                <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+                    We turn bold ideas into
+                    <span className="block text-mypurple">
+                        software that wakes up
+                    </span>
+                    <span className="block">your business.</span>
                 </h1>
 
-                <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-                    Wakefulness Soft architects, ships, and scales mission-critical platforms for ambitious
-                    teams. Precision engineering, ruthless reliability, and design that earns trust.
+                <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed sm:text-lg">
+                    Designing your dream is our most cherished task
                 </p>
 
-                <div className="mt-8 flex flex-wrap items-center gap-3">
+                <div className="mt-9 flex flex-col items-center justify-center gap-6 md:flex-row">
+                    {/* TODO: Add href */}
+                    <a
+                        href=""
+                        className="bg-mypurple text-darkvoid px-4 py-2 rounded-xl"
+                    >
+                        Request a Quote
+                    </a>
+                    {/* TODO: Add href */}
+                    <a
+                        href=""
+                        className="border-solid border px-4 py-2 rounded-xl"
+                    >
+                        View Our Work
+                    </a>
                 </div>
-            </section>
+            </div>
         </div>
-    </>
+    </section>
   )
 }

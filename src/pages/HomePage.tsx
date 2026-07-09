@@ -8,7 +8,7 @@ import { WhySection } from "../components/WhySection/WhySection"
 
 export const HomePage = () => {
   return (
-    <div>
+    <div className="relative min-h-screen">
       <main>
         <HeroSection />
         <ServicesSection />

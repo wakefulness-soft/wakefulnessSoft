@@ -9,6 +9,30 @@
   --off: #8d7f99;
 }
 
+@theme {
+  --color-darkvoid: #151419;
+  /* --color-ocean:    #00171f; */
+  --color-inkblack: #00151f;
+  --color-mypurple: #BC6cFF;
+  --color-pool:     #003459;
+  --color-vodka:    #C8B3F6;
+  --color-river:    #ADEBFF;
+  --color-wildsand: #E4EEF0;
+  --color-snow:     #FBFBFB;
+  --color-sea-foam: #FFFFFF;
+  --color-lava:     #F56E0F;
+}
+
+@layer base {
+  body {
+    @apply bg-darkvoid text-snow
+  }
+}
+
+@utility text-glow {
+  text-shadow: 0 0 28px color-mix(in oklch, var(--brand) 45%, transparent);
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
