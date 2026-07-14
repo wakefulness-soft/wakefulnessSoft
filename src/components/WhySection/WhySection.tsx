@@ -63,13 +63,13 @@ export const WhySection = () => {
             </a>
           </div>
           {/* TODO: Add responsive design */}
-          <div className="grid overflow-hidden border-2 border-vodka rounded-2xl bg-vodka gap-0.5 sm:grid-cols-2">
+          <div className="grid overflow-hidden border-2 border-vodka rounded-2xl bg-vodka gap-px sm:grid-cols-2">
             {
               PILLARS.map((item, idx) => (
-                <div key={idx} className="p-3 bg-inkblack text-snow font-normal">
-                  <span className="text-vodka">{item.displayId}</span>
-                  <h3 className="pt-1 text-xl">{item.title}</h3>
-                  <p className="text-balance">{item.content}</p>
+                <div key={idx} className="h-full p-6 bg-inkblack text-snow font-normal">
+                  <span className="font-mono text-vodka text-sm">{item.displayId}</span>
+                  <h3 className="mt-3 text-lg font-semibold tracking-tight">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-balance">{item.content}</p>
                 </div>
               ))
             }
