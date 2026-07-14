@@ -1,0 +1,30 @@
+.pillarsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+    border: solid var(--color-vodka) 1px;
+    border-radius: 10px;
+    background-color: var(--color-vodka);
+    gap: .09em;
+}
+
+.pillarItem {
+    padding: 1.5em;
+    background-color: var(--color-inkblack);
+    color: var(--color-snow);
+    font-style: 2rem;
+}
+
+.pillarNumber {
+    /* color: #9500ff; */
+    color: var(--color-vodka);
+}
+
+.pillarTitle {
+    font-size: large;
+    padding: .08em 0;
+}
+
+.pillarContent {
+    text-wrap: balance;
+}

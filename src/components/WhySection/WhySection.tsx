@@ -1,6 +1,81 @@
+import styles from './WhySection.module.css'
+
+interface IPillar {
+  displayId: string;
+  title: string;
+  content: string;
+}
+
+const PILLARS: IPillar[] = [
+  {
+    displayId: '01',
+    title: 'Title',
+    content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque odio nesciunt quia expedita doloremque magnam facilis tenetur dolorem architecto explicabo.'
+  },
+  {
+    displayId: '02',
+    title: 'Title',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequuntur enim quae consectetur, nisi dolore?'
+  },
+  {
+    displayId: '03',
+    title: 'Title',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro distinctio ea culpa cum dolorem blanditiis laborum quis?'
+  },
+  {
+    displayId: '04',
+    title: 'Title',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim doloribus iste dolores nihil nostrum dolore et ex fugiat ducimus?'
+  },
+  {
+    displayId: '05',
+    title: 'Title',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minus alias aut vel recusandae.'
+  },
+  {
+    displayId: '06',
+    title: 'Title',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vel facere sed perferendis mollitia aliquam nostrum!'
+  },
+]
 
 export const WhySection = () => {
   return (
-    <div>WhySection</div>
+    <section
+      id="why"
+      className="relative scroll-mt-24 border-y border-mypurple bg-inkblack/30 py-24 sm:py-32"
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <span className="text-sm font-medium text-mypurple">
+              Why Wakefulness Soft
+            </span>
+            <h2 className="mt-2 mb-6 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              We are the great choise to design your system from scratch
+            </h2>
+            <p className='mb-6 text-balance leading-relaxed text-snow'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsum maxime magnam</p>
+            <a
+              href="#contact"
+              className="text-balance text-vodka border px-4 py-2 rounded-xl transition duration-300 ease-in-out hover:bg-mypurple hover:text-darkvoid"
+            >
+              Start a conversation
+            </a>
+          </div>
+          {/* TODO: Add responsive design */}
+          <div className="grid overflow-hidden border-2 border-vodka rounded-2xl bg-vodka gap-0.5 sm:grid-cols-2">
+            {
+              PILLARS.map((item, idx) => (
+                <div key={idx} className="p-3 bg-inkblack text-snow font-normal">
+                  <span className="text-vodka">{item.displayId}</span>
+                  <h3 className="pt-1 text-xl">{item.title}</h3>
+                  <p className="text-balance">{item.content}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
