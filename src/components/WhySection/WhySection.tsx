@@ -54,7 +54,7 @@ export const WhySection = () => {
             <h2 className="mt-2 mb-6 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
               We are the great choise to design your system from scratch
             </h2>
-            <p className='mb-6 text-balance leading-relaxed text-snow'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsum maxime magnam</p>
+            <p className='mb-6 text-balance leading-relaxed text-ghost'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsum maxime magnam</p>
             <a
               href="#contact"
               className="text-balance text-vodka border px-4 py-2 rounded-xl transition duration-300 ease-in-out hover:bg-mypurple hover:text-darkvoid"
@@ -63,13 +63,13 @@ export const WhySection = () => {
             </a>
           </div>
           {/* TODO: Add responsive design */}
-          <div className="grid overflow-hidden border-2 border-vodka rounded-2xl bg-vodka gap-0.5 sm:grid-cols-2">
+          <div className="grid overflow-hidden border-2 border-vodka rounded-2xl bg-vodka gap-px sm:grid-cols-2">
             {
               PILLARS.map((item, idx) => (
-                <div key={idx} className="p-3 bg-inkblack text-snow font-normal">
-                  <span className="text-vodka">{item.displayId}</span>
-                  <h3 className="pt-1 text-xl">{item.title}</h3>
-                  <p className="text-balance">{item.content}</p>
+                <div key={idx} className="h-full p-6 bg-inkblack text-snow font-normal">
+                  <span className="font-mono text-vodka text-sm">{item.displayId}</span>
+                  <h3 className="mt-3 text-lg font-semibold tracking-tight">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-balance text-ghost">{item.content}</p>
                 </div>
               ))
             }
