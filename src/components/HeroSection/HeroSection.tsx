@@ -16,7 +16,7 @@ export const HeroSection = () => {
                     <span className="block">your business.</span>
                 </h1>
 
-                <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed sm:text-lg">
+                <p className="mx-auto mt-6 max-w-xl text-pretty text-base text-ghost leading-relaxed sm:text-lg">
                     Designing your dream is our most cherished task
                 </p>
 
