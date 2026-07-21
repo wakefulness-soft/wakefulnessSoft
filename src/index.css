@@ -33,11 +33,34 @@
   --color-ghost:     #c9b8d4;
   --color-sea-foam: #FFFFFF;
   --color-lava:     #F56E0F;
+
+  /* Colores principales */
+  --color-prymary:    #BC6CFF;
+  --color-accent:     #D8A4FF;
+
+  /* Colores para fondos */
+  --color-background: #101113;
+  --color-secondary:  #181A20;
+  --color-hover:      #21242B;
+  --color-inkblack:   #0B0C0F;
+
+  /* Colores para bordes */
+  --color-border:     #2A2D36;
+  --color-divider:    #202229;
+
+  /* Colores para textos */
+  --color-snow:       #FBFBFB;
+  --color-ghost:      #B9BDC8;
+  --color-muted:      #8A909C;
+
+  /* Colores extras (Solo usar en ocaciones muy concretas) */
+  --color-vodka:      #C8B3F6;
+  --color-hover2:     #1C1E24;
 }
 
 @layer base {
   body {
-    @apply bg-darkvoid text-snow
+    @apply bg-background text-ghost
   }
 }
 
