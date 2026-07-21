@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar/Navbar.tsx'
 import Footer from './components/Footer/Footer.tsx'
-import { HomePage } from './pages/HomePage.tsx'
+import { HomePage } from './pages/Home/HomePage'
 
 function App() {
   return (
