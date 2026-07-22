@@ -18,6 +18,32 @@
   --color-snow:     #FBFBFB;
   --color-sea-foam: #FFFFFF;
   --color-lava:     #F56E0F;
+
+  /* Colores principales */
+  --color-prymary:    #BC6CFF;
+  --color-accent:     #D8A4FF;
+
+  /* Colores para fondos */
+  --color-background: #0b0b10;
+  --color-void:       #0b0a0d;
+  --color-secondary:  #181A20;
+  --color-hover:      #21242B;
+  --color-inkblack:   #0B0C0F;
+
+  /* Colores para bordes */
+  --color-border:     #2A2D36;
+  --color-divider:    #202229;
+
+  /* Colores para textos */
+  --color-snow:       #FBFBFB;
+  --color-bone:       #e3d7d9;
+  --color-ghost:      #c9b8d4;
+  --color-muted:      #8d7f99;
+
+  /* Colores extras (Solo usar en ocaciones muy concretas) */
+  --color-vodka:      #C8B3F6;
+  --color-dim:        #3E3347;
+  --color-hover2:     #1C1E24;
 }
 
 @theme {
@@ -39,7 +65,8 @@
   --color-accent:     #D8A4FF;
 
   /* Colores para fondos */
-  --color-background: #101113;
+  --color-background: #0b0b10;
+  --color-void:       #0b0a0d;
   --color-secondary:  #181A20;
   --color-hover:      #21242B;
   --color-inkblack:   #0B0C0F;
@@ -50,11 +77,13 @@
 
   /* Colores para textos */
   --color-snow:       #FBFBFB;
+  --color-bone:       #e3d7d9;
   --color-ghost:      #B9BDC8;
-  --color-muted:      #8A909C;
+  --color-muted:      #8d7f99;
 
   /* Colores extras (Solo usar en ocaciones muy concretas) */
   --color-vodka:      #C8B3F6;
+  --color-dim:        #3E3347;
   --color-hover2:     #1C1E24;
 }
 
