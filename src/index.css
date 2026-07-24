@@ -18,6 +18,45 @@
   --color-snow:     #FBFBFB;
   --color-sea-foam: #FFFFFF;
   --color-lava:     #F56E0F;
+
+  /* Colores principales */
+  --color-prymary:    #BC6CFF;
+  --color-accent:     #D8A4FF;
+
+  /* Colores para fondos */
+  --color-background: #0b0b10;
+  --color-void:       #0b0a0d;
+  --color-secondary:  #181A20;
+  --color-hover:      #21242B;
+  --color-inkblack:   #0B0C0F;
+
+  /* Colores para bordes */
+  --color-border:     #2A2D36;
+  --color-divider:    #202229;
+
+  /* Colores para textos */
+  --color-snow:       #FBFBFB;
+  --color-bone:       #e3d7d9;
+  --color-ghost:      #c9b8d4;
+  --color-muted:      #8d7f99;
+
+  /* Colores extras (Solo usar en ocaciones muy concretas) */
+  --color-vodka:      #C8B3F6;
+  --color-dim:        #3E3347;
+  --color-hover2:     #1C1E24;
+
+  /* text sizes */
+  --text-xs:          0.75rem;
+  --text-sm:          0.875rem;
+  --text-base:        1rem;
+  --text-lg:          1.125rem;
+  --text-xl:          1.25rem;
+  --text-2xl:         1.5rem;
+  --text-3xl:         1.875rem;
+  --text-4xl:         2.25rem;
+  --text-5xl:         3rem;
+  --text-6xl:         4.5rem;
+  --text-7xl:         6rem;
 }
 
 @theme {
@@ -33,11 +72,46 @@
   --color-ghost:     #c9b8d4;
   --color-sea-foam: #FFFFFF;
   --color-lava:     #F56E0F;
+
+  /* Colores principales */
+  --color-prymary:    #BC6CFF;
+  --color-accent:     #D8A4FF;
+
+  /* Colores para fondos */
+  --color-background: #0b0b10;
+  --color-void:       #0b0a0d;
+  --color-secondary:  #181A20;
+  --color-hover:      #21242B;
+  --color-inkblack:   #0B0C0F;
+
+  /* Colores para bordes */
+  --color-border:     #2A2D36;
+  --color-divider:    #202229;
+
+  /* Colores para textos */
+  --color-snow:       #FBFBFB;
+  --color-bone:       #e3d7d9;
+  --color-ghost:      #B9BDC8;
+  --color-muted:      #8d7f99;
+
+  /* Colores extras (Solo usar en ocaciones muy concretas) */
+  --color-vodka:      #C8B3F6;
+  --color-dim:        #3E3347;
+  --color-hover2:     #1C1E24;
 }
 
 @layer base {
   body {
-    @apply bg-darkvoid text-snow
+    @apply bg-background text-ghost
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--color-dim) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.18;
+    pointer-events: none;
   }
 }
 

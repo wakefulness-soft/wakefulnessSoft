@@ -1,4 +1,4 @@
-import styles from './WhySection.module.css'
+import s from './WhySection.module.css'
 
 interface IPillar {
   displayId: string;
@@ -43,33 +43,41 @@ export const WhySection = () => {
   return (
     <section
       id="why"
-      className="relative scroll-mt-24 border-y border-mypurple bg-inkblack/30 py-24 sm:py-32"
+      className={s.section}
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <span className="text-sm font-medium text-mypurple">
-              Why Wakefulness Soft
+      {/* <div className="mx-auto max-w-6xl px-4 sm:px-6"> */}
+      <div className={s.container}>
+        {/* <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"> */}
+        <div className={s.content}>
+          {/* <div className="lg:sticky lg:top-28 lg:self-start"> */}
+          <div className={s.hero}>
+            {/* <span className="text-sm font-medium text-accent"> */}
+            <span className={s.eyebrow}>
+              Why Wakefulness
             </span>
-            <h2 className="mt-2 mb-6 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              We are the great choise to design your system from scratch
+            {/* <h2 className="mt-2 mb-6 text-balance text-3xl text-snow font-semibold tracking-tight sm:text-4xl lg:text-5xl"> */}
+            <h2 className={s.headline}>
+              The great <em>choice</em> to design your system from scratch
             </h2>
-            <p className='mb-6 text-balance leading-relaxed text-ghost'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsum maxime magnam</p>
+            <p className={s.body}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsum maxime magnam</p>
             <a
               href="#contact"
-              className="text-balance text-vodka border px-4 py-2 rounded-xl transition duration-300 ease-in-out hover:bg-mypurple hover:text-darkvoid"
+              // className="text-balance border border-border text-snow px-4 py-2 rounded-xl transition-colors hover:bg-hover"
+              className={s.contactLink}
             >
               Start a conversation
             </a>
           </div>
           {/* TODO: Add responsive design */}
-          <div className="grid overflow-hidden border-2 border-vodka rounded-2xl bg-vodka gap-px sm:grid-cols-2">
+          {/* <div className="grid overflow-hidden border-2 border-border rounded-2xl gap-px sm:grid-cols-2"> */}
+          <div className={s.pillarsContainer}>
             {
               PILLARS.map((item, idx) => (
-                <div key={idx} className="h-full p-6 bg-inkblack text-snow font-normal">
-                  <span className="font-mono text-vodka text-sm">{item.displayId}</span>
-                  <h3 className="mt-3 text-lg font-semibold tracking-tight">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-balance text-ghost">{item.content}</p>
+                // <div key={idx} className="h-full p-6 bg-secondary font-normal transition-colors hover:bg-hover2">
+                <div key={idx} className={s.pillarItem}>
+                  <span className={s.pillarNumber}>{item.displayId}</span>
+                  <h3 className={s.pillarTitle}>{item.title}</h3>
+                  <p className={s.pillarContent}>{item.content}</p>
                 </div>
               ))
             }

@@ -4,7 +4,7 @@ import type { ILink } from "../../types/links.interface.ts";
 import { NavbarLink } from '../NavbarLink.tsx';
 
 const links: Array<ILink> = [
-  { label: "Inicio", href: "#inicio" },
+  { label: "Inicio", href: "#top" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Nosotros", href: "#nosotros" },
@@ -48,7 +48,7 @@ export default function Navbar() {
         </svg>
 
         {/* Logo */}
-        <a href="#inicio" className="relative z-10 flex items-center gap-2.5">
+        <a href="#top" className="relative z-10 flex items-center gap-2.5">
           <img
             src={logo}
             alt="Wakefulness Soft"
