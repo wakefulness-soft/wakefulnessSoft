@@ -102,9 +102,13 @@
 
 @layer base {
   body {
-    @apply bg-background text-ghost
+    /* @apply bg-background text-ghost */
+    background-color: var(--color-background);
+    color: var(--color-ghost);
+    position: relative;
   }
-  section::before {
+
+  body::before {
     content: "";
     position: absolute;
     inset: 0;

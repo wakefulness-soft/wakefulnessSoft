@@ -1,6 +1,6 @@
 /* ─── tokens ─── */
 .section {
-  background-color: var(--color-void);
+  background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
   color: var(--color-bone);
   padding: 7rem 1.5rem 6rem;
   overflow: hidden;
@@ -28,17 +28,25 @@
 
 /* ─── eyebrow ─── */
 .eyebrow {
-  display: inline-block;
+  /* display: inline-block;
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-ghost);
+  color: var(--color-accent);
   margin-bottom: 1.5rem;
   padding: 0.3rem 0.8rem;
   border: 1px solid var(--color-border);
   border-radius: 9999px;
-  background: var(--color-secondary);
+  background: var(--color-secondary); */
+  
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  letter-spacing: 0.2em;
 }
 
 /* ─── columnas hero ─── */
