@@ -6,7 +6,7 @@ const navLinks: Array<ILink> = [
   { label: "Inicio", href: "#inicio" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
-  { label: "Nosotros", href: "#nosotros" },
+  { label: "Nosotros", href: "#us" },
 ];
 
 const socials: Array<ILink> = [

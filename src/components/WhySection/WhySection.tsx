@@ -57,7 +57,7 @@ export const WhySection = () => {
             </span>
             {/* <h2 className="mt-2 mb-6 text-balance text-3xl text-snow font-semibold tracking-tight sm:text-4xl lg:text-5xl"> */}
             <h2 className={s.headline}>
-              The great <em>choice</em> to design your system from scratch
+              The great <em>choice</em> to design your system from scratch.
             </h2>
             <p className={s.body}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsum maxime magnam</p>
             <a

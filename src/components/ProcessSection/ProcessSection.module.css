@@ -1,0 +1,98 @@
+.section {
+    position: relative;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
+    color: var(--color-muted);
+    padding: 7rem 1.5rem 6rem;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 68rem;
+    position: relative;
+}
+
+.content {
+    
+}
+
+.eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    letter-spacing: 0.2em;
+}
+
+.hero {
+    margin-bottom: 2.5rem;
+}
+
+.headline {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03rem;
+    color: var(--color-bone);
+    margin: 0 0 1.5rem;
+}
+
+.headline em {
+  font-style: normal;
+  color: var(--color-ghost);
+}
+
+.body {
+    font-size: var(--text-lg);
+    line-height: 1.75;
+    color: var(--color-muted);
+    /* max-width: 38ch; */
+}
+
+.stepsTimeLine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepCardsContainer {
+    /* background-color: rebeccapurple; */
+    margin: auto 0;
+    padding: 2rem;
+}
+
+.stepCard {
+    display: block;
+    border: 1px solid var(--color-border);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    background-color: var(--color-void);
+    box-shadow: 0px 5px 10px var(--color-secondary);
+    transition-property: background-color;
+    transition-duration: 200ms;
+}
+
+.stepCard:hover {
+    background-color: var(--color-hover2);
+}
+
+.stepTitle {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-ghost);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+}
+
+.stepDesc {
+    letter-spacing: 0.03rem;
+}
+
+/* sm */
+@media (width >= 40rem) {
+
+}

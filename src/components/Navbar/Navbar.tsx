@@ -7,7 +7,7 @@ const links: Array<ILink> = [
   { label: "Inicio", href: "#top" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
-  { label: "Nosotros", href: "#nosotros" },
+  { label: "Nosotros", href: "#us" },
   { label: "Contacto", href: "#contacto" },
 ];
 
