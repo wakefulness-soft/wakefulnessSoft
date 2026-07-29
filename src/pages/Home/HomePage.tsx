@@ -12,7 +12,7 @@ export const HomePage = () => {
     <div className="relative min-h-screen">
       <main>
         <HeroSection />
-        <ServicesSection />
+        {/* <ServicesSection /> */}
         <AboutSection />
         <WhySection />
         <ProcessSection />
