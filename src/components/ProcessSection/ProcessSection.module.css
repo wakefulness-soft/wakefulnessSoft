@@ -51,15 +51,43 @@
     /* max-width: 38ch; */
 }
 
+.timelineContainer {
+    display: grid;
+    gap: 1.5rem;
+}
+
 .stepsTimeLine {
+    padding: 0.5rem 0.75rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1.5rem;
+}
+
+.timelineStep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    font-family: monospace;
+    transition-property: background-color;
+    transition-duration: 200ms;
+}
+
+.timelineStep span {
+    font-size: var(--text-xl);
+}
+
+.timelineStep:hover {
+    background-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
+    box-shadow: 0px 0px 25px color-mix(in srgb, var(--color-secondary) 90%, transparent);
+    color: var(--color-void);
 }
 
 .stepCardsContainer {
-    /* background-color: rebeccapurple; */
     margin: auto 0;
     padding: 2rem;
 }
@@ -90,9 +118,43 @@
 
 .stepDesc {
     letter-spacing: 0.03rem;
+    font-size: var(--text-base);
 }
 
 /* sm */
 @media (width >= 40rem) {
+    
+}
 
+/* md */
+@media (width >= 48rem) {
+    .timelineContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .stepsTimeLine {
+        padding: 0.5rem 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .timelineStep {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border: 1px solid var(--color-border);
+        border-radius: 50%;
+        font-family: monospace;
+    }
+}
+
+/* l1g */
+@media (width >= 64rem) {
+    
 }

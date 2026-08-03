@@ -116,15 +116,15 @@ export default function ProjectSection() {
         <div className={s.previewOrb} />
         <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
           aria-hidden="true" style={{ position: "relative", zIndex: 1, opacity: 0.5 }}>
-          <ellipse cx="60" cy="52" rx="30" ry="26" fill="var(--color-prymary)" opacity="0.2" />
-          <ellipse cx="60" cy="52" rx="30" ry="26" stroke="var(--color-prymary)"
+          <ellipse cx="60" cy="52" rx="30" ry="26" fill="var(--color-primary)" opacity="0.2" />
+          <ellipse cx="60" cy="52" rx="30" ry="26" stroke="var(--color-primary)"
             strokeWidth="1.5" fill="none" opacity="0.6" />
           <ellipse cx="50" cy="50" rx="7" ry="7.5" fill="var(--color-void)" />
           <ellipse cx="70" cy="50" rx="7" ry="7.5" fill="var(--color-void)" />
           <path d="M54,61 L60,56 L66,61 Z" fill="var(--color-void)" opacity="0.5" />
-          <rect x="47"   y="68" width="9" height="8" rx="2" fill="var(--color-prymary)" opacity="0.3" />
-          <rect x="57.5" y="68" width="9" height="8" rx="2" fill="var(--color-prymary)" opacity="0.3" />
-          <rect x="68"   y="68" width="9" height="8" rx="2" fill="var(--color-prymary)" opacity="0.3" />
+          <rect x="47"   y="68" width="9" height="8" rx="2" fill="var(--color-primary)" opacity="0.3" />
+          <rect x="57.5" y="68" width="9" height="8" rx="2" fill="var(--color-primary)" opacity="0.3" />
+          <rect x="68"   y="68" width="9" height="8" rx="2" fill="var(--color-primary)" opacity="0.3" />
           <path d="M60,26 C56,16 64,10 60,0" stroke="var(--color-ghost)"
             strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
           <path d="M48,23 C44,13 50,7 46,0" stroke="var(--color-ghost)"

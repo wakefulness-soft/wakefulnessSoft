@@ -10,26 +10,26 @@ const steps: ICoffeToSystemStep[] = [
     "step": "Selecting the beans",
     "description": "Gathering requirements and understanding project goals to choose the right technologies and approach."
   },
-  {
-    "step": "Grinding the coffee",
-    "description": "Breaking down the project into modules, services, or components for structured development."
-  },
-  {
-    "step": "Heating the water",
-    "description": "Setting up the development environment, databases, and infrastructure needed to run the system."
-  },
-  {
-    "step": "Brewing the coffee",
-    "description": "Writing and integrating the actual code, connecting components, and implementing logic."
-  },
-  {
-    "step": "Filtering the brew",
-    "description": "Code review, refactoring, and removing technical debt or inefficiencies."
-  },
-  {
-    "step": "Adding milk and sugar",
-    "description": "Polishing the user interface, adding final features, and optimizing performance before deployment."
-  }
+  // {
+  //   "step": "Grinding the coffee",
+  //   "description": "Breaking down the project into modules, services, or components for structured development."
+  // },
+  // {
+  //   "step": "Heating the water",
+  //   "description": "Setting up the development environment, databases, and infrastructure needed to run the system."
+  // },
+  // {
+  //   "step": "Brewing the coffee",
+  //   "description": "Writing and integrating the actual code, connecting components, and implementing logic."
+  // },
+  // {
+  //   "step": "Filtering the brew",
+  //   "description": "Code review, refactoring, and removing technical debt or inefficiencies."
+  // },
+  // {
+  //   "step": "Adding milk and sugar",
+  //   "description": "Polishing the user interface, adding final features, and optimizing performance before deployment."
+  // }
 ];
 
 export const ProcessSection = () => {
@@ -51,14 +51,14 @@ export const ProcessSection = () => {
         </div>
         <div className={s.body}>
           {/* <div className="lg:sticky lg:top-28 lg:self-start"> */}
-            <div className="grid grid-cols-2 gap-10">
+            <div className={s.timelineContainer}>
               <div className={s.stepsTimeLine}>
-                <div className="font-mono border rounded-4xl w-20 h-20">1</div>
-                <div className="font-mono mt-2 border rounded-4xl w-20 h-20">2</div>
-                <div className="font-mono mt-2 border rounded-4xl w-20 h-20">3</div>
-                <div className="font-mono mt-2 border rounded-4xl w-20 h-20">4</div>
-                <div className="font-mono mt-2 border rounded-4xl w-20 h-20">5</div>
-                <div className="font-mono mt-2 border rounded-4xl w-20 h-20">6</div>
+                <div className={s.timelineStep}><span>1</span></div>
+                <div className={s.timelineStep}><span>2</span></div>
+                <div className={s.timelineStep}><span>3</span></div>
+                <div className={s.timelineStep}><span>4</span></div>
+                <div className={s.timelineStep}><span>5</span></div>
+                <div className={s.timelineStep}><span>6</span></div>
               </div>
               <div className={s.stepCardsContainer}>
                 {
