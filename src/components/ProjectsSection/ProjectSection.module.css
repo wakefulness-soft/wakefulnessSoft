@@ -134,11 +134,11 @@
   align-items: stretch;
 }
 .card.featured:hover {
-  border-color: color-mix(in srgb, var(--color-prymary) 35%, var(--color-border));
-  box-shadow: 0 0 55px -10px color-mix(in srgb, var(--color-prymary) 25%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  box-shadow: 0 0 55px -10px color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 .card.featured::before {
-  background: linear-gradient(to top, var(--color-prymary), transparent);
+  background: linear-gradient(to top, var(--color-primary), transparent);
 }
 
 @media (max-width: 768px) {
@@ -218,7 +218,7 @@
   height: 140px;
   border-radius: 50%;
   background: radial-gradient(circle at 40% 40%,
-    color-mix(in srgb, var(--color-prymary) 18%, transparent),
+    color-mix(in srgb, var(--color-primary) 18%, transparent),
     transparent 70%);
   position: absolute;
 }
@@ -272,7 +272,7 @@
 
 .featuredName em {
   font-style: normal;
-  color: var(--color-prymary);
+  color: var(--color-primary);
 }
 
 .desc {
@@ -325,7 +325,7 @@
 
 /* featured link hereda color primario */
 .featuredLink {
-  color: var(--color-prymary);
+  color: var(--color-primary);
 }
 .featuredLink:hover { color: var(--color-accent); }
 

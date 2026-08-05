@@ -9,35 +9,68 @@ interface IPillar {
 const PILLARS: IPillar[] = [
   {
     displayId: '01',
-    title: 'Title',
-    content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque odio nesciunt quia expedita doloremque magnam facilis tenetur dolorem architecto explicabo.'
+    title: 'Craftsmanship Over Shortcuts',
+    content: "We don't chase quick fixes. Every feature is designed to be maintainable, scalable, and built with long-term quality in mind."
   },
   {
     displayId: '02',
-    title: 'Title',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequuntur enim quae consectetur, nisi dolore?'
+    title: 'Fresh Perspective',
+    content: "The quietest hours often produce the clearest thinking. We approach problems with curiosity and thoughtful engineering rather than rushing toward the first solution."
   },
   {
     displayId: '03',
-    title: 'Title',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro distinctio ea culpa cum dolorem blanditiis laborum quis?'
+    title: 'Strong Foundations',
+    content: "Like a good espresso, great software starts with quality ingredients. Clean architecture, maintainable code, and scalable design are the foundation of everything we build."
   },
   {
     displayId: '04',
-    title: 'Title',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim doloribus iste dolores nihil nostrum dolore et ex fugiat ducimus?'
+    title: 'Performance by Design',
+    content: "Fast software creates better experiences. From database queries to frontend interactions, performance is considered from day one."
   },
   {
     displayId: '05',
-    title: 'Title',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minus alias aut vel recusandae.'
+    title: 'Quality in Every Commit',
+    content: "Every release reflects our standards. We test, review, refine, and polish because details matter."
   },
   {
     displayId: '06',
-    title: 'Title',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vel facere sed perferendis mollitia aliquam nostrum!'
+    title: 'Reliable Delivery',
+    content: "Ideas only matter when they become reality. We focus on predictable execution, consistent progress, and delivering software you can confidently rely on."
   },
-]
+];
+
+const PILLARS2: IPillar[] = [
+  {
+    displayId: '01',
+    title: 'Craftsmanship Over Shortcuts',
+    content: 'We build clean, maintainable software designed to last—not just quick fixes.'
+  },
+  {
+    displayId: '02',
+    title: 'Fresh Perspective',
+    content: 'We solve problems with curiosity, thoughtful engineering, and a fresh point of view.'
+  },
+  {
+    displayId: '03',
+    title: 'Strong Foundations',
+    content: 'Clean architecture and scalable design are the foundation of every solution we build.'
+  },
+  {
+    displayId: '04',
+    title: 'Performance by Design',
+    content: 'Performance is built in from day one, creating fast and reliable user experiences.'
+  },
+  {
+    displayId: '05',
+    title: 'Quality in Every Commit',
+    content: 'Every release is carefully reviewed, refined, and polished to meet our standards.'
+  },
+  {
+    displayId: '06',
+    title: 'Reliable Delivery',
+    content: 'We deliver predictable progress with software your business can depend on.'
+  },
+];
 
 export const WhySection = () => {
   return (
@@ -45,35 +78,27 @@ export const WhySection = () => {
       id="why"
       className={s.section}
     >
-      {/* <div className="mx-auto max-w-6xl px-4 sm:px-6"> */}
       <div className={s.container}>
-        {/* <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"> */}
         <div className={s.content}>
-          {/* <div className="lg:sticky lg:top-28 lg:self-start"> */}
           <div className={s.hero}>
-            {/* <span className="text-sm font-medium text-accent"> */}
             <span className={s.eyebrow}>
               Why Wakefulness
             </span>
-            {/* <h2 className="mt-2 mb-6 text-balance text-3xl text-snow font-semibold tracking-tight sm:text-4xl lg:text-5xl"> */}
             <h2 className={s.headline}>
-              The great <em>choice</em> to design your system from scratch
+              Where great software stays <em>awake</em>.
             </h2>
-            <p className={s.body}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsum maxime magnam</p>
+            <p className={s.body}>We believe the best ideas don't appear because it's late at night — they appear because someone cares enough to keep refining them.</p>
+            <p className={s.body}>Every project we build is treated like a product we'd proudly sign our names to, combining technical excellence with thoughtful collaboration from the first conversation to the final deployment.</p>
             <a
               href="#contact"
-              // className="text-balance border border-border text-snow px-4 py-2 rounded-xl transition-colors hover:bg-hover"
               className={s.contactLink}
             >
               Start a conversation
             </a>
           </div>
-          {/* TODO: Add responsive design */}
-          {/* <div className="grid overflow-hidden border-2 border-border rounded-2xl gap-px sm:grid-cols-2"> */}
           <div className={s.pillarsContainer}>
             {
               PILLARS.map((item, idx) => (
-                // <div key={idx} className="h-full p-6 bg-secondary font-normal transition-colors hover:bg-hover2">
                 <div key={idx} className={s.pillarItem}>
                   <span className={s.pillarNumber}>{item.displayId}</span>
                   <h3 className={s.pillarTitle}>{item.title}</h3>

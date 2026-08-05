@@ -27,7 +27,7 @@
 
 .highlight {
     display: block;
-    color: var(--color-prymary);
+    color: var(--color-primary);
 }
 
 .slogan {
@@ -52,7 +52,7 @@
 }
 
 .linQuote {
-    background-color: var(--color-prymary);
+    background-color: var(--color-primary);
     color: var(--color-background);
     transition-property: translate, box-shadow;
     transition-duration: 200ms;

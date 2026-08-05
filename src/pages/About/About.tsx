@@ -109,13 +109,13 @@ export default function About(){
   }, []);
 
   return (
-    <section id="nosotros" className={s.section}>
+    <section id="us" className={s.section}>
       <div className={s.inner}>
 
         {/* ── hero ── */}
         <div className={s.hero}>
           <div>
-            <span className={s.eyebrow}>Nosotros</span>
+            <span className={s.eyebrow}>Us</span>
             <h2 className={s.headline}>
               Code that<br />
               doesn't <em>sleep.</em>
