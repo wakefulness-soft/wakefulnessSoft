@@ -1,6 +1,6 @@
 /* ─── sección principal ─── */
 .section {
-  background-color: var(--color-void);
+  background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
   color: var(--color-bone);
   padding: 7rem 1.5rem 6rem;
   overflow: hidden;
