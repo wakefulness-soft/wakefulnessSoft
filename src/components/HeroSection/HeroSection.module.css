@@ -1,8 +1,9 @@
 .section {
     position: relative;
     overflow: hidden;
-    background-color: color-mix(in srgb, var(--color-background) 25%, transparent);
+    background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
     color: var(--color-muted);
+    padding: 7rem 1.5rem 6rem;
 }
 
 .container {
