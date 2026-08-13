@@ -1,6 +1,270 @@
+import { useState, ChangeEvent } from "react";
+import s from "./CtaSection.module.css";
 
-export const CtaSection = () => {
+/* ─── tipos ─── */
+type Status = "idle" | "sending" | "sent" | "error";
+
+interface FormData {
+  name:    string;
+  email:   string;
+  service: string;
+  message: string;
+}
+
+const INITIAL: FormData = {
+  name:    "",
+  email:   "",
+  service: "",
+  message: "",
+};
+
+const SERVICES = [
+  "Web development",
+  "Mobile app",
+  "Technical consulting",
+  "Maintenance & support",
+  "Something else",
+];
+
+/* ─── SVG skull decorativo ─── */
+const SkullSVG = () => (
+  <svg
+    width="80" height="80"
+    viewBox="0 0 80 80"
+    fill="none"
+    aria-hidden="true"
+  >
+    {/* vapor */}
+    <path d="M40,18 C36,8 44,2 40,-6"
+      stroke="var(--color-ghost)" strokeWidth="1.5"
+      strokeLinecap="round" opacity="0.5" />
+    <path d="M30,15 C26,5 32,-1 28,-9"
+      stroke="var(--color-ghost)" strokeWidth="1"
+      strokeLinecap="round" opacity="0.3" />
+    <path d="M50,15 C54,5 48,-1 52,-9"
+      stroke="var(--color-ghost)" strokeWidth="1"
+      strokeLinecap="round" opacity="0.3" />
+    {/* cabeza */}
+    <ellipse cx="40" cy="42" rx="24" ry="22"
+      fill="var(--color-ghost)" opacity="0.12" />
+    <ellipse cx="40" cy="42" rx="24" ry="22"
+      stroke="var(--color-ghost)" strokeWidth="1.5"
+      fill="none" opacity="0.4" />
+    {/* mandíbula */}
+    <rect x="26" y="57" width="28" height="12" rx="5"
+      fill="var(--color-ghost)" opacity="0.1"
+      stroke="var(--color-ghost)" strokeWidth="1.5" />
+    {/* ojos */}
+    <ellipse cx="32" cy="40" rx="6" ry="6.5"
+      fill="var(--color-void)" stroke="var(--color-ghost)"
+      strokeWidth="1" opacity="0.7" />
+    <ellipse cx="48" cy="40" rx="6" ry="6.5"
+      fill="var(--color-void)" stroke="var(--color-ghost)"
+      strokeWidth="1" opacity="0.7" />
+    {/* nariz */}
+    <path d="M37,51 L40,47 L43,51 Z"
+      fill="var(--color-ghost)" opacity="0.3" />
+    {/* dientes */}
+    <rect x="28" y="59" width="6" height="7" rx="1.5"
+      fill="var(--color-void)" />
+    <rect x="36.5" y="59" width="6" height="7" rx="1.5"
+      fill="var(--color-void)" />
+    <rect x="45" y="59" width="6" height="7" rx="1.5"
+      fill="var(--color-void)" />
+    {/* chispas */}
+    <circle cx="68" cy="30" r="1.5" fill="var(--color-ghost)" opacity="0.4" />
+    <circle cx="14" cy="52" r="1.5" fill="var(--color-ghost)" opacity="0.3" />
+    <circle cx="62" cy="62" r="1"   fill="var(--color-ghost)" opacity="0.25" />
+  </svg>
+);
+
+/* ─── componente principal ─── */
+export default function CtaSection() {
+  const [form, setForm]     = useState<FormData>(INITIAL);
+  const [status, setStatus] = useState<Status>("idle");
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = () => {
+    if (!form.name || !form.email || !form.message) return;
+
+    setStatus("sending");
+
+    // Simula envío — reemplaza con tu lógica real (fetch, emailjs, etc.)
+    setTimeout(() => setStatus("sent"), 2000);
+  };
+
+  const btnLabel = () => {
+    if (status === "sending")
+      return <><span className={s.blink}>█</span> sending...</>;
+    if (status === "sent")
+      return <>✓ message sent</>;
+    return <>{`>`} send_message</>;
+  };
+
+  const btnClass = [
+    s.submitBtn,
+    status === "sending" ? s.sending : "",
+    status === "sent"    ? s.sent    : "",
+  ].join(" ");
+
   return (
-    <div>CtaSection</div>
-  )
+    <section id="contacto" className={s.section}>
+      {/* línea de vapor en el borde superior */}
+      <div className={s.steamLine} />
+
+      <div className={s.inner}>
+
+        {/* ── panel izquierdo ── */}
+        <div className={s.left}>
+          <span className={s.eyebrow}>Contact</span>
+
+          <h2 className={s.headline}>
+            Let's build<br />
+            something <em>alive.</em>
+          </h2>
+
+          <p className={s.sub}>
+            Got a project in mind? A problem that needs solving?
+            Or just want to talk code at 2 am?
+            Drop us a message — we don't sleep anyway.
+          </p>
+
+          <div className={s.skullWrap}>
+            <SkullSVG />
+          </div>
+
+          <div className={s.directContact}>
+            <span className={s.directLabel}>// or reach us directly</span>
+            <a href="mailto:hola@wakefulnesssoft.com" className={s.directItem}>
+              <span className={s.directIcon}>✉</span>
+              hola@wakefulnesssoft.com
+            </a>
+            <a href="https://github.com" target="_blank"
+              rel="noreferrer" className={s.directItem}>
+              <span className={s.directIcon}>⌥</span>
+              github.com/wakefulnesssoft
+            </a>
+          </div>
+        </div>
+
+        {/* ── formulario ── */}
+        <div className={s.formWrap}>
+          <div className={s.formBar}>
+            <span className={s.dot} />
+            <span className={s.dot} />
+            <span className={s.dot} />
+            <span className={s.formTitle}>new_message.ts</span>
+          </div>
+
+          <div className={s.formBody}>
+
+            {/* fila nombre + email */}
+            <div className={s.row}>
+              <div className={s.field}>
+                <label className={s.label} htmlFor="name">
+                  <span>const</span> name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  className={s.input}
+                  placeholder="John Doe"
+                  value={form.name}
+                  onChange={handleChange}
+                  disabled={status === "sending" || status === "sent"}
+                  autoComplete="off"
+                />
+              </div>
+
+              <div className={s.field}>
+                <label className={s.label} htmlFor="email">
+                  <span>const</span> email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className={s.input}
+                  placeholder="john@company.com"
+                  value={form.email}
+                  onChange={handleChange}
+                  disabled={status === "sending" || status === "sent"}
+                  autoComplete="off"
+                />
+              </div>
+            </div>
+
+            {/* servicio */}
+            <div className={s.field}>
+              <label className={s.label} htmlFor="service">
+                <span>const</span> service
+              </label>
+              <select
+                id="service"
+                name="service"
+                className={s.select}
+                value={form.service}
+                onChange={handleChange}
+                disabled={status === "sending" || status === "sent"}
+              >
+                <option value="" disabled>// select a service</option>
+                {SERVICES.map((srv) => (
+                  <option key={srv} value={srv}>{srv}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* mensaje */}
+            <div className={s.field}>
+              <label className={s.label} htmlFor="message">
+                <span>const</span> message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                className={s.textarea}
+                placeholder="// tell us about your project..."
+                value={form.message}
+                onChange={handleChange}
+                disabled={status === "sending" || status === "sent"}
+              />
+            </div>
+
+            {/* botón */}
+            <button
+              className={btnClass}
+              onClick={handleSubmit}
+              disabled={
+                status === "sending" ||
+                status === "sent"    ||
+                !form.name           ||
+                !form.email          ||
+                !form.message
+              }
+            >
+              {btnLabel()}
+            </button>
+
+            {status === "error" && (
+              <p style={{
+                fontFamily: "ui-monospace, monospace",
+                fontSize: "var(--text-xs)",
+                color: "#ff5f57",
+                textAlign: "center",
+              }}>
+                {"// error — try again or email us directly"}
+              </p>
+            )}
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

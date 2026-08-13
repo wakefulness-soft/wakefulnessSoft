@@ -16,6 +16,7 @@ interface Project {
 /* ─── datos  de los proyectos al chile no se que poner ─── */
 const PROJECTS: Project[] = [
   {
+    /* ─── Aqui podemos poner el proyecto mas laborioso que hemos echo ─── */
     id:         "nebula",
     filename:   "nebula-platform.tsx",
     name:       "Nebula",
