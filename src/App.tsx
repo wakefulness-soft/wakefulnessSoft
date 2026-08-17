@@ -1,17 +1,23 @@
 import Navbar from './components/Navbar/Navbar.tsx'
 import Footer from './components/Footer/Footer.tsx'
 import { HomePage } from './pages/Home/HomePage'
+import { ThemeSwitcher } from './components/ui/ThemeSwitcher/ThemeSwitcher.tsx'
+import { ThemeContextProvider } from './context/ThemeContext.tsx'
+
 
 function App() {
   return (
     <>
-      <div className="page-container">
-        <Navbar />
-        <div className="main-content pt-20">
-          <HomePage />
+      <ThemeContextProvider>
+        <div className="page-container">
+          <Navbar />
+          <div className="main-content pt-20">
+            <HomePage />
+          </div>
+          <Footer />
+          <ThemeSwitcher/>
         </div>
-        <Footer />
-      </div>
+      </ThemeContextProvider>
     </>
   )
 }
