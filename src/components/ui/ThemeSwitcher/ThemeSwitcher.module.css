@@ -1,7 +1,7 @@
 .foatingComponent {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 1rem;
+    left: 1rem;
     z-index: 1000;
 }
 
@@ -11,10 +11,10 @@
 .toggle {
     position: relative;
 
-    width: 100px;
-    height: 50px;
+    width: 50px;
+    aspect-ratio: 1;
 
-    margin: 50px;
+    margin: 15px;
     padding: 5px;
 
     box-sizing: border-box;
@@ -25,7 +25,10 @@
 
     transition:
         background-color 0.25s ease,
-        border-color 0.25s ease;
+        border-color 0.25s ease,
+        margin 0.25s ease,
+        width 0.25s ease,
+        height 0.25s ease;
 }
 
 /* =========================
@@ -41,17 +44,7 @@
    ========================= */
 
 .trackIcons {
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 11px;
-
-    pointer-events: none;
+    display: none;
 }
 
 .trackIcons svg {
@@ -80,8 +73,8 @@
 .toggle label {
     position: absolute;
 
-    top: 5px;
-    left: 5px;
+    top: 4px;
+    left: 4px;
 
     width: 40px;
     height: 40px;
@@ -119,30 +112,69 @@
         color 0.25s ease;
 }
 
-/* =========================
-   DARK
-   ========================= */
-
-.toggle.dark label {
-    transform: translateX(50px);
+/* sm */
+@media (width >= 40rem) {
+    
 }
 
-.toggle.dark .sunIcon {
-    opacity: 0.35;
+/* md */
+@media (width >= 48rem) {
+    .toggle {
+        width: 100px;
+        height: 50px;
+
+        margin: 50px;
+    }
+
+    .trackIcons {
+        position: absolute;
+
+        inset: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 11px;
+
+        pointer-events: none;
+    }
+
+    .toggle label {
+        top: 5px;
+        left: 5px;
+    }
+
+    /* =========================
+    DARK
+    ========================= */
+
+    .toggle.dark label {
+        transform: translateX(50px);
+    }
+
+    .toggle.dark .sunIcon {
+        opacity: 0.35;
+    }
+
+    .toggle.dark .moonIcon {
+        opacity: 0.9;
+    }
+
+    /* =========================
+    LIGHT
+    ========================= */
+
+    .toggle.light .sunIcon {
+        opacity: 0.9;
+    }
+
+    .toggle.light .moonIcon {
+        opacity: 0.35;
+    }
 }
 
-.toggle.dark .moonIcon {
-    opacity: 0.9;
-}
-
-/* =========================
-   LIGHT
-   ========================= */
-
-.toggle.light .sunIcon {
-    opacity: 0.9;
-}
-
-.toggle.light .moonIcon {
-    opacity: 0.35;
+/* lg */
+@media (width >= 64rem) {
+    
 }
