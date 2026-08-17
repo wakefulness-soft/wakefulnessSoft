@@ -1,0 +1,148 @@
+.foatingComponent {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* ================================
+   Theme switch
+   ================================ */
+.toggle {
+    position: relative;
+
+    width: 100px;
+    height: 50px;
+
+    margin: 50px;
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* =========================
+   INPUT
+   ========================= */
+
+.toggle input {
+    display: none;
+}
+
+/* =========================
+   ICONOS DEL TRACK
+   ========================= */
+
+.trackIcons {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 11px;
+
+    pointer-events: none;
+}
+
+.trackIcons svg {
+    width: 20px;
+    height: 20px;
+
+    stroke-width: 2.2;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.sunIcon {
+    color: var(--color-primary);
+}
+
+.moonIcon {
+    color: var(--color-muted);
+}
+
+/* =========================
+   THUMB
+   ========================= */
+
+.toggle label {
+    position: absolute;
+
+    top: 5px;
+    left: 5px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    background-color: var(--color-primary);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* =========================
+   ICONO DENTRO DEL THUMB
+   ========================= */
+
+.toggleIcon {
+    width: 22px;
+    height: 22px;
+
+    color: var(--color-snow);
+
+    stroke-width: 2.2;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+/* =========================
+   DARK
+   ========================= */
+
+.toggle.dark label {
+    transform: translateX(50px);
+}
+
+.toggle.dark .sunIcon {
+    opacity: 0.35;
+}
+
+.toggle.dark .moonIcon {
+    opacity: 0.9;
+}
+
+/* =========================
+   LIGHT
+   ========================= */
+
+.toggle.light .sunIcon {
+    opacity: 0.9;
+}
+
+.toggle.light .moonIcon {
+    opacity: 0.35;
+}

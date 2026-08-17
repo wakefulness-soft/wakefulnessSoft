@@ -19,6 +19,10 @@
   --color-sea-foam: #FFFFFF;
   --color-lava:     #F56E0F;
 
+
+  /* ================================
+   DARK THEME
+   ================================ */
   /* Colores principales */
   --color-primary:    #BC6CFF;
   --color-accent:     #D8A4FF;
@@ -57,6 +61,36 @@
   --text-5xl:         3rem;
   --text-6xl:         4.5rem;
   --text-7xl:         6rem;
+}
+
+/* ================================
+   LIGHT THEME
+   ================================ */
+[data-theme="light"] {
+ /* Colores principales */
+  --color-primary:    #6C2FBF;
+  --color-accent:     #C084FC;
+
+  /* Colores para fondos */
+  --color-background: #F3EEFA;
+  --color-void:       #FFF9FF;
+  --color-secondary:  #E6D8F2;
+  --color-hover:      #D8C5E8;
+  --color-inkblack:   #C7B0DB;
+
+  /* Colores para bordes */
+  --color-border:     #BFA8D0;
+  --color-divider:    #D9CBE4;
+
+  /* Colores para textos */
+  --color-snow:       #1B1024;
+  --color-bone:       #382442;
+  --color-ghost:      #5F4870;
+  --color-muted:      #786484;
+
+  /* Colores extras */
+  --color-vodka:      #7D4DB2;
+  --color-dim:        #BFA8CE; 
 }
 
 @theme {

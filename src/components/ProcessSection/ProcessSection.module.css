@@ -132,7 +132,7 @@
 }
 
 .stepCard:hover {
-    background-color: var(--color-hover2);
+    background-color: var(--color-hover);
 }
 
 .stepIcon {
