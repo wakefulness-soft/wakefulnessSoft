@@ -172,7 +172,7 @@ export default function ProjectSection() {
   );
 
   return (
-    <section id="proyectos" className={s.section}>
+    <section id="projects" className={s.section}>
       <div className={s.inner}>
 
         <span className={s.eyebrow}>Projects</span>

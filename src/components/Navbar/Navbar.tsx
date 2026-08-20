@@ -6,9 +6,9 @@ import { NavbarLink } from '../NavbarLink.tsx';
 const links: Array<ILink> = [
   { label: "Inicio", href: "#top" },
   { label: "Servicios", href: "#servicios" },
-  { label: "Proyectos", href: "#proyectos" },
+  { label: "Proyectos", href: "#projects" },
   { label: "Nosotros", href: "#us" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -68,7 +68,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="#contacto"
+          href="#contact"
           className="relative z-10 hidden items-center rounded-full bg-[#c9b8d4] px-4 py-1.5 text-sm font-semibold text-[#0b0a0d] transition-all hover:bg-[#d8c9e1] hover:shadow-[0_0_25px_rgba(201,184,212,0.45)] md:inline-flex"
         >
           Hablemos
