@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar/Navbar.tsx'
 import Footer from './components/Footer/Footer.tsx'
+import LanguageSwitcher from "./components/LanguageSwitcher/LanguageSwitcher";
 import { HomePage } from './pages/Home/HomePage'
 import { ThemeSwitcher } from './components/ui/ThemeSwitcher/ThemeSwitcher.tsx'
 import { ThemeContextProvider } from './context/ThemeContext.tsx'
@@ -16,6 +17,7 @@ function App() {
           </div>
           <Footer />
           <ThemeSwitcher/>
+          <LanguageSwitcher/>
         </div>
       </ThemeContextProvider>
     </>

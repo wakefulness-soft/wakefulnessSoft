@@ -1,7 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { useEffect, useRef } from "react";
 import s from "./About.module.css";
 
-/* ─── tipos ─── */
+
 interface Line {
   cmd: string;
   desc: string;
@@ -14,26 +15,19 @@ interface Stat {
 
 type SparkCoord = [number, number];
 
-/* ─── datos ─── */
-const LINES: Line[] = [
-  { cmd: "init",         desc: "Custom software built to solve real-world problems" },
-  { cmd: "quality",      desc: "Clean, reviewed, and well-documented code" },
-  { cmd: "speed",        desc: "Fast delivery without compromising reliability" },
-  { cmd: "transparency", desc: "Clear communication throughout every stage of the project" },
-  { cmd: "innovation",   desc: "We adopt what makes sense, not just what's trending" },
-];
+const LINE_KEYS = ["init", "quality", "speed", "transparency", "innovation"] as const;
 
-const STATS: Stat[] = [
-  { number: "5+",  label: "Years in production"   },
-  { number: "40+", label: "Projects delivered" },
-  { number: "∞",   label: "Cups of coffee"        },
-];
+const STAT_KEYS = [
+  { key: "years", number: "5+" },
+  { key: "projects", number: "40+" },
+  { key: "coffee", number: "∞" },
+] as const;
 
 const SPARKS: SparkCoord[] = [
   [80, 180], [240, 150], [100, 100], [210, 240], [155, 280],
 ];
 
-/* ─── SVG decorativo de vapor ─── */
+
 function VaporSVG(){
   return (
     <svg
@@ -87,7 +81,20 @@ function VaporSVG(){
 
 /* ─── componente principal ─── */
 export default function About(){
-  // +1 para la línea del cursor parpadeante al final
+  const { t } = useTranslation(); 
+
+  
+  const LINES: Line[] = LINE_KEYS.map((key) => ({
+    cmd: key,
+    desc: t(`about.lines.${key}`),
+  }));
+
+  const STATS: Stat[] = STAT_KEYS.map(({ key, number }) => ({
+    number,
+    label: t(`about.stats.${key}`),
+  }));
+
+  
   const linesRef = useRef<(HTMLDivElement | null)[]>(
     Array(LINES.length + 1).fill(null)
   );
@@ -117,14 +124,10 @@ export default function About(){
           <div>
             <span className={s.eyebrow}>Us</span>
             <h2 className={s.headline}>
-              Code that<br />
-              doesn't <em>sleep.</em>
+              {t("about.hero.headline")}
             </h2>
             <p className={s.body}>
-              Wakefulness Soft is a software development studio
-              founded by developers who prefer the early hours and black coffee.
-              We build digital products we would be proud to put our names behind —
-              even if the commit was made at 3 am.
+              {t("about.hero.description")}
             </p>
           </div>
 
