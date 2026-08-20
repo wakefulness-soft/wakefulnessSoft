@@ -70,7 +70,9 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <a href="#contacto" className={styles.ctaButton}>
+        <a
+          href="#contacto"
+          className={styles.ctaButton}>
           {t('navbar.cta')}
         </a>
 

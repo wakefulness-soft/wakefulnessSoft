@@ -113,7 +113,7 @@ export default function CtaSection() {
   ].join(" ");
 
   return (
-    <section id="contacto" className={s.section}>
+    <section id="contact" className={s.section}>
       {/* línea de vapor en el borde superior */}
       <div className={s.steamLine} />
 
