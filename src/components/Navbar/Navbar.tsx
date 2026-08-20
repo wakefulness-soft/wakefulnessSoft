@@ -73,7 +73,6 @@ export default function Navbar() {
         <a
           href="#contacto"
           className={styles.ctaButton}>
-        >
           {t('navbar.cta')}
         </a>
 
