@@ -3,12 +3,12 @@
     overflow: hidden;
     background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
     color: var(--color-muted);
-    padding: 7rem 1.5rem 6rem;
+    padding: 3rem 1.5rem 4rem;
 }
 
 .container {
     margin: auto;
-    padding: 9rem 4rem 20rem;
+    padding: 2rem 4rem 4rem;
 }
 
 .content {
@@ -17,7 +17,7 @@
 }
 
 .title {
-    margin-top: 6rem;
+    margin-top: 0;
     text-wrap: balance;
     font-size: 2.25rem;
     font-weight: bold;

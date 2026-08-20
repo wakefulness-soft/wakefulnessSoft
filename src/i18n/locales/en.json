@@ -1,0 +1,74 @@
+{
+  "navbar": {
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "projects": "Projects",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "cta": "Let's Talk",
+    "menu": {
+      "open": "Open menu",
+      "close": "Close menu"
+    }
+  },
+
+
+  "footer": {
+    "brandDescription": "We build software while the rest of the world sleeps: awake code, caffeinated ideas.",
+    "sections": {
+      "navigation": "Navigation",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "services": {
+      "web": "Web Development",
+      "mobile": "Mobile Applications",
+      "consulting": "Technical Consulting",
+      "support": "Maintenance & Support"
+    },
+    "contactInfo": {
+      "location": "Guadalajara, Jalisco, Mexico"
+    },
+    "bottom": {
+      "copyright": "© {{year}} Wakefulness Soft. All rights reserved.",
+      "madeWith": "Made with ☕ and midnight lines of code."
+    }
+  },
+  "languageSwitcher": {
+    "label": "Change language"
+  },
+
+
+  "hero": {
+    "titleLine1": "We turn bold ideas into",
+    "titleHighlight": "software that wakes up",
+    "titleLine3": "your business.",
+    "slogan": "Designing your dream is our most cherished task",
+    "actions": {
+    "requestQuote": "Request a Quote",
+    "viewOurWork": "View Our Work"
+  }
+},
+
+  "about": {
+    "hero": {
+      "headline": "Code that doesn't sleep.",
+      "description": "Wakefulness Soft is a software development studio founded by developers who prefer the early hours and black coffee. We build digital products we would be proud to put our names behind — even if the commit was made at 3 am."
+    },
+    "lines": {
+      "init": "Custom software built to solve real-world problems",
+      "quality": "Clean, reviewed, and well-documented code",
+      "speed": "Fast delivery without compromising reliability",
+      "transparency": "Clear communication throughout every stage of the project",
+      "innovation": "We adopt what makes sense, not just what's trending"
+    },
+    "stats": {
+      "years": "Years in production",
+      "projects": "Projects delivered",
+      "coffee": "Cups of coffee"
+    }
+  }
+
+}
