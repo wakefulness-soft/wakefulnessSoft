@@ -1,0 +1,76 @@
+{
+  "navbar": {
+    "links": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "projects": "Proyectos",
+      "about": "Nosotros",
+      "contact": "Contacto"
+    },
+    "cta": "Hablemos",
+    "menu": {
+      "open": "Abrir menú",
+      "close": "Cerrar menú"
+    }
+  },
+
+
+
+  "footer": {
+    "brandDescription": "Construimos software mientras el resto del mundo duerme: código despierto, ideas cafeinadas.",
+    "sections": {
+      "navigation": "Navegación",
+      "services": "Servicios",
+      "contact": "Contacto"
+    },
+    "services": {
+      "web": "Desarrollo Web",
+      "mobile": "Aplicaciones Móviles",
+      "consulting": "Consultoría Técnica",
+      "support": "Mantenimiento y Soporte"
+    },
+    "contactInfo": {
+      "location": "Guadalajara, Jalisco, México"
+    },
+    "bottom": {
+      "copyright": "© {{year}} Wakefulness Soft. Todos los derechos reservados.",
+      "madeWith": "Hecho con ☕ y líneas de código a medianoche."
+    }
+  },
+  "languageSwitcher": {
+    "label": "Cambiar idioma"
+  },
+
+
+
+  "hero": {
+    "titleLine1": "Convertimos ideas audaces en",
+    "titleHighlight": "software que despierta",
+    "titleLine3": "tu negocio.",
+    "slogan": "Diseñar tu sueño es nuestra tarea más preciada",
+    "actions": {
+    "requestQuote": "Solicita una Cotización",
+    "viewOurWork": "Ve Nuestro Trabajo"
+  }
+},
+
+
+  "about": {
+    "hero": {
+      "headline": "Código que no duerme.",
+      "description": "Wakefulness Soft es un estudio de desarrollo de software fundado por desarrolladores que prefieren las primeras horas y el café negro. Construimos productos digitales de los que estaríamos orgullosos de poner nuestros nombres detrás — incluso si el commit fue hecho a las 3 de la mañana."
+    },
+    "lines": {
+      "init": "Software personalizado construido para resolver problemas del mundo real",
+      "quality": "Código limpio, revisado y bien documentado",
+      "speed": "Entrega rápida sin comprometer la confiabilidad",
+      "transparency": "Comunicación clara en cada etapa del proyecto",
+      "innovation": "Adoptamos lo que tiene sentido, no solo lo que está de moda"
+    },
+    "stats": {
+      "years": "Años en producción",
+      "projects": "Proyectos entregados",
+      "coffee": "Tazas de café"
+    }
+  }
+}

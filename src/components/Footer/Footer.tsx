@@ -1,13 +1,15 @@
+import { useTranslation } from "react-i18next";
 import logo from "../../assets/logo.png";
 import type { ILink } from "../../types/links.interface";
 import { FooterLink } from "../FooterLink";
+import styles from "./Footer.module.css";
 
-const navLinks: Array<ILink> = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Nosotros", href: "#us" },
-];
+const navLinkKeys = [
+  { key: "home", href: "#inicio" },
+  { key: "services", href: "#servicios" },
+  { key: "projects", href: "#proyectos" },
+  { key: "about", href: "#us" },
+] as const;
 
 const socials: Array<ILink> = [
   { label: "GitHub", href: "https://github.com/" },
@@ -15,18 +17,13 @@ const socials: Array<ILink> = [
   { label: "X", href: "https://x.com/" },
 ];
 
-const services: string[] = [
-  "Desarrollo web",
-  "Aplicaciones móviles",
-  "Consultoría técnica",
-  "Mantenimiento y soporte",
-];
+const serviceKeys = ["web", "mobile", "consulting", "support"] as const;
 
-// Mismo "humito" del navbar, para que la marca se sienta consistente.
+// Same "smoke" as the navbar, for brand consistency
 function Wisp() {
   return (
     <svg
-      className="pointer-events-none absolute left-0 -bottom-2 h-3 w-full overflow-visible opacity-0 -translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
+      className={styles.wispSvg}
       viewBox="0 0 60 12"
       preserveAspectRatio="none"
       aria-hidden="true"
@@ -43,84 +40,89 @@ function Wisp() {
 }
 
 export default function Footer() {
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-[#2a242c] bg-[#0b0a0d] text-[#cfc6e0]">
-      {/* Línea de vapor que cruza el borde superior */}
-      <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-linear-to-r from-transparent via-[#c9b8d4]/60 to-transparent" />
+    <footer className={styles.footer}>
+      {/* Vapor line crossing the top border */}
+      <div className={styles.topLine} />
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-4">
-        {/* Marca */}
-        <div className="md:col-span-1">
-          <div className="mb-4 flex items-center gap-3">
-            <img src={logo} alt="Wakefulness Soft" className="h-10 w-10 object-contain" />
-            <span className="text-lg font-semibold text-[#e3d7d9]">
-              Wakefulness<span className="text-[#c9b8d4]"> Soft</span>
+      <div className={styles.container}>
+        {/* Brand */}
+        <div className={styles.brandSection}>
+          <div className={styles.brandWrapper}>
+            <img src={logo} alt="Wakefulness Soft" className={styles.brandLogo} />
+            <span className={styles.brandName}>
+              Wakefulness<span className={styles.brandAccent}> Soft</span>
             </span>
           </div>
-          <p className="max-w-xs text-sm leading-relaxed text-[#8d7f99]">
-            Construimos software mientras el resto del mundo duerme: código despierto, ideas con cafeína.
+          <p className={styles.brandDescription}>
+            {t('footer.brandDescription')}
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className={styles.socialLinks}>
             {socials.map((s) => (
               <a
                 key={s.label}
                 href={s.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative text-sm text-[#cfc6e0] hover:text-[#e3d7d9]"
-              >
-                {s.label}
+                className={styles.socialLink}
+            >
+              {s.label}
+              <span className={styles.wispWrapper}>
                 <Wisp />
-              </a>
-            ))}
+              </span>
+            </a>
+          ))}
           </div>
         </div>
 
-        {/* Navegación */}
+        {/* Navigation */}
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-[#e3d7d9]">
-            Navegación
-          </h3>
-          <ul className="space-y-3">
-            {navLinks.map((link) => (
-              <FooterLink key={link.href} label={link.label} href={link.href} />
+          <h3 className={styles.sectionTitle}>{t('footer.sections.navigation')}</h3>
+          <ul className={styles.navList}>
+            {navLinkKeys.map((link) => (
+              <FooterLink
+                key={link.href}
+                label={t(`navbar.links.${link.key}`)}
+                href={link.href}
+              />
             ))}
           </ul>
         </div>
 
-        {/* Servicios */}
+        {/* Services */}
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-[#e3d7d9]">
-            Servicios
-          </h3>
-          <ul className="space-y-3">
-            {services.map((s) => (
-              <li key={s} className="text-sm text-[#8d7f99]">
-                {s}
+          <h3 className={styles.sectionTitle}>{t('footer.sections.services')}</h3>
+          <ul className={styles.servicesList}>
+            {serviceKeys.map((key) => (
+              <li key={key} className={styles.servicesItem}>
+                {t(`footer.services.${key}`)}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Contacto */}
+        {/* Contact */}
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-[#e3d7d9]">
-            Contacto
-          </h3>
-          <ul className="space-y-3 text-sm text-[#8d7f99]">
-            <li>hola@wakefulnesssoft.com</li>
+          <h3 className={styles.sectionTitle}>{t('footer.sections.contact')}</h3>
+          <ul className={styles.contactList}>
+            <li>hello@wakefulnesssoft.com</li>
             <li>+52 33 0000 0000</li>
-            <li>Guadalajara, Jalisco, México</li>
+            <li>{t('footer.contactInfo.location')}</li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-[#2a242c]">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-xs text-[#6e5f8c] sm:flex-row">
-          <span>© {year} Wakefulness Soft. Todos los derechos reservados.</span>
-          <span>Hecho con ☕ y líneas de código a medianoche.</span>
+      <div className={styles.bottomBar}>
+        <div className={styles.bottomContainer}>
+          <span className={styles.bottomCopyright}>
+            {t('footer.bottom.copyright', { year })}
+          </span>
+          <span className={styles.bottomMadeWith}>
+            {t('footer.bottom.madeWith')}
+          </span>
         </div>
       </div>
     </footer>

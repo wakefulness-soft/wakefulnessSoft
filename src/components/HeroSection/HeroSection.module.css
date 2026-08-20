@@ -3,14 +3,13 @@
     overflow: hidden;
     background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
     color: var(--color-muted);
-    padding: 9rem 1.5rem 6rem;
+    padding: 3rem 1.5rem 6rem;
     text-align: center;
 }
 
 .container {
     margin: auto;
-    padding: 0rem 4rem 10rem;
-    
+    padding: 2rem 4rem 20rem;
 }
 
 .content {

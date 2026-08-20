@@ -1,0 +1,247 @@
+/* Navbar.module.css */
+
+/* Header principal */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  padding: 1rem 1rem 0 1rem; /* px-4 pt-4 */
+}
+
+/* Navbar contenedor */
+.navbar {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  max-width: 64rem; /* max-w-5xl */
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 1rem; /* rounded-2xl */
+  border: 1px solid #2a242c;
+  background-color: rgba(24, 21, 28, 0.8); /* bg-[#18151c]/80 */
+  backdrop-filter: blur(12px); /* backdrop-blur-xl */
+  transition: all 0.3s ease; /* transition-all duration-300 */
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+}
+
+/* Estado scrolled del navbar */
+.navbar.scrolled {
+  padding: 0.5rem 1.25rem; /* px-5 py-2 */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* shadow-[0_8px_30px_rgba(0,0,0,0.5)] */
+}
+
+/* SVG decorativo (vapor) */
+.steamSvg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  opacity: 0.18;
+}
+
+.steamPath {
+  animation: wfSteamDrift 9s ease-in-out infinite;
+}
+
+@keyframes wfSteamDrift {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateX(-12px) translateY(-2px);
+    opacity: 0.28;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 0.18;
+  }
+}
+
+/* Logo link */
+.logoLink {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem; /* gap-2.5 */
+}
+
+.logoImage {
+  height: 2rem; /* h-8 */
+  width: 2rem; /* w-8 */
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(201, 184, 212, 0.4));
+  animation: wfGhostFloat 4s ease-in-out infinite;
+}
+
+@keyframes wfGhostFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.logoText {
+  font-size: 1rem; /* text-base */
+  font-weight: 600; /* font-semibold */
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: #e3d7d9;
+  transition: color 0.2s;
+}
+
+.logoText:hover {
+  color: #f8f9fa;
+}
+
+.logoTextAccent {
+  color: #a855f7; /* text-purple-400 */
+}
+
+/* Desktop links */
+.desktopLinks {
+  position: relative;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  gap: 1.75rem; /* gap-7 */
+}
+
+@media (min-width: 768px) {
+  .desktopLinks {
+    display: flex;
+  }
+}
+
+/* CTA button */
+.ctaButton {
+  position: relative;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  border-radius: 9999px; /* rounded-full */
+  background-color: #c9b8d4;
+  padding: 0.375rem 1rem; /* px-4 py-1.5 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  color: #0b0a0d;
+  transition: all 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #d8c9e1;
+  box-shadow: 0 0 25px rgba(201, 184, 212, 0.45);
+}
+
+@media (min-width: 768px) {
+  .ctaButton {
+    display: inline-flex;
+  }
+}
+
+/* Mobile menu button */
+.mobileButton {
+  position: relative;
+  z-index: 10;
+  border-radius: 0.25rem; /* rounded */
+  padding: 0.25rem; /* p-1 */
+  color: #e3d7d9;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileButton:focus {
+  outline: none;
+}
+
+.mobileButton:focus-visible {
+  ring: 2px solid #c9b8d4;
+}
+
+@media (min-width: 768px) {
+  .mobileButton {
+    display: none;
+  }
+}
+
+.mobileIcon {
+  height: 1.25rem; /* h-5 */
+  width: 1.25rem; /* w-5 */
+}
+
+/* Floating mobile menu */
+.mobileMenu {
+  margin: 0.5rem auto 0; /* mt-2 */
+  max-width: 64rem; /* max-w-5xl */
+  overflow: hidden;
+  border-radius: 1.5rem; /* rounded-3xl */
+  border: 1px solid #2a242c;
+  background-color: rgba(24, 21, 28, 0.95); /* bg-[#18151c]/95 */
+  backdrop-filter: blur(12px); /* backdrop-blur-xl */
+  transition: all 0.3s ease; /* transition-all duration-300 */
+  max-height: 0;
+  opacity: 0;
+}
+
+.mobileMenu.open {
+  max-height: 24rem; /* max-h-96 */
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.mobileMenuList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* gap-4 */
+  padding: 1.25rem 1.5rem; /* px-6 py-5 */
+  margin: 0;
+  list-style: none;
+}
+
+.mobileMenuItem {
+  /* Contenedor del item */
+}
+
+.mobileLink {
+  display: block;
+  font-size: 1rem; /* text-base */
+  color: #9a8eb8;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.mobileLink:hover {
+  color: #e3d7d9;
+}
+
+.mobileCta {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px; /* rounded-full */
+  background-color: #c9b8d4;
+  padding: 0.375rem 1rem; /* px-4 py-1.5 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  color: #0b0a0d;
+  text-decoration: none;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .steamPath,
+  .logoImage {
+    animation: none;
+  }
+}
