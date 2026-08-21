@@ -53,15 +53,16 @@
 }
 
 .carousel {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    overflow-x: auto;
-    padding: 1rem 1rem;
+    /* width: 100vw; */
+    /* position: relative; */
+    /* left: 50%;
+    right: 50%; */
+    /* margin-left: -50vw;
+    margin-right: -50vw; */
+    /* overflow-x: auto; */
+    /* padding: 1rem 1rem; */
     /* animation: spin 5s infinite linear; */
+    margin-top: 3rem;
 }
 
 .carousel::-webkit-scrollbar {
@@ -69,8 +70,8 @@
 }
 
 .testimonials {
-    display: flex;
-    gap: clamp(0.25rem, 4vw, 1.5rem);
+    /* display: flex;
+    gap: clamp(0.25rem, 4vw, 1.5rem); */
 }
 
 .testimonialCard {
