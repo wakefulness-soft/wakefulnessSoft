@@ -1,0 +1,137 @@
+.testimonialCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-secondary);
+    border-radius: 1rem;
+    transition: all .25s ease;
+}
+
+.testimonialCard:hover {
+    border-color: var(--color-dim);
+    box-shadow: 0 0 40px -8px color-mix(in srgb, var(--color-ghost) 20%, transparent);
+}
+
+.cardFigure {
+    width: 6rem;
+    height: 6rem;
+
+    overflow: hidden;
+
+    position: relative;
+    top: -2rem;
+    
+    border-radius: 1rem;
+    background-color: var(--color-hover);
+    transition: all .25s ease;
+    box-shadow: 0 0 20px -8px color-mix(in srgb, var(--color-ghost) 20%, transparent);
+}
+
+.score {
+    /* border: 1px solid red; */
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scoreIcon {
+    width: var(--text-5xl);
+    height: var(--text-5xl);
+    transition: all .25s ease;
+}
+
+.cardContent {
+    width: 100%;
+
+    padding: 1rem 2rem 2rem;
+    
+    text-align: left;
+
+    border-radius: 1rem;
+    background-color: var(--color-secondary);
+    transition: all .25s ease;
+}
+
+.cardContent time {
+    font-size: var(--text-base);
+    font-weight: 500;
+}
+
+.cardContent h2 {
+    color: var(--color-bone);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin-bottom: .6rem;
+}
+
+.cardContent p {
+    line-height: 1.4;
+    font-size: var(--text-base);
+}
+
+.carouselActions {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all .25s ease;
+}
+
+/* sm */
+@media (width >= 40rem) {
+    
+}
+
+/* md */
+@media (width >= 48rem) {
+    .testimonialCard {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        flex-direction: row;
+    }
+
+    .cardFigure {
+        width: 10rem;
+        height: 10rem;
+        
+        top: 0;
+        right: 2.5rem;
+    }
+
+    .cardContent {
+        width: 30rem;
+        height: 15rem;
+
+        padding: 2rem 2rem 2rem 1rem;
+    }
+
+    .cardContent h2 {
+        margin-bottom: .8rem;
+    }
+
+    .scoreIcon {
+        width: var(--text-6xl);
+        height: var(--text-6xl);
+    }
+
+    .carouselActions {
+        position: absolute;
+        bottom: 5px;
+        z-index: 1000;
+    }
+}
+
+/* lg */
+@media (width >= 64rem) {
+    
+}
