@@ -1,0 +1,10 @@
+/* ─── eyebrow ─── */
+.eyebrow {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  letter-spacing: 0.2em;
+}

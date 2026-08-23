@@ -1,5 +1,7 @@
 import { useState, ChangeEvent } from "react";
 import s from "./CtaSection.module.css";
+import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
+import { HeadlineComponent } from "../ui/HeadlineComponent/HeadlineComponent";
 
 /* ─── tipos ─── */
 type Status = "idle" | "sending" | "sent" | "error";
@@ -121,12 +123,9 @@ export default function CtaSection() {
 
         {/* ── panel izquierdo ── */}
         <div className={s.left}>
-          <span className={s.eyebrow}>Contact</span>
+          <EyebrowComponent text="Contact"/>
 
-          <h2 className={s.headline}>
-            Let's build<br />
-            something <em>alive.</em>
-          </h2>
+          <HeadlineComponent title="Let's build something alive."/>
 
           <p className={s.sub}>
             Got a project in mind? A problem that needs solving?

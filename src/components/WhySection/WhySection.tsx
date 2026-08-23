@@ -1,3 +1,5 @@
+import { EyebrowComponent } from '../ui/EyebrowComponent/EyebrowComponent';
+import { HeadlineComponent } from '../ui/HeadlineComponent/HeadlineComponent';
 import s from './WhySection.module.css'
 
 interface IPillar {
@@ -81,12 +83,8 @@ export const WhySection = () => {
       <div className={s.container}>
         <div className={s.content}>
           <div className={s.hero}>
-            <span className={s.eyebrow}>
-              Why Wakefulness
-            </span>
-            <h2 className={s.headline}>
-              Where great software stays <em>awake</em>.
-            </h2>
+            <EyebrowComponent text='Why Wakefulness'/>
+            <HeadlineComponent title='Where great software stays awake.' />
             <p className={s.body}>We believe the best ideas don't appear because it's late at night — they appear because someone cares enough to keep refining them.</p>
             <p className={s.body}>Every project we build is treated like a product we'd proudly sign our names to, combining technical excellence with thoughtful collaboration from the first conversation to the final deployment.</p>
             <a
