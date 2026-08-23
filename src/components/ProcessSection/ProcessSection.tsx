@@ -1,6 +1,8 @@
 import s from "./ProcessSection.module.css";
 import React, { useEffect, useState } from "react";
 import { Flame, Layers, Map, ScanEye, Sparkles, Zap } from "lucide-react";
+import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
+import { HeadlineComponent } from "../ui/HeadlineComponent/HeadlineComponent";
 
 interface ICoffeToSystemStep {
   stepName: string;
@@ -75,10 +77,8 @@ export const ProcessSection = () => {
     <section id="process" className={s.section}>
       <div className={s.container}>
         <div className={s.hero}>
-          <span className={s.eyebrow}>How we work</span>
-          <h2 className={s.headline}>
-            Your bedtime, our <em>check-in</em>.
-          </h2>
+          <EyebrowComponent text="How we work" />
+          <HeadlineComponent title="Your bedtime, our check-in." />
           <p className={s.body}>
             Just like in the perfect extraction process, we work calmly,
             eliminating noise to achieve the best result.

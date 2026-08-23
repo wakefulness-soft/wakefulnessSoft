@@ -38,30 +38,6 @@
   .left { position: static; }
 }
 
-.eyebrow {
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--color-accent);
-  display: block;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  letter-spacing: 0.2em;
-}
-
-.headline {
-  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--color-bone);
-  margin: 0;
-}
-
-.headline em {
-  font-style: normal;
-  color: var(--color-ghost);
-}
-
 .sub {
   font-size: var(--text-sm);
   color: var(--color-muted);

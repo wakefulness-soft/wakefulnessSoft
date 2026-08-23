@@ -14,16 +14,6 @@
   z-index: 1;
 }
 
-/* ─── encabezado ─── */
-.eyebrow {
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--color-accent);
-  display: block;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  letter-spacing: 0.2em;
-}
 
 .header {
   display: flex;
@@ -34,22 +24,8 @@
   flex-wrap: wrap;
 }
 
-.headline {
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--color-bone);
-  margin: 0;
-}
-
-.headline em {
-  font-style: normal;
-  color: var(--color-ghost);
-}
-
 .headerSub {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-muted);
   max-width: 32ch;
   line-height: 1.65;

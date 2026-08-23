@@ -1,6 +1,8 @@
 import s from "./TestimonialSection.module.css";
 import type { ITestimonials } from "./../../types/testimonial.interface";
 import { TestimonialCarousel } from "../ui/TestimonialCard/TestimonialCard";
+import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
+import { HeadlineComponent } from "../ui/HeadlineComponent/HeadlineComponent";
 
 const slides: ITestimonials[] = [
   {
@@ -41,10 +43,8 @@ export const TestimonialSection = () => {
       <div className={s.container}>
         <div className={s.content}>
           <div className={s.hero}>
-            <span className={s.eyebrow}>Testimonial</span>
-            <h2 className={s.headline}>
-              What they <em>say</em>.
-            </h2>
+            <EyebrowComponent text="Testimonial"/>
+            <HeadlineComponent title="What they say."/>
             <p className={s.body}>
               Our work speaks even when we are not present.
             </p>

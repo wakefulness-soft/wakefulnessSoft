@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef } from "react";
 import s from "./About.module.css";
+import { HeadlineComponent } from "../../components/ui/HeadlineComponent/HeadlineComponent";
+import { EyebrowComponent } from "../../components/ui/EyebrowComponent/EyebrowComponent";
 
 
 interface Line {
@@ -122,10 +124,8 @@ export default function About(){
         {/* ── hero ── */}
         <div className={s.hero}>
           <div>
-            <span className={s.eyebrow}>Us</span>
-            <h2 className={s.headline}>
-              {t("about.hero.headline")}
-            </h2>
+            <EyebrowComponent text="Us" />
+            <HeadlineComponent title={t("about.hero.headline")} />
             <p className={s.body}>
               {t("about.hero.description")}
             </p>

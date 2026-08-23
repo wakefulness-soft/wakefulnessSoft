@@ -16,32 +16,8 @@
     
 }
 
-.eyebrow {
-    font-size: var(--text-sm);
-    font-weight: 700;
-    color: var(--color-accent);
-    display: block;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    letter-spacing: 0.2em;
-}
-
 .hero {
     margin-bottom: 2.5rem;
-}
-
-.headline {
-    font-size: clamp(2.4rem, 5vw, 3.6rem);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -0.03rem;
-    color: var(--color-bone);
-    margin: 0 0 1.5rem;
-}
-
-.headline em {
-  font-style: normal;
-  color: var(--color-ghost);
 }
 
 .body {

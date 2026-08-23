@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import s from "./ProjectSection.module.css";  
+import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
+import { HeadlineComponent } from "../ui/HeadlineComponent/HeadlineComponent";
 /* ─── tipos ─── */
 interface Project {
   id:          string;
@@ -175,12 +177,9 @@ export default function ProjectSection() {
     <section id="projects" className={s.section}>
       <div className={s.inner}>
 
-        <span className={s.eyebrow}>Projects</span>
+        <EyebrowComponent text="Projects"/>
         <div className={s.header}>
-          <h2 className={s.headline}>
-            What we've<br />
-            <em>built.</em>
-          </h2>
+          <HeadlineComponent title="What we've built."/>
           <p className={s.headerSub}>
             Each project started from scratch at the witching hour.
             Here are the ones that made it through.
