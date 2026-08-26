@@ -1,123 +1,93 @@
-import s from "./ProcessSection.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Flame, Layers, Map, ScanEye, Sparkles, Zap } from "lucide-react";
 import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
 import { HeadlineComponent } from "../ui/HeadlineComponent/HeadlineComponent";
+import s from "./ProcessSection.module.css";
 
-interface ICoffeToSystemStep {
-  stepName: string;
-  description: string;
+interface IStepConfig {
   icon: React.ReactNode;
 }
 
-const steps: Record<number, ICoffeToSystemStep> = {
-  1: {
-    stepName: "Selecting the beans",
-    description:
-      "Gathering requirements and understanding project goals to choose the right technologies and approach.",
-    icon: <Map />,
-  },
-  2: {
-    stepName: "Grinding the coffee",
-    description:
-      "Breaking down the project into modules, services, or components for structured development.",
-    icon: <Layers />,
-  },
-  3: {
-    stepName: "Heating the water",
-    description:
-      "Setting up the development environment, databases, and infrastructure needed to run the system.",
-    icon: <Flame />,
-  },
-  4: {
-    stepName: "Brewing the coffee",
-    description:
-      "Writing and integrating the actual code, connecting components, and implementing logic.",
-    icon: <Zap />,
-  },
-  5: {
-    stepName: "Filtering the brew",
-    description:
-      "Code review, refactoring, and removing technical debt or inefficiencies.",
-    icon: <ScanEye />,
-  },
-  6: {
-    stepName: "Adding milk and sugar",
-    description:
-      "Polishing the user interface, adding final features, and optimizing performance before deployment.",
-    icon: <Sparkles />,
-  },
-};
-
-const getStepCard = (key: number): React.ReactNode => {
-  const step = steps[key];
-  return (
-    <div className={s.stepCard}>
-      <div className={s.stepIcon}>{step.icon}</div>
-      <span className={s.stepTitle}>{step.stepName}</span>
-      <p className={s.stepDesc}>{step.description}</p>
-    </div>
-  );
+const STEP_ICONS: Record<number, IStepConfig> = {
+  1: { icon: <Map /> },
+  2: { icon: <Layers /> },
+  3: { icon: <Flame /> },
+  4: { icon: <Zap /> },
+  5: { icon: <ScanEye /> },
+  6: { icon: <Sparkles /> },
 };
 
 export const ProcessSection = () => {
-  const [step, setStep] = useState(1);
-  const [currentStep, setCurrentStep] = useState<React.ReactNode>();
+  const { t } = useTranslation();
+  const [activeStep, setActiveStep] = useState(1);
 
-  useEffect(() => {
-    setCurrentStep(getStepCard(step));
-  }, [step]);
-  1;
+  const stepKeys = Object.keys(STEP_ICONS).map(Number);
 
-  const handleChangeStep = (stepId: number) => {
-    setStep(stepId);
+  // Obtener los datos traducidos del paso seleccionado actualmente
+  const currentStepData = {
+    stepName: t(`processSection.steps.${activeStep}.stepName`),
+    description: t(`processSection.steps.${activeStep}.description`),
+    icon: STEP_ICONS[activeStep].icon,
   };
 
   return (
     <section id="process" className={s.section}>
       <div className={s.container}>
         <div className={s.hero}>
-          <EyebrowComponent text="How we work" />
-          <HeadlineComponent title="Your bedtime, our check-in." />
-          <p className={s.body}>
-            Just like in the perfect extraction process, we work calmly,
-            eliminating noise to achieve the best result.
-          </p>
+          <EyebrowComponent text={t("processSection.eyebrow")} />
+          <HeadlineComponent title={t("processSection.headline")} />
+          <p className={s.body}>{t("processSection.body")}</p>
         </div>
+
         <div className={s.body}>
           <div className={s.timelineContainer}>
             <div className={s.stepsTimeLine}>
               <ol>
-                {Object.keys(steps).map((stepNumber) => (
-                  <li key={stepNumber}>
-                    {/* Botón interactivo para accesibilidad de teclado */}
-                    <button
-                      type="button"
-                      className={s.timelineStep}
-                      onMouseEnter={() => handleChangeStep(+stepNumber)}
-                      aria-label={`Ir al paso ${stepNumber}: ${steps[+stepNumber].stepName}`}
-                    >
-                      <div
-                        className={`${s.timelineStepIcon} ${+stepNumber <= step ? s.timelineStepIconVisited : ""}`}
-                      >
-                        <span>{steps[+stepNumber].icon}</span>
-                      </div>
+                {stepKeys.map((stepNumber) => {
+                  const stepName = t(`processSection.steps.${stepNumber}.stepName`);
 
-                      {/* Identificación del paso agrupada semánticamente */}
-                      <p>
-                        <span className={s.timelineStepNumber}>
-                          {stepNumber.toString().padStart(2, "0")}
-                        </span>
-                        <span className={s.timelineStepName}>
-                          {steps[+stepNumber].stepName}
-                        </span>
-                      </p>
-                    </button>
-                  </li>
-                ))}
+                  return (
+                    <li key={stepNumber}>
+                      <button
+                        type="button"
+                        className={s.timelineStep}
+                        onMouseEnter={() => setActiveStep(stepNumber)}
+                        onClick={() => setActiveStep(stepNumber)}
+                        aria-label={t("processSection.ariaLabel", {
+                          stepNumber,
+                          stepName,
+                        })}
+                      >
+                        <div
+                          className={`${s.timelineStepIcon} ${
+                            stepNumber <= activeStep ? s.timelineStepIconVisited : ""
+                          }`}
+                        >
+                          <span>{STEP_ICONS[stepNumber].icon}</span>
+                        </div>
+
+                        <p>
+                          <span className={s.timelineStepNumber}>
+                            {stepNumber.toString().padStart(2, "0")}
+                          </span>
+                          <span className={s.timelineStepName}>{stepName}</span>
+                        </p>
+                      </button>
+                    </li>
+                  );
+                })}
               </ol>
             </div>
-            <div className={s.stepCardsContainer}>{currentStep}</div>
+
+            {/* Tarjeta del paso seleccionado */}
+            <div className={s.stepCardsContainer}>
+              <div className={s.stepCard}>
+                <div className={s.stepIcon}>{currentStepData.icon}</div>
+                <span className={s.stepTitle}>{currentStepData.stepName}</span>
+                <p className={s.stepDesc}>{currentStepData.description}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

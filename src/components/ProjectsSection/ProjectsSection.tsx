@@ -1,29 +1,30 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import s from "./ProjectSection.module.css";  
 import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
 import { HeadlineComponent } from "../ui/HeadlineComponent/HeadlineComponent";
+
 /* ─── tipos ─── */
 interface Project {
   id:          string;
   filename:    string;
   name:        string;
   nameAccent?: string;
-  desc:        string;
+  descKey:     string;
   stack:       string[];
   href:        string;
   status:      "live" | "wip";
   featured?:   boolean;
 }
 
-/* ─── datos  de los proyectos al chile no se que poner ─── */
+/* ─── datos base de los proyectos ─── */
 const PROJECTS: Project[] = [
   {
-    /* ─── Aqui podemos poner el proyecto mas laborioso que hemos echo ─── */
     id:         "nebula",
     filename:   "nebula-platform.tsx",
     name:       "Nebula",
     nameAccent: "Platform",
-    desc:       "Plataforma SaaS para gestión de equipos remotos con dashboards en tiempo real, control de permisos y analítica integrada. Diseñada para sobrevivir a la madrugada del lunes.",
+    descKey:    "projects.items.nebula.desc",
     stack:      ["React", "Node.js", "PostgreSQL", "WebSockets", "Docker"],
     href:       "#",
     status:     "live",
@@ -33,7 +34,7 @@ const PROJECTS: Project[] = [
     id:       "phantom-api",
     filename: "phantom-api.go",
     name:     "Phantom API",
-    desc:     "REST API de alta disponibilidad con autenticación JWT, rate limiting y caché inteligente. Levanta en frío en menos de 200 ms.",
+    descKey:  "projects.items.phantom-api.desc",
     stack:    ["Go", "Redis", "PostgreSQL"],
     href:     "#",
     status:   "live",
@@ -42,7 +43,7 @@ const PROJECTS: Project[] = [
     id:       "drift-ui",
     filename: "drift-ui.tsx",
     name:     "Drift UI",
-    desc:     "Sistema de componentes oscuros para React. Sin dependencias de runtime, 100% accesible.",
+    descKey:  "projects.items.drift-ui.desc",
     stack:    ["React", "TypeScript", "CSS Modules"],
     href:     "#",
     status:   "wip",
@@ -51,7 +52,7 @@ const PROJECTS: Project[] = [
     id:       "hollow-cli",
     filename: "hollow.sh",
     name:     "Hollow CLI",
-    desc:     "Herramienta de línea de comandos para automatizar deploys y auditar dependencias en monorepos.",
+    descKey:  "projects.items.hollow-cli.desc",
     stack:    ["Bash", "Node.js", "YAML"],
     href:     "#",
     status:   "live",
@@ -60,6 +61,7 @@ const PROJECTS: Project[] = [
 
 /* ─── componente principal ─── */
 export default function ProjectSection() {
+  const { t } = useTranslation();
   const cardsRef = useRef<(HTMLDivElement | null)[]>(
     Array(PROJECTS.length).fill(null)
   );
@@ -96,20 +98,20 @@ export default function ProjectSection() {
         <div className={s.featuredBody}>
           <div className={s.statusLine}>
             <span className={`${s.statusDot}${project.status === "wip" ? ` ${s.wip}` : ""}`} />
-            {project.status === "live" ? "en producción" : "en desarrollo"}
+            {t(`projects.status.${project.status}`)}
           </div>
           <h3 className={s.featuredName}>
             {project.name}{" "}
             {project.nameAccent && <em>{project.nameAccent}</em>}
           </h3>
-          <p className={s.desc}>{project.desc}</p>
+          <p className={s.desc}>{t(project.descKey)}</p>
           <div className={s.stack}>
             {project.stack.map((tech) => (
               <span key={tech} className={s.tag}>{tech}</span>
             ))}
           </div>
           <a href={project.href} className={`${s.link} ${s.featuredLink}`}>
-            {">"} ver proyecto <span className={s.linkArrow}>↗</span>
+            {t("projects.actions.viewProject")} <span className={s.linkArrow}>↗</span>
           </a>
         </div>
       </div>
@@ -137,7 +139,7 @@ export default function ProjectSection() {
         </svg>
         <span className={s.previewLabel}
           style={{ position: "absolute", bottom: "1.2rem", fontSize: "0.65rem" }}>
-          {"// preview disponible pronto"}
+          {t("projects.actions.previewSoon")}
         </span>
       </div>
     </div>
@@ -157,17 +159,17 @@ export default function ProjectSection() {
       <div className={s.cardBody}>
         <div className={s.statusLine}>
           <span className={`${s.statusDot}${project.status === "wip" ? ` ${s.wip}` : ""}`} />
-          {project.status === "live" ? "en producción" : "en desarrollo"}
+          {t(`projects.status.${project.status}`)}
         </div>
         <h3 className={s.projectName}>{project.name}</h3>
-        <p className={s.desc}>{project.desc}</p>
+        <p className={s.desc}>{t(project.descKey)}</p>
         <div className={s.stack}>
           {project.stack.map((tech) => (
             <span key={tech} className={s.tag}>{tech}</span>
           ))}
         </div>
         <a href={project.href} className={s.link}>
-          {">"} ver proyecto <span className={s.linkArrow}>↗</span>
+          {t("projects.actions.viewProject")} <span className={s.linkArrow}>↗</span>
         </a>
       </div>
     </div>
@@ -177,12 +179,11 @@ export default function ProjectSection() {
     <section id="projects" className={s.section}>
       <div className={s.inner}>
 
-        <EyebrowComponent text="Projects"/>
+        <EyebrowComponent text={t("projects.eyebrow")} />
         <div className={s.header}>
-          <HeadlineComponent title="What we've built."/>
+          <HeadlineComponent title={t("projects.headline")} />
           <p className={s.headerSub}>
-            Each project started from scratch at the witching hour.
-            Here are the ones that made it through.
+            {t("projects.sub")}
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import { useState, ChangeEvent } from "react";
+import { useTranslation } from "react-i18next";
 import s from "./CtaSection.module.css";
 import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
 import { HeadlineComponent } from "../ui/HeadlineComponent/HeadlineComponent";
@@ -19,14 +20,6 @@ const INITIAL: FormData = {
   service: "",
   message: "",
 };
-
-const SERVICES = [
-  "Web development",
-  "Mobile app",
-  "Technical consulting",
-  "Maintenance & support",
-  "Something else",
-];
 
 /* ─── SVG skull decorativo ─── */
 const SkullSVG = () => (
@@ -82,8 +75,17 @@ const SkullSVG = () => (
 
 /* ─── componente principal ─── */
 export default function CtaSection() {
+  const { t } = useTranslation();
   const [form, setForm]     = useState<FormData>(INITIAL);
   const [status, setStatus] = useState<Status>("idle");
+
+  const services = [
+    { key: "webDev", label: t("cta.services.webDev") },
+    { key: "mobileApp", label: t("cta.services.mobileApp") },
+    { key: "consulting", label: t("cta.services.consulting") },
+    { key: "maintenance", label: t("cta.services.maintenance") },
+    { key: "other", label: t("cta.services.other") },
+  ];
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -102,10 +104,10 @@ export default function CtaSection() {
 
   const btnLabel = () => {
     if (status === "sending")
-      return <><span className={s.blink}>█</span> sending...</>;
+      return <><span className={s.blink}>█</span> {t("cta.buttons.sending")}</>;
     if (status === "sent")
-      return <>✓ message sent</>;
-    return <>{`>`} send_message</>;
+      return <>{t("cta.buttons.sent")}</>;
+    return <>{t("cta.buttons.send")}</>;
   };
 
   const btnClass = [
@@ -123,14 +125,12 @@ export default function CtaSection() {
 
         {/* ── panel izquierdo ── */}
         <div className={s.left}>
-          <EyebrowComponent text="Contact"/>
+          <EyebrowComponent text={t("cta.eyebrow")} />
 
-          <HeadlineComponent title="Let's build something alive."/>
+          <HeadlineComponent title={t("cta.headline")} />
 
           <p className={s.sub}>
-            Got a project in mind? A problem that needs solving?
-            Or just want to talk code at 2 am?
-            Drop us a message — we don't sleep anyway.
+            {t("cta.sub")}
           </p>
 
           <div className={s.skullWrap}>
@@ -138,7 +138,7 @@ export default function CtaSection() {
           </div>
 
           <div className={s.directContact}>
-            <span className={s.directLabel}>// or reach us directly</span>
+            <span className={s.directLabel}>{t("cta.directLabel")}</span>
             <a href="mailto:hola@wakefulnesssoft.com" className={s.directItem}>
               <span className={s.directIcon}>✉</span>
               hola@wakefulnesssoft.com
@@ -157,7 +157,7 @@ export default function CtaSection() {
             <span className={s.dot} />
             <span className={s.dot} />
             <span className={s.dot} />
-            <span className={s.formTitle}>new_message.ts</span>
+            <span className={s.formTitle}>{t("cta.formTitle")}</span>
           </div>
 
           <div className={s.formBody}>
@@ -166,14 +166,14 @@ export default function CtaSection() {
             <div className={s.row}>
               <div className={s.field}>
                 <label className={s.label} htmlFor="name">
-                  <span>const</span> name
+                  <span>const</span> {t("cta.labels.name")}
                 </label>
                 <input
                   id="name"
                   name="name"
                   type="text"
                   className={s.input}
-                  placeholder="John Doe"
+                  placeholder={t("cta.placeholders.name")}
                   value={form.name}
                   onChange={handleChange}
                   disabled={status === "sending" || status === "sent"}
@@ -183,14 +183,14 @@ export default function CtaSection() {
 
               <div className={s.field}>
                 <label className={s.label} htmlFor="email">
-                  <span>const</span> email
+                  <span>const</span> {t("cta.labels.email")}
                 </label>
                 <input
                   id="email"
                   name="email"
                   type="email"
                   className={s.input}
-                  placeholder="john@company.com"
+                  placeholder={t("cta.placeholders.email")}
                   value={form.email}
                   onChange={handleChange}
                   disabled={status === "sending" || status === "sent"}
@@ -202,7 +202,7 @@ export default function CtaSection() {
             {/* servicio */}
             <div className={s.field}>
               <label className={s.label} htmlFor="service">
-                <span>const</span> service
+                <span>const</span> {t("cta.labels.service")}
               </label>
               <select
                 id="service"
@@ -212,9 +212,9 @@ export default function CtaSection() {
                 onChange={handleChange}
                 disabled={status === "sending" || status === "sent"}
               >
-                <option value="" disabled>// select a service</option>
-                {SERVICES.map((srv) => (
-                  <option key={srv} value={srv}>{srv}</option>
+                <option value="" disabled>{t("cta.placeholders.selectService")}</option>
+                {services.map((srv) => (
+                  <option key={srv.key} value={srv.label}>{srv.label}</option>
                 ))}
               </select>
             </div>
@@ -222,13 +222,13 @@ export default function CtaSection() {
             {/* mensaje */}
             <div className={s.field}>
               <label className={s.label} htmlFor="message">
-                <span>const</span> message
+                <span>const</span> {t("cta.labels.message")}
               </label>
               <textarea
                 id="message"
                 name="message"
                 className={s.textarea}
-                placeholder="// tell us about your project..."
+                placeholder={t("cta.placeholders.message")}
                 value={form.message}
                 onChange={handleChange}
                 disabled={status === "sending" || status === "sent"}
@@ -257,7 +257,7 @@ export default function CtaSection() {
                 color: "#ff5f57",
                 textAlign: "center",
               }}>
-                {"// error — try again or email us directly"}
+                {t("cta.error")}
               </p>
             )}
 

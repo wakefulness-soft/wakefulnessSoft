@@ -69,6 +69,181 @@
       "projects": "Projects delivered",
       "coffee": "Cups of coffee"
     }
-  }
+  },
 
+  
+  "whySection": {
+    "eyebrow": "Why Wakefulness",
+    "headline": "Where great software stays awake.",
+    "paragraph1": "We believe the best ideas don't appear because it's late at night — they appear because someone cares enough to keep refining them.",
+    "paragraph2": "Every project we build is treated like a product we'd proudly sign our names to, combining technical excellence with thoughtful collaboration from the first conversation to the final deployment.",
+    "contactLink": "Start a conversation",
+    "pillars": [
+      {
+        "displayId": "01",
+        "title": "Craftsmanship Over Shortcuts",
+        "content": "We don't chase quick fixes. Every feature is designed to be maintainable, scalable, and built with long-term quality in mind."
+      },
+      {
+        "displayId": "02",
+        "title": "Fresh Perspective",
+        "content": "The quietest hours often produce the clearest thinking. We approach problems with curiosity and thoughtful engineering rather than rushing toward the first solution."
+      },
+      {
+        "displayId": "03",
+        "title": "Strong Foundations",
+        "content": "Like a good espresso, great software starts with quality ingredients. Clean architecture, maintainable code, and scalable design are the foundation of everything we build."
+      },
+      {
+        "displayId": "04",
+        "title": "Performance by Design",
+        "content": "Fast software creates better experiences. From database queries to frontend interactions, performance is considered from day one."
+      },
+      {
+        "displayId": "05",
+        "title": "Quality in Every Commit",
+        "content": "Every release reflects our standards. We test, review, refine, and polish because details matter."
+      },
+      {
+        "displayId": "06",
+        "title": "Reliable Delivery",
+        "content": "Ideas only matter when they become reality. We focus on predictable execution, consistent progress, and delivering software you can confidently rely on."
+      }
+    ]
+  },
+
+  "processSection": {
+    "eyebrow": "How we work",
+    "headline": "Your bedtime, our check-in.",
+    "body": "Just like in the perfect extraction process, we work calmly, eliminating noise to achieve the best result.",
+    "ariaLabel": "Go to step {{stepNumber}}: {{stepName}}",
+    "steps": {
+      "1": {
+        "stepName": "Selecting the beans",
+        "description": "Gathering requirements and understanding project goals to choose the right technologies and approach."
+      },
+      "2": {
+        "stepName": "Grinding the coffee",
+        "description": "Breaking down the project into modules, services, or components for structured development."
+      },
+      "3": {
+        "stepName": "Heating the water",
+        "description": "Setting up the development environment, databases, and infrastructure needed to run the system."
+      },
+      "4": {
+        "stepName": "Brewing the coffee",
+        "description": "Writing and integrating the actual code, connecting components, and implementing logic."
+      },
+      "5": {
+        "stepName": "Filtering the brew",
+        "description": "Code review, refactoring, and removing technical debt or inefficiencies."
+      },
+      "6": {
+        "stepName": "Adding milk and sugar",
+        "description": "Polishing the user interface, adding final features, and optimizing performance before deployment."
+      }
+    }
+  },
+
+
+  "cta": {
+    "eyebrow": "Contact",
+    "headline": "Let's build something alive.",
+    "sub": "Got a project in mind? A problem that needs solving? Or just want to talk code at 2 am? Drop us a message — we don't sleep anyway.",
+    "directLabel": "// or reach us directly",
+    "formTitle": "new_message.ts",
+    "labels": {
+      "name": "name",
+      "email": "email",
+      "service": "service",
+      "message": "message"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@company.com",
+      "selectService": "// select a service",
+      "message": "// tell us about your project..."
+    },
+    "services": {
+      "webDev": "Web development",
+      "mobileApp": "Mobile app",
+      "consulting": "Technical consulting",
+      "maintenance": "Maintenance & support",
+      "other": "Something else"
+    },
+    "buttons": {
+      "sending": "sending...",
+      "sent": "✓ message sent",
+      "send": "> send_message"
+    },
+    "error": "// error — try again or email us directly"
+  },
+
+
+  "testimonials": {
+    "eyebrow": "Testimonial",
+    "headline": "What they say.",
+    "sub": "Our work speaks even when we are not present.",
+    "slides": [
+      {
+        "name": "Elena Rodríguez",
+        "date": "2026-08-19",
+        "content": "Hiring Wakefulness Soft was the best decision. They understood our SaaS needed solid architecture. Clean code that maintenance teams love."
+      },
+      {
+        "name": "Miguel Ángel Torres",
+        "date": "2026-08-21",
+        "content": "The Phantom API is incredibly fast and stable. Rate limiting and smart cache exceeded expectations. Specialists in building strong foundations."
+      },
+      {
+        "name": "Sofía Méndez",
+        "date": "2026-08-23",
+        "content": "We value their craftsmanship over shortcuts. They delivered the Drift UI component system, accessible and without unnecessary dependencies."
+      },
+      {
+        "name": "Carlos Vega",
+        "date": "2026-08-25",
+        "content": "Smooth collaboration from requirements to deployment. Hollow CLI saved hours of automation. Developers prioritizing predictable execution are refreshing."
+      },
+      {
+        "name": "Ana Belén Cruz",
+        "date": "2026-08-27",
+        "content": "Attention to detail in every commit is impressive. They understood our scalability and performance needs from day one."
+      }
+    ]
+  },
+
+
+
+  "projects": {
+    "eyebrow": "Projects",
+    "headline": "What we've built.",
+    "sub": "Each project started from scratch at the witching hour. Here are the ones that made it through.",
+    "status": {
+      "live": "in production",
+      "wip": "in development"
+    },
+    "actions": {
+      "viewProject": "> view project",
+      "previewSoon": "// preview available soon"
+    },
+    "items": {
+      "nebula": {
+        "desc": "SaaS platform for remote team management with real-time dashboards, permissions control, and integrated analytics. Designed to survive Monday morning."
+      },
+      "phantom-api": {
+        "desc": "High availability REST API with JWT authentication, rate limiting, and smart caching. Cold starts in less than 200 ms."
+      },
+      "drift-ui": {
+        "desc": "Dark mode component system for React. Zero runtime dependencies, 100% accessible."
+      },
+      "hollow-cli": {
+        "desc": "Command-line tool to automate deployments and audit dependencies across monorepos."
+      }
+    }
+  }
 }
+
+
+
+
