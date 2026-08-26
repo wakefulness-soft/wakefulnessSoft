@@ -34,10 +34,7 @@ export default function LanguageSwitcher() {
 
       <div className={styles.track}>
         <span
-          className={styles.indicator}
-          style={{
-            transform: current === "es" ? "translateX(0%)" : "translateX(100%)",
-          }}
+          className={`${styles.indicator} ${current === "es" ? styles["is-es"] : styles["is-default"]}`}
         />
         {LANGS.map((lang) => (
           <button
