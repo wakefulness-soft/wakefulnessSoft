@@ -1,14 +1,15 @@
 import { useTranslation } from "react-i18next";
-import logo from "../../assets/logo.png";
+import logo64 from "../../assets/logo-64.png";
+import logo128 from "../../assets/logo-128.png";
 import type { ILink } from "../../types/links.interface";
 import { FooterLink } from "../FooterLink";
 import styles from "./Footer.module.css";
 
 const navLinkKeys = [
-  { key: "home", href: "#inicio" },
-  { key: "services", href: "#servicios" },
-  { key: "projects", href: "#proyectos" },
+  { key: "home", href: "#top" },
   { key: "about", href: "#us" },
+  { key: "projects", href: "#projects" },
+  { key: "contact", href: "#contact" },
 ] as const;
 
 const socials: Array<ILink> = [
@@ -52,7 +53,17 @@ export default function Footer() {
         {/* Brand */}
         <div className={styles.brandSection}>
           <div className={styles.brandWrapper}>
-            <img src={logo} alt="Wakefulness Soft" className={styles.brandLogo} />
+            <img
+              src={logo64}
+              srcSet={`${logo64} 64w, ${logo128} 128w`}
+              sizes="40px"
+              alt=""
+              width="40"
+              height="40"
+              loading="lazy"
+              decoding="async"
+              className={styles.brandLogo}
+            />
             <span className={styles.brandName}>
               Wakefulness<span className={styles.brandAccent}> Soft</span>
             </span>

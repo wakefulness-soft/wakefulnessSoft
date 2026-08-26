@@ -8,19 +8,16 @@ import { ThemeContextProvider } from './context/ThemeContext.tsx'
 
 function App() {
   return (
-    <>
-      <ThemeContextProvider>
-        <div className="page-container">
-          <Navbar />
-          <div className="main-content pt-20">
-            <HomePage />
-          </div>
-          <Footer />
-          <ThemeSwitcher/>
-          <LanguageSwitcher/>
-        </div>
-      </ThemeContextProvider>
-    </>
+    <ThemeContextProvider>
+      <div className="page-container">
+        <a className="skip-link" href="#main-content">Skip to main content</a>
+        <Navbar />
+        <HomePage />
+        <Footer />
+        <ThemeSwitcher />
+        <LanguageSwitcher />
+      </div>
+    </ThemeContextProvider>
   )
 }
 

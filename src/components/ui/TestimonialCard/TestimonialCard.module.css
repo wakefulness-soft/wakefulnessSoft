@@ -1,137 +1,131 @@
 .testimonialCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    color: var(--color-muted);
-    border: 1px solid var(--color-border);
-    background-color: var(--color-secondary);
-    border-radius: 1rem;
-    transition: all .25s ease;
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 52rem;
+  margin: 2rem auto 0;
+  padding: 0 1.25rem 1rem;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: var(--color-secondary);
+  color: var(--color-muted);
+  transition: border-color 250ms ease, box-shadow 250ms ease;
 }
 
-.testimonialCard:hover {
-    border-color: var(--color-dim);
-    box-shadow: 0 0 40px -8px color-mix(in srgb, var(--color-ghost) 20%, transparent);
+.testimonialCard:hover,
+.testimonialCard:focus-within {
+  border-color: var(--color-dim);
+  box-shadow: 0 0 2.5rem -0.5rem color-mix(in srgb, var(--color-ghost) 20%, transparent);
 }
 
 .cardFigure {
-    width: 6rem;
-    height: 6rem;
-
-    overflow: hidden;
-
-    position: relative;
-    top: -2rem;
-    
-    border-radius: 1rem;
-    background-color: var(--color-hover);
-    transition: all .25s ease;
-    box-shadow: 0 0 20px -8px color-mix(in srgb, var(--color-ghost) 20%, transparent);
+  position: relative;
+  top: -2rem;
+  display: grid;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 0 -1.25rem;
+  overflow: hidden;
+  place-items: center;
+  border-radius: 1rem;
+  background: var(--color-hover);
+  box-shadow: 0 0 1.25rem -0.5rem color-mix(in srgb, var(--color-ghost) 20%, transparent);
 }
 
 .score {
-    /* border: 1px solid red; */
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
 }
 
 .scoreIcon {
-    width: var(--text-5xl);
-    height: var(--text-5xl);
-    transition: all .25s ease;
+  width: var(--text-5xl);
+  height: var(--text-5xl);
 }
 
 .cardContent {
-    width: 100%;
-
-    padding: 1rem 2rem 2rem;
-    
-    text-align: left;
-
-    border-radius: 1rem;
-    background-color: var(--color-secondary);
-    transition: all .25s ease;
+  width: 100%;
+  min-width: 0;
+  padding: 1rem 0 1.5rem;
+  text-align: left;
 }
 
 .cardContent time {
-    font-size: var(--text-base);
-    font-weight: 500;
+  font-size: var(--text-sm);
+  font-weight: 500;
 }
 
-.cardContent h2 {
-    color: var(--color-bone);
-    font-size: var(--text-2xl);
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    margin-bottom: .6rem;
+.cardContent h3 {
+  margin: 0.35rem 0 0.75rem;
+  color: var(--color-bone);
+  font-size: var(--text-xl);
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 
 .cardContent p {
-    line-height: 1.4;
-    font-size: var(--text-base);
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.65;
 }
 
 .carouselActions {
-    margin-top: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-    transition: all .25s ease;
+  display: flex;
+  margin-top: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-/* sm */
-@media (width >= 40rem) {
-    
+.carouselActions button {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-void);
+  color: var(--color-bone);
+  cursor: pointer;
+  transition: background-color 180ms ease, box-shadow 180ms ease;
 }
 
-/* md */
-@media (width >= 48rem) {
-    .testimonialCard {
-        display: flex;
-        align-items: center;
-        justify-self: center;
-        flex-direction: row;
-    }
-
-    .cardFigure {
-        width: 10rem;
-        height: 10rem;
-        
-        top: 0;
-        right: 2.5rem;
-    }
-
-    .cardContent {
-        width: 30rem;
-        height: 15rem;
-
-        padding: 2rem 2rem 2rem 1rem;
-    }
-
-    .cardContent h2 {
-        margin-bottom: .8rem;
-    }
-
-    .scoreIcon {
-        width: var(--text-6xl);
-        height: var(--text-6xl);
-    }
-
-    .carouselActions {
-        position: absolute;
-        bottom: 5px;
-        z-index: 1000;
-    }
+.carouselActions button:hover {
+  background: var(--color-hover);
+  box-shadow: 0 0 1.25rem color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
-/* lg */
-@media (width >= 64rem) {
-    
+@media (min-width: 48rem) {
+  .testimonialCard {
+    min-height: 18rem;
+    margin-top: 0;
+    padding: 2rem 2rem 2rem 10rem;
+    align-items: flex-start;
+  }
+
+  .cardFigure {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: 8rem;
+    height: 8rem;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+
+  .cardContent { padding: 0 0 1.5rem; }
+
+  .cardContent h3 { font-size: var(--text-2xl); }
+
+  .carouselActions { justify-content: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonialCard,
+  .carouselActions button { transition: none; }
 }

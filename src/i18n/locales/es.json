@@ -39,6 +39,10 @@
   "languageSwitcher": {
     "label": "Cambiar idioma"
   },
+  "themeSwitcher": {
+    "toDark": "Usar tema oscuro",
+    "toLight": "Usar tema claro"
+  },
 
 
 
@@ -185,6 +189,10 @@
     "eyebrow": "Testimonios",
     "headline": "Lo que dicen de nosotros.",
     "sub": "Nuestro trabajo habla por nosotros incluso cuando no estamos presentes.",
+    "actions": {
+      "previous": "Testimonio anterior",
+      "next": "Testimonio siguiente"
+    },
     "slides": [
       {
         "name": "Elena Rodríguez",

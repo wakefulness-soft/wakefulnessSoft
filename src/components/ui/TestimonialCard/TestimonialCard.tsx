@@ -2,6 +2,7 @@ import { ChevronLeft, ChevronRight, User } from "lucide-react";
 import s from "./TestimonialCard.module.css";
 import type { ITestimonials } from "./../../../types/testimonial.interface";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type TestimonialCarouselProps = {
   testimonials: ITestimonials[];
@@ -45,6 +46,8 @@ const TestimonialCard = ({
   moveNext,
   movePrev,
 }: TestimonialCardProps) => {
+  const { t } = useTranslation();
+
   return (
     <article className={s.testimonialCard}>
       <figure className={s.cardFigure}>
@@ -52,19 +55,19 @@ const TestimonialCard = ({
           <User className={s.scoreIcon} />
         </div>
       </figure>
-      <div className={s.cardContent}>
+      <div className={s.cardContent} aria-live="polite">
         <time>{testimonial.date}</time>
 
-        <h2>{testimonial.name}</h2>
+        <h3>{testimonial.name}</h3>
 
         <p>{testimonial.content}</p>
       </div>
       <div className={s.carouselActions}>
-        <button onClick={movePrev}>
-          <ChevronLeft />
+        <button type="button" onClick={movePrev} aria-label={t("testimonials.actions.previous")}>
+          <ChevronLeft aria-hidden="true" />
         </button>
-        <button onClick={moveNext}>
-          <ChevronRight />
+        <button type="button" onClick={moveNext} aria-label={t("testimonials.actions.next")}>
+          <ChevronRight aria-hidden="true" />
         </button>
       </div>
     </article>

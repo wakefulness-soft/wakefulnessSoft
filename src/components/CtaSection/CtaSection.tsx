@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./CtaSection.module.css";
 import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
@@ -93,7 +93,8 @@ export default function CtaSection() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if (!form.name || !form.email || !form.message) return;
 
     setStatus("sending");
@@ -160,7 +161,7 @@ export default function CtaSection() {
             <span className={s.formTitle}>{t("cta.formTitle")}</span>
           </div>
 
-          <div className={s.formBody}>
+          <form className={s.formBody} onSubmit={handleSubmit}>
 
             {/* fila nombre + email */}
             <div className={s.row}>
@@ -177,7 +178,8 @@ export default function CtaSection() {
                   value={form.name}
                   onChange={handleChange}
                   disabled={status === "sending" || status === "sent"}
-                  autoComplete="off"
+                  autoComplete="name"
+                  required
                 />
               </div>
 
@@ -194,7 +196,8 @@ export default function CtaSection() {
                   value={form.email}
                   onChange={handleChange}
                   disabled={status === "sending" || status === "sent"}
-                  autoComplete="off"
+                  autoComplete="email"
+                  required
                 />
               </div>
             </div>
@@ -232,36 +235,31 @@ export default function CtaSection() {
                 value={form.message}
                 onChange={handleChange}
                 disabled={status === "sending" || status === "sent"}
+                rows={6}
+                required
               />
             </div>
 
             {/* botón */}
             <button
+              type="submit"
               className={btnClass}
-              onClick={handleSubmit}
+              aria-live="polite"
               disabled={
                 status === "sending" ||
-                status === "sent"    ||
-                !form.name           ||
-                !form.email          ||
-                !form.message
+                status === "sent"
               }
             >
               {btnLabel()}
             </button>
 
             {status === "error" && (
-              <p style={{
-                fontFamily: "ui-monospace, monospace",
-                fontSize: "var(--text-xs)",
-                color: "#ff5f57",
-                textAlign: "center",
-              }}>
+              <p className={s.error} role="alert">
                 {t("cta.error")}
               </p>
             )}
 
-          </div>
+          </form>
         </div>
       </div>
     </section>

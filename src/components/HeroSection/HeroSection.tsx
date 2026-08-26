@@ -25,13 +25,13 @@ export const HeroSection = () => {
                         href="#contact"
                         className={`${s.link} ${s.linQuote}`}
                     >
-                        Request a Quote
+                        {t('hero.actions.requestQuote')}
                     </a>
                     <a
                         href="#projects"
                         className={`${s.link} ${s.linkReview}`}
                     >
-                        View Our Work
+                        {t('hero.actions.viewOurWork')}
                     </a>
                 </div>
             </div>

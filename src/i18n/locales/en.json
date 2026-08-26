@@ -39,6 +39,10 @@
   "languageSwitcher": {
     "label": "Change language"
   },
+  "themeSwitcher": {
+    "toDark": "Use dark theme",
+    "toLight": "Use light theme"
+  },
 
 
   "hero": {
@@ -184,6 +188,10 @@
     "eyebrow": "Testimonial",
     "headline": "What they say.",
     "sub": "Our work speaks even when we are not present.",
+    "actions": {
+      "previous": "Previous testimonial",
+      "next": "Next testimonial"
+    },
     "slides": [
       {
         "name": "Elena Rodríguez",
