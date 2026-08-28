@@ -3,13 +3,14 @@
     overflow: hidden;
     background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
     color: var(--color-muted);
-    padding: 7rem 1.5rem 6rem;
+    padding: var(--section-space) var(--page-gutter);
 }
 
 
 .container {
     margin: 0 auto;
-    max-width: 68rem;
+    width: 100%;
+    max-width: var(--content-max);
     position: relative;
 }
 
@@ -24,8 +25,9 @@
 .body {
     margin-bottom: 1.5rem;
     text-wrap: balance;
-    letter-spacing: 1.625;
-    font-size: var(--text-lg);
+    line-height: 1.7;
+    letter-spacing: 0;
+    font-size: var(--text-base);
 }
 
 .carousel {

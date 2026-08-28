@@ -1,6 +1,7 @@
 /* ─── texto del hero ─── */
 .headline {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  /* 1.75rem mobile, 2.25rem tablet, and 2.5rem desktop. */
+  font-size: 1.75rem;
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -11,4 +12,12 @@
 .headline em {
   font-style: normal;
   color: var(--color-ghost);
+}
+
+@media (min-width: 48rem) {
+  .headline { font-size: 2.25rem; }
+}
+
+@media (min-width: 64rem) {
+  .headline { font-size: 2.5rem; }
 }

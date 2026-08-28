@@ -1,20 +1,7 @@
 import s from './TerminalCard.module.css'
-import type { PropsWithChildren } from "react";
-
-interface Project {
-  id: string;
-  filename: string;
-  name: string;
-  nameAccent?: string;
-  desc: string;
-  stack: string[];
-  href: string;
-  status: "live" | "wip";
-  featured?: boolean;
-}
 
 // export const TerminalCard = (project: Project, refIndex: number) => {
-export const TerminalCard = ( { children } : PropsWithChildren ) => {
+export const TerminalCard = () => {
   const status : "live" | "wip" = "wip";
   const name: string = 'Temporal name';
   const desc: string = 'Temporal desc'

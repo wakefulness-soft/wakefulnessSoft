@@ -62,11 +62,16 @@ const PROJECTS: Project[] = [
 /* ─── componente principal ─── */
 export default function ProjectSection() {
   const { t } = useTranslation();
-  const cardsRef = useRef<(HTMLDivElement | null)[]>(
+  const cardsRef = useRef<(HTMLElement | null)[]>(
     Array(PROJECTS.length).fill(null)
   );
 
   useEffect(() => {
+    if (!("IntersectionObserver" in window)) {
+      cardsRef.current.forEach((element) => element?.classList.add(s.visible));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
@@ -84,20 +89,20 @@ export default function ProjectSection() {
 
   /* ── card featured (inline) ── */
   const renderFeatured = (project: Project, refIndex: number) => (
-    <div
+    <article
       key={project.id}
       ref={(el) => { cardsRef.current[refIndex] = el; }}
       className={`${s.card} ${s.featured} ${s.cardFeatured}`}
     >
       {/* panel izquierdo */}
-      <div style={{ display: "flex", flexDirection: "column", flex: 1.4 }}>
+      <div className={s.featuredContent}>
         <div className={s.cardBar}>
-          <span className={s.dot} /><span className={s.dot} /><span className={s.dot} />
+          <span className={s.dot} aria-hidden="true" /><span className={s.dot} aria-hidden="true" /><span className={s.dot} aria-hidden="true" />
           <span className={s.cardFilename}>{project.filename}</span>
         </div>
         <div className={s.featuredBody}>
           <div className={s.statusLine}>
-            <span className={`${s.statusDot}${project.status === "wip" ? ` ${s.wip}` : ""}`} />
+            <span className={`${s.statusDot}${project.status === "wip" ? ` ${s.wip}` : ""}`} aria-hidden="true" />
             {t(`projects.status.${project.status}`)}
           </div>
           <h3 className={s.featuredName}>
@@ -110,7 +115,11 @@ export default function ProjectSection() {
               <span key={tech} className={s.tag}>{tech}</span>
             ))}
           </div>
-          <a href={project.href} className={`${s.link} ${s.featuredLink}`}>
+          <a
+            href={project.href}
+            className={`${s.link} ${s.featuredLink}`}
+            aria-label={`${t("projects.actions.viewProject")}: ${project.name}`}
+          >
             {t("projects.actions.viewProject")} <span className={s.linkArrow}>↗</span>
           </a>
         </div>
@@ -118,9 +127,8 @@ export default function ProjectSection() {
 
       {/* panel derecho — preview atmosférico */}
       <div className={s.featuredPreview}>
-        <div className={s.previewOrb} />
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
-          aria-hidden="true" style={{ position: "relative", zIndex: 1, opacity: 0.5 }}>
+        <div className={s.previewOrb} aria-hidden="true" />
+        <svg className={s.previewGraphic} width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true">
           <ellipse cx="60" cy="52" rx="30" ry="26" fill="var(--color-primary)" opacity="0.2" />
           <ellipse cx="60" cy="52" rx="30" ry="26" stroke="var(--color-primary)"
             strokeWidth="1.5" fill="none" opacity="0.6" />
@@ -137,28 +145,27 @@ export default function ProjectSection() {
           <path d="M72,23 C76,13 70,7 74,0" stroke="var(--color-ghost)"
             strokeWidth="1" strokeLinecap="round" opacity="0.35" />
         </svg>
-        <span className={s.previewLabel}
-          style={{ position: "absolute", bottom: "1.2rem", fontSize: "0.65rem" }}>
+        <span className={s.previewLabel}>
           {t("projects.actions.previewSoon")}
         </span>
       </div>
-    </div>
+    </article>
   );
 
   /* ── card normal (inline) ── */
   const renderCard = (project: Project, refIndex: number) => (
-    <div
+    <article
       key={project.id}
       ref={(el) => { cardsRef.current[refIndex] = el; }}
       className={s.card}
     >
       <div className={s.cardBar}>
-        <span className={s.dot} /><span className={s.dot} /><span className={s.dot} />
+        <span className={s.dot} aria-hidden="true" /><span className={s.dot} aria-hidden="true" /><span className={s.dot} aria-hidden="true" />
         <span className={s.cardFilename}>{project.filename}</span>
       </div>
       <div className={s.cardBody}>
         <div className={s.statusLine}>
-          <span className={`${s.statusDot}${project.status === "wip" ? ` ${s.wip}` : ""}`} />
+          <span className={`${s.statusDot}${project.status === "wip" ? ` ${s.wip}` : ""}`} aria-hidden="true" />
           {t(`projects.status.${project.status}`)}
         </div>
         <h3 className={s.projectName}>{project.name}</h3>
@@ -168,11 +175,15 @@ export default function ProjectSection() {
             <span key={tech} className={s.tag}>{tech}</span>
           ))}
         </div>
-        <a href={project.href} className={s.link}>
+        <a
+          href={project.href}
+          className={s.link}
+          aria-label={`${t("projects.actions.viewProject")}: ${project.name}`}
+        >
           {t("projects.actions.viewProject")} <span className={s.linkArrow}>↗</span>
         </a>
       </div>
-    </div>
+    </article>
   );
 
   return (

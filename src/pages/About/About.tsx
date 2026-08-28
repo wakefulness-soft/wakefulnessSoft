@@ -153,7 +153,7 @@ export default function About(){
                 <span className={s.prompt}>{">"}</span>
                 <span className={s.lineContent}>
                   <strong>{line.cmd}</strong>{"  "}
-                  <span style={{ color: "var(--muted)", fontSize: "0.82rem" }}>
+                  <span className={s.lineDescription}>
                     {"// "}{line.desc}
                   </span>
                 </span>

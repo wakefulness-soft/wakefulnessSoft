@@ -53,7 +53,9 @@ export const ProcessSection = () => {
                         type="button"
                         className={s.timelineStep}
                         onMouseEnter={() => setActiveStep(stepNumber)}
+                        onFocus={() => setActiveStep(stepNumber)}
                         onClick={() => setActiveStep(stepNumber)}
+                        aria-pressed={activeStep === stepNumber}
                         aria-label={t("processSection.ariaLabel", {
                           stepNumber,
                           stepName,
