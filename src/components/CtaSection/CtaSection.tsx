@@ -1,4 +1,5 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
 import s from "./CtaSection.module.css";
 import { EyebrowComponent } from "../ui/EyebrowComponent/EyebrowComponent";
@@ -93,9 +94,33 @@ export default function CtaSection() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const formRef = useRef<HTMLFormElement>(null);
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!form.name || !form.email || !form.message) return;
+
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        }
+      )
+      .then(
+        () => {
+          alert('Message sent successfully!');
+          formRef.current?.reset();
+        },
+        (error) => {
+          console.error('Failed to send email: ', error);
+          alert('Something went wrong. Please try again.');
+        }
+      );
 
     setStatus("sending");
 
@@ -161,7 +186,7 @@ export default function CtaSection() {
             <span className={s.formTitle}>{t("cta.formTitle")}</span>
           </div>
 
-          <form className={s.formBody} onSubmit={handleSubmit}>
+          <form ref={formRef} className={s.formBody} onSubmit={handleSubmit}>
 
             {/* fila nombre + email */}
             <div className={s.row}>
