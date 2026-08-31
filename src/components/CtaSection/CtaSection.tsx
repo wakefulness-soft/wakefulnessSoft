@@ -165,9 +165,9 @@ export default function CtaSection() {
 
           <div className={s.directContact}>
             <span className={s.directLabel}>{t("cta.directLabel")}</span>
-            <a href="mailto:hola@wakefulnesssoft.com" className={s.directItem}>
+            <a href="mailto:wakefulnesssoft@gmail.com" className={s.directItem}>
               <span className={s.directIcon}>✉</span>
-              hola@wakefulnesssoft.com
+              wakefulnesssoft@gmail.com
             </a>
             <a href="https://github.com" target="_blank"
               rel="noreferrer" className={s.directItem}>
