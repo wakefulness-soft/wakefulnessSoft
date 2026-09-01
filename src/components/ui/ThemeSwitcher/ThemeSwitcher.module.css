@@ -1,0 +1,198 @@
+.foatingComponent {
+    position: fixed;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    left: max(1rem, env(safe-area-inset-left));
+    z-index: 90;
+}
+
+/* ================================
+   Theme switch
+   ================================ */
+.toggle {
+    position: relative;
+
+    width: 50px;
+    aspect-ratio: 1;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        margin 0.25s ease,
+        width 0.25s ease,
+        height 0.25s ease;
+}
+
+/* =========================
+   INPUT
+   ========================= */
+
+.toggle input {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.toggle input:focus-visible + .trackIcons + label {
+    outline: 0.1875rem solid var(--focus-ring);
+    outline-offset: 0.1875rem;
+}
+
+/* =========================
+   ICONOS DEL TRACK
+   ========================= */
+
+.trackIcons {
+    display: none;
+}
+
+.trackIcons svg {
+    width: 20px;
+    height: 20px;
+
+    stroke-width: 2.2;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.sunIcon {
+    color: var(--color-primary);
+}
+
+.sunIcon:hover {
+    color: var(--color-bone);
+}
+
+.moonIcon {
+    color: var(--color-muted);
+}
+
+.moonIcon:hover {
+    color: var(--color-bone);
+}
+
+/* =========================
+   THUMB
+   ========================= */
+
+.toggle label {
+    position: absolute;
+
+    top: 4px;
+    left: 4px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    background-color: var(--color-primary);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* =========================
+   ICONO DENTRO DEL THUMB
+   ========================= */
+
+.toggleIcon {
+    width: 22px;
+    height: 22px;
+
+    color: var(--color-void);
+
+    stroke-width: 2.2;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+/* sm */
+@media (width >= 40rem) {
+    
+}
+
+/* md */
+@media (width >= 48rem) {
+    .toggle {
+        width: 100px;
+        height: 50px;
+    }
+
+    .trackIcons {
+        position: absolute;
+
+        inset: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 11px;
+
+        pointer-events: none;
+    }
+
+    .toggle label {
+        top: 5px;
+        left: 5px;
+    }
+
+    /* =========================
+    DARK
+    ========================= */
+
+    .toggle.dark label {
+        transform: translateX(50px);
+    }
+
+    .toggle.dark .sunIcon {
+        opacity: 0.35;
+    }
+
+    .toggle.dark .moonIcon {
+        opacity: 0.9;
+    }
+
+    /* =========================
+    LIGHT
+    ========================= */
+
+    .toggle.light .sunIcon {
+        opacity: 0.9;
+    }
+
+    .toggle.light .moonIcon {
+        opacity: 0.35;
+    }
+}
+
+/* lg */
+@media (width >= 64rem) {
+    
+}

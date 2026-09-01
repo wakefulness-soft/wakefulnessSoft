@@ -1,0 +1,320 @@
+.section {
+    position: relative;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
+    color: var(--color-muted);
+    padding: var(--section-space) var(--page-gutter);
+}
+
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--content-max);
+    position: relative;
+}
+
+.content {
+    
+}
+
+.hero {
+
+}
+
+.body {
+    margin-bottom: 1.5rem;
+    text-wrap: balance;
+    line-height: 1.7;
+    letter-spacing: 0;
+    font-size: var(--text-base);
+}
+
+.carousel {
+    /* width: 100vw; */
+    /* position: relative; */
+    /* left: 50%;
+    right: 50%; */
+    /* margin-left: -50vw;
+    margin-right: -50vw; */
+    /* overflow-x: auto; */
+    /* padding: 1rem 1rem; */
+    /* animation: spin 5s infinite linear; */
+    margin-top: 3rem;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonials {
+    /* display: flex;
+    gap: clamp(0.25rem, 4vw, 1.5rem); */
+}
+
+.testimonialCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    flex: 0 0 21em;
+    border-radius: 10px;
+    /* overflow: hidden; */
+    transition-property: transform box-shadow;
+    transition-duration: 200ms;
+}
+
+.testimonialCard:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 0px 25px color-mix(in srgb, var(--color-secondary) 90%, transparent);
+}
+
+.cardHeader {
+    background-color: color-mix(in srgb, var(--color-accent) 80%, transparent);
+    color: var(--color-void);
+    padding: .7rem 1.5rem;
+}
+
+.cardHeader h3 {
+    display: block;
+    font-weight: 500;
+    font-size: var(--text-lg);
+    letter-spacing: .04rem;
+}
+
+.cardHeader span {
+    display: block;
+    font-weight: 500;
+    font-size: var(--text-sm);
+    letter-spacing: -0.03rem;
+}
+
+.cardBody {
+    margin-top: 1vw;
+    padding: .9rem;
+    flex: 1 1 auto;
+}
+
+.score {
+    display: flex;
+    gap: clamp(0.1rem, 2vw, 0.25rem);
+}
+
+.testimonial {
+    margin-top: 1vw;
+    letter-spacing: .05rem;
+    text-wrap: balance;
+}
+
+.cardFooter {
+    margin-top: auto;
+    padding: .9rem;
+    letter-spacing: .05rem;
+}
+
+/* ─── card base ─── */
+.card {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: var(--color-secondary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  /* reveal inicial */
+  /* opacity: 0; */
+  transform: translateY(14px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+z.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:nth-child(2) { transition-delay: 0.08s; }
+.card:nth-child(3) { transition-delay: 0.16s; }
+.card:nth-child(4) { transition-delay: 0.24s; }
+
+.card:hover {
+  border-color: var(--color-dim);
+  box-shadow: 0 0 40px -8px color-mix(in srgb, var(--color-ghost) 20%, transparent);
+}
+
+/* barra lateral de vapor que sube al hacer hover */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  height: 0%;
+  background: linear-gradient(to top, var(--color-ghost), transparent);
+  border-radius: 0 2px 2px 0;
+  transition: height 0.45s ease;
+  z-index: 2;
+}
+.card:hover::before { height: 100%; }
+
+/* featured: glow de color primario */
+.card.featured {
+  flex-direction: row;
+  align-items: stretch;
+}
+.card.featured:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  box-shadow: 0 0 55px -10px color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+.card.featured::before {
+  background: linear-gradient(to top, var(--color-primary), transparent);
+}
+
+@media (max-width: 768px) {
+  .card.featured { flex-direction: column; }
+}
+
+/* ─── barra superior tipo editor ─── */
+.cardBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-secondary) 60%, var(--color-void));
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.dot:nth-child(1) { background: #ff5f57; }
+.dot:nth-child(2) { background: #febc2e; }
+.dot:nth-child(3) { background: #28c840; }
+
+.cardFilename {
+  font-family: ui-monospace, monospace;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  margin-left: 0.4rem;
+  letter-spacing: 0.04em;
+}
+
+/* ─── cuerpo de la card ─── */
+.cardBody {
+  padding: 1.6rem 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  flex: 1;
+}
+
+.statusLine {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: ui-monospace, monospace;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #28c840;
+  box-shadow: 0 0 6px #28c840;
+  flex-shrink: 0;
+}
+
+.statusDot.wip { background: #febc2e; box-shadow: 0 0 6px #febc2e; }
+
+.projectName {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-bone);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.desc {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+/* ─── stack de tecnologías ─── */
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.tag {
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--color-ghost);
+  background: color-mix(in srgb, var(--color-ghost) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ghost) 18%, transparent);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  letter-spacing: 0.04em;
+}
+
+/* ─── link del proyecto ─── */
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: ui-monospace, monospace;
+  font-size: var(--text-xs);
+  color: var(--color-ghost);
+  text-decoration: none;
+  transition: color 0.2s;
+  margin-top: 0.25rem;
+}
+
+.link:hover { color: var(--color-bone); }
+
+.linkArrow {
+  font-size: 0.85rem;
+  transition: transform 0.2s;
+}
+
+.link:hover .linkArrow { transform: translateX(3px) translateY(-1px); }
+
+/* ─── reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; opacity: 1; transform: none; }
+  .card::before { transition: none; }
+}
+
+@keyframes spin {
+    from { translate: 0; }
+    to { translate: -100%; }
+}
+
+/* sm */
+@media (width >= 40rem) {
+    
+}
+
+/* md */
+@media (width >= 48rem) {
+    
+}
+
+/* lg */
+@media (width >= 64rem) {
+    
+}
+

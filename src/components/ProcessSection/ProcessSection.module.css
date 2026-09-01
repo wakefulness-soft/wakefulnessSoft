@@ -1,0 +1,196 @@
+.section {
+    position: relative;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
+    color: var(--color-muted);
+    padding: var(--section-space) var(--page-gutter);
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--content-max);
+    position: relative;
+}
+
+.content {
+    
+}
+
+.hero {
+    margin-bottom: 2.5rem;
+}
+
+.body {
+    font-size: var(--text-lg);
+    line-height: 1.75;
+    color: var(--color-muted);
+}
+
+.timelineContainer {
+    display: grid;
+    overflow: hidden;
+    gap: 1.5rem;
+}
+
+.stepsTimeLine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.stepsTimeLine ol {
+    display: grid;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.timelineStep {
+    display: flex;
+    width: 100%;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.timelineStep p {
+    display: none;
+}
+
+.timelineStepIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: clamp(2.75rem, 12vw, 4rem);
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    font-family: monospace;
+    transition-property: background-color border-color;
+    transition-duration: 200ms;
+}
+
+.timelineStepIcon span {
+    font-size: clamp(var(--text-sm), 4vw, var(--text-xl));
+}
+
+.timelineStepIconVisited {
+    background-color: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
+    box-shadow: 0px 0px 25px color-mix(in srgb, var(--color-secondary) 90%, transparent);
+}
+
+.timelineStepNumber {
+    font-size: var(--text-sm);
+    font-family: monospace;
+}
+
+.timelineStepName {
+    margin-left: .5rem;
+    color: var(--color-ghost);
+    font-weight: 600;
+}
+
+.stepCardsContainer {
+    margin: auto 0;
+    padding: 0;
+}
+
+.stepCard {
+    display: block;
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: var(--color-void);
+    box-shadow: 0px 5px 10px var(--color-secondary);
+    transition-property: background-color;
+    transition-duration: 200ms;
+}
+
+.stepCard:hover {
+    background-color: var(--color-hover);
+}
+
+.stepIcon {
+    display: inline-block;
+    margin-bottom: .5rem;
+    padding: .7rem;
+    border-radius: .5rem;
+    background-color: var(--color-secondary);
+}
+
+.stepTitle {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-ghost);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+}
+
+.stepDesc {
+    letter-spacing: 0.03rem;
+    font-size: var(--text-base);
+}
+
+/* sm */
+@media (width >= 40rem) {
+    .timelineStep p {
+        display: none;
+    }
+}
+
+/* md */
+@media (width >= 48rem) {
+    
+    .timelineContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .stepsTimeLine {
+        padding: 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* gap: 1.5rem; */
+    }
+
+    .timelineStep {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .stepsTimeLine ol {
+        display: flex;
+        width: auto;
+        flex-direction: column;        
+    }
+
+    .timelineStep p {
+        display: block;
+    }
+}
+
+/* lg */
+@media (width >= 64rem) {
+    
+}

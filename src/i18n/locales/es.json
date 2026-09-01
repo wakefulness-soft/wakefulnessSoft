@@ -1,0 +1,326 @@
+{
+  "navbar": {
+    "links": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "projects": "Proyectos",
+      "about": "Nosotros",
+      "contact": "Contacto"
+    },
+    "cta": "Hablemos",
+    "menu": {
+      "open": "Abrir menú",
+      "close": "Cerrar menú"
+    }
+  },
+
+
+  "footer": {
+    "brandDescription": "Construimos software mientras el resto del mundo duerme: código despierto, ideas cafeinadas.",
+    "sections": {
+      "navigation": "Navegación",
+      "services": "Servicios",
+      "contact": "Contacto"
+    },
+    "services": {
+      "web": "Desarrollo Web",
+      "mobile": "Aplicaciones Móviles",
+      "consulting": "Consultoría Técnica",
+      "support": "Mantenimiento y Soporte"
+    },
+    "contactInfo": {
+      "location": "Guadalajara, Jalisco, México"
+    },
+    "bottom": {
+      "copyright": "© {{year}} Wakefulness Soft. Todos los derechos reservados.",
+      "madeWith": "Hecho con ☕ y líneas de código a medianoche."
+    }
+  },
+  "languageSwitcher": {
+    "label": "Cambiar idioma"
+  },
+  "themeSwitcher": {
+    "toDark": "Usar tema oscuro",
+    "toLight": "Usar tema claro"
+  },
+
+
+
+  "hero": {
+    "titleLine1": "Convertimos ideas audaces en",
+    "titleHighlight": "software que despierta",
+    "titleLine3": "tu negocio.",
+    "slogan": "Diseñar tu sueño es nuestra tarea más preciada",
+    "actions": {
+    "requestQuote": "Solicita una Cotización",
+    "viewOurWork": "Ve Nuestro Trabajo"
+  }
+},
+
+
+  "about": {
+    "hero": {
+      "headline": "Código que no duerme.",
+      "description": "Wakefulness Soft es un estudio de desarrollo de software fundado por desarrolladores que prefieren las primeras horas y el café negro. Construimos productos digitales de los que estaríamos orgullosos de poner nuestros nombres detrás — incluso si el commit fue hecho a las 3 de la mañana."
+    },
+    "lines": {
+      "init": "Software personalizado construido para resolver problemas del mundo real",
+      "quality": "Código limpio, revisado y bien documentado",
+      "speed": "Entrega rápida sin comprometer la confiabilidad",
+      "transparency": "Comunicación clara en cada etapa del proyecto",
+      "innovation": "Adoptamos lo que tiene sentido, no solo lo que está de moda"
+    },
+    "stats": {
+      "years": "Años en producción",
+      "projects": "Proyectos entregados",
+      "coffee": "Tazas de café"
+    }
+  },
+
+  "whySection": {
+    "eyebrow": "Por qué Wakefulness",
+    "headline": "Donde el gran software permanece despierto.",
+    "paragraph1": "Creemos que las mejores ideas no surgen por ser tarde en la noche, sino porque a alguien le importa lo suficiente seguir perfeccionándolas.",
+    "paragraph2": "Cada proyecto que construimos se trata como un producto del que nos sentiríamos orgullosos de firmar, combinando excelencia técnica con colaboración reflexiva desde la primera conversación hasta el despliegue final.",
+    "contactLink": "Iniciar una conversación",
+    "pillars": [
+      {
+        "displayId": "01",
+        "title": "Artesanía sobre atajos",
+        "content": "No buscamos soluciones rápidas. Cada funcionalidad está diseñada para ser mantenible, escalable y creada pensando en la calidad a largo plazo."
+      },
+      {
+        "displayId": "02",
+        "title": "Perspectiva fresca",
+        "content": "Las horas más silenciosas a menudo producen el pensamiento más claro. Abordamos los problemas con curiosidad e ingeniería reflexiva en lugar de apresurarnos hacia la primera solución."
+      },
+      {
+        "displayId": "03",
+        "title": "Bases sólidas",
+        "content": "Como un buen espresso, el gran software comienza con ingredientes de calidad. La arquitectura limpia, el código mantenible y el diseño escalable son la base de todo lo que construimos."
+      },
+      {
+        "displayId": "04",
+        "title": "Rendimiento por diseño",
+        "content": "El software rápido crea mejores experiencias. Desde las consultas a la base de datos hasta las interacciones frontend, el rendimiento se considera desde el primer día."
+      },
+      {
+        "displayId": "05",
+        "title": "Calidad en cada commit",
+        "content": "Cada entrega refleja nuestros estándares. Probamos, revisamos, refinamos y pulimos porque los detalles importan."
+      },
+      {
+        "displayId": "06",
+        "title": "Entrega confiable",
+        "content": "Las ideas solo importan cuando se convierten en realidad. Nos enfocamos en una ejecución predecible, un progreso constante y la entrega de software en el que puedas confiar plenamente."
+      }
+    ]
+  },
+
+  "processSection": {
+    "eyebrow": "Cómo trabajamos",
+    "headline": "Tu hora de dormir, nuestro check-in.",
+    "body": "Al igual que en un proceso de extracción perfecto, trabajamos con calma, eliminando el ruido para lograr el mejor resultado.",
+    "ariaLabel": "Ir al paso {{stepNumber}}: {{stepName}}",
+    "steps": {
+      "1": {
+        "stepName": "Selección de granos",
+        "description": "Reunión de requerimientos y comprensión de objetivos del proyecto para elegir las tecnologías y el enfoque adecuados."
+      },
+      "2": {
+        "stepName": "Molienda del café",
+        "description": "Desglose del proyecto en módulos, servicios o componentes para un desarrollo estructurado."
+      },
+      "3": {
+        "stepName": "Calentamiento del agua",
+        "description": "Configuración del entorno de desarrollo, bases de datos e infraestructura necesarias para ejecutar el sistema."
+      },
+      "4": {
+        "stepName": "Extracción del café",
+        "description": "Escritura e integración del código real, conexión de componentes e implementación de la lógica."
+      },
+      "5": {
+        "stepName": "Filtrado del café",
+        "description": "Revisión de código, refactorización y eliminación de deuda técnica o ineficiencias."
+      },
+      "6": {
+        "stepName": "Leche y azúcar al gusto",
+        "description": "Pulido de la interfaz de usuario, incorporación de características finales y optimización del rendimiento previo al despliegue."
+      }
+    }
+  },
+
+  "cta": {
+    "eyebrow": "Contacto",
+    "headline": "Construyamos algo con vida.",
+    "sub": "¿Tienes un proyecto en mente? ¿Un problema que resolver? ¿O solo quieres hablar de código a las 2 am? Escríbenos — de todos modos no dormimos.",
+    "directLabel": "// o contáctanos directamente",
+    "formTitle": "nuevo_mensaje.ts",
+    "labels": {
+      "name": "nombre",
+      "email": "email",
+      "service": "servicio",
+      "message": "mensaje"
+    },
+    "placeholders": {
+      "name": "Juan Pérez",
+      "email": "juan@empresa.com",
+      "selectService": "// selecciona un servicio",
+      "message": "// cuéntanos sobre tu proyecto..."
+    },
+    "services": {
+      "webDev": "Desarrollo web",
+      "mobileApp": "Aplicación móvil",
+      "consulting": "Consultoría técnica",
+      "maintenance": "Mantenimiento y soporte",
+      "other": "Otro asunto"
+    },
+    "buttons": {
+      "sending": "enviando...",
+      "sent": "✓ mensaje enviado",
+      "send": "> enviar_mensaje"
+    },
+    "error": "// error — intenta de nuevo o escríbenos directamente"
+  },
+
+
+
+  "testimonials": {
+    "eyebrow": "Testimonios",
+    "headline": "Lo que dicen de nosotros.",
+    "sub": "Nuestro trabajo habla por nosotros incluso cuando no estamos presentes.",
+    "actions": {
+      "previous": "Testimonio anterior",
+      "next": "Testimonio siguiente"
+    },
+    "slides": [
+      {
+        "name": "Elena Rodríguez",
+        "date": "2026-08-19",
+        "content": "Contratar a Wakefulness Soft fue la mejor decisión. Entendieron que nuestro SaaS necesitaba una arquitectura sólida. Código limpio que a los equipos de mantenimiento les encanta."
+      },
+      {
+        "name": "Miguel Ángel Torres",
+        "date": "2026-08-21",
+        "content": "La API Phantom es increíblemente rápida y estable. El límite de tasa (rate limiting) y el caché inteligente superaron las expectativas. Especialistas en construir bases sólidas."
+      },
+      {
+        "name": "Sofía Méndez",
+        "date": "2026-08-23",
+        "content": "Valoramos su nivel de detalle por encima de los atajos. Entregaron el sistema de componentes Drift UI, accesible y sin dependencias innecesarias."
+      },
+      {
+        "name": "Carlos Vega",
+        "date": "2026-08-25",
+        "content": "Colaboración fluida desde los requerimientos hasta el despliegue. Hollow CLI ahorró horas de automatización. Es refrescante ver desarrolladores que priorizan una ejecución predecible."
+      },
+      {
+        "name": "Ana Belén Cruz",
+        "date": "2026-08-27",
+        "content": "La atención al detalle en cada commit es impresionante. Entendieron nuestras necesidades de escalabilidad y rendimiento desde el primer día."
+      }
+    ]
+  },
+
+
+
+  "projects": {
+    "eyebrow": "Proyectos",
+    "headline": "Lo que hemos construido.",
+    "sub": "Cada proyecto comenzó desde cero en la hora cero. Estos son los que sobrevivieron.",
+    "status": {
+      "live": "en producción",
+      "wip": "en desarrollo"
+    },
+    "actions": {
+      "viewProject": "> ver proyecto",
+      "previewSoon": "// preview disponible pronto"
+    },
+    "items": {
+      "nebula": {
+        "desc": "Plataforma SaaS para gestión de equipos remotos con dashboards en tiempo real, control de permisos y analítica integrada. Diseñada para sobrevivir a la madrugada del lunes."
+      },
+      "phantom-api": {
+        "desc": "REST API de alta disponibilidad con autenticación JWT, rate limiting y caché inteligente. Levanta en frío en menos de 200 ms."
+      },
+      "drift-ui": {
+        "desc": "Sistema de componentes oscuros para React. Sin dependencias de runtime, 100% accesible."
+      },
+      "hollow-cli": {
+        "desc": "Herramienta de línea de comandos para automatizar deploys y auditar dependencias en monorepos."
+      }
+    }
+  },
+
+  "heroConcepts": {
+    "common": {
+      "startProject": "Iniciar un proyecto",
+      "exploreWork": "Explorar nuestro trabajo",
+      "compareLabel": "Comparar conceptos de hero"
+    },
+    "focus": {
+      "label": "Enfoque 3 AM",
+      "eyebrow": "Para ideas que merecen mantenernos despiertos",
+      "titleLine1": "Las horas más silenciosas crean",
+      "titleAccent": "las ideas más claras.",
+      "titleLine2": "",
+      "description": "Convertimos ideas ambiciosas en productos digitales resistentes, con curiosidad, arquitectura limpia y calidad por encima de los atajos.",
+      "hint": "Mueve el cursor. Hay más en la oscuridad."
+    },
+    "espresso": {
+      "label": "Extracción Espresso",
+      "eyebrow": "Un proceso cuidadoso. Un resultado confiable.",
+      "titleLine1": "Ideas audaces,",
+      "titleAccent": "perfectamente extraídas.",
+      "description": "Desde la primera conversación hasta el despliegue final, cada detalle se mide, se refina y se construye para resistir la presión.",
+      "replay": "Preparar otra vez",
+      "progressLabel": "Progreso de preparación del proyecto",
+      "waiting": "El buen software requiere un momento deliberado.",
+      "stages": {
+        "0": "Moliendo los granos...",
+        "1": "Calentando el agua...",
+        "2": "Preparando tu solución...",
+        "3": "Wakefulness listo."
+      },
+      "stepLabels": {
+        "0": "Descubrir",
+        "1": "Diseñar",
+        "2": "Construir",
+        "3": "Entregar"
+      }
+    },
+    "sleepingCode": {
+      "label": "Código Despierto",
+      "titleLine1": "Código que",
+      "titleAccent": "no duerme.",
+      "description": "Sistemas limpios y vivos, diseñados de noche y listos para crear impulso por la mañana.",
+      "night": "Trabajo nocturno · calidad deliberada",
+      "day": "Entrega matutina · impulso real",
+      "cardLabel": "Ejemplo de código interactivo. Mueve el cursor para inclinar la tarjeta y revelar el modo de día."
+    },
+    "terminal": {
+      "label": "Terminal de Medianoche",
+      "titleLine1": "Construyamos",
+      "titleAccent": "algo con vida.",
+      "description": "¿Tienes un problema que resolver, o solo quieres hablar de código a las 2 am? La terminal está abierta.",
+      "prompt": "> ¿Inicializar proyecto?",
+      "inputLabel": "Ingresa un comando en la terminal",
+      "executeLabel": "Ejecutar comando",
+      "demo": "O ejecuta el comando de demostración",
+      "building": "Construyendo Nebula Platform...",
+      "checking": "Revisando arquitectura y rendimiento...",
+      "compiling": "Compilando código despierto...",
+      "success": "Éxito. Tu idea está despierta.",
+      "revealEyebrow": "Compilación completa · 0 errores",
+      "revealTitle": "Tu próximo producto está listo para despertar.",
+      "reset": "Ejecutar de nuevo"
+    }
+  }
+}
+
+
+
+
+
+
+

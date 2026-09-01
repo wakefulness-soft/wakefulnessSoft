@@ -1,0 +1,127 @@
+.section {
+    position: relative;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--color-void) 25%, transparent);
+    color: var(--color-muted);
+    padding: var(--section-space) var(--page-gutter);
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--content-max);
+    position: relative;
+}
+
+.content {
+    display: grid;
+    gap: 3rem;
+}
+
+.hero {
+    /* position: sticky;
+    top: 9rem; */
+}
+
+.body {
+    margin-bottom: 1.5rem;
+    text-wrap: balance;
+    line-height: 1.7;
+    letter-spacing: 0;
+    font-size: var(--text-base);
+}
+
+.contactLink {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    text-wrap: balance;
+    border: 1px solid var(--color-border);
+    color: var(--color-bone);
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: var(--color-void);
+    transition-property: background-color;
+    transition-duration: 200ms;
+}
+
+.contactLink:hover {
+    background-color: var(--color-hover);
+}
+
+.pillarsContainer {
+    display: grid;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    gap: 1px;
+}
+
+.pillarItem {
+    padding: 1.5em;
+    background-color: var(--color-secondary);
+    font-size: var(--text-base);
+    transition-property: background-color;
+    transition-duration: 200ms;
+}
+
+.pillarItem:hover {
+    background-color: var(--color-hover);
+}
+
+.pillarNumber {
+    font-family: monospace;
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+}
+
+.pillarTitle {
+    margin-top: 0.75rem;
+    color: var(--color-bone);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: 0.03rem;
+}
+
+.pillarContent {
+    margin-top: 0.5rem;
+    font-size: var(--text-sm);
+    letter-spacing: 0.03rem;
+    text-wrap: balance;
+    color: var(--color-muted);
+}
+
+/* sm */
+@media (width >= 40rem) {
+    .content {
+        gap: 4rem;
+    }
+
+    .headline {
+        font-size: var(--text-4xl);
+    }
+
+    .pillarsContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* lg */
+@media (width >= 64rem) {
+    .content {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .hero {
+        /* position: sticky;
+        top: 7rem;
+        align-self: flex-start; */
+    }
+
+    .headline {
+        font-size: var(--text-5xl);
+    }
+
+    .body { font-size: var(--text-lg); }
+}

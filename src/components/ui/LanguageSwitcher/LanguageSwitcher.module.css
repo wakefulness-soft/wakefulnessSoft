@@ -1,0 +1,125 @@
+.switcher {
+  position: fixed;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wisp {
+  width: 14px;
+  height: 22px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.wispPath {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: drift 4s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0% { stroke-dashoffset: 40; opacity: 0; }
+  30% { opacity: 0.5; }
+  70% { opacity: 0.5; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+.track {
+  /* width: 100px;
+  height: 50px; */
+  width: 50px;
+  aspect-ratio: 1;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  background: var(--color-secondary);
+  border: 1px solid var(--color-border, #2a242c);
+  border-radius: 999px;
+  padding: 4px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary, #BC6CFF);
+  border-radius: 999px;
+  /* transition: transform 0.3s ease; */
+  box-shadow: 0 0 12px rgba(188, 108, 255, 0.5);
+}
+
+.option {
+  position: relative;
+  z-index: 1;
+  width: 35px;
+  padding: 6px 0;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-void, #8d7f99);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.option.active {
+  color: var(--color-void, #0b0a0d);
+  display: none;
+}
+
+.option:hover:not(.active) {
+  color: var(--color-bone, #e3d7d9);
+}
+
+/* sm */
+@media (width >= 40rem) {
+    
+}
+
+/* md */
+@media (width >= 48rem) {
+  .track {
+    width: 100px;
+    height: 50px;
+  }
+
+  .indicator {
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+  }
+
+  .option {
+    color: var(--color-muted, #8d7f99);
+  }
+
+ .option.active {
+    display: block;
+  }
+
+  .indicator.is-es {
+    --translate-val: 0%;
+  }
+
+  .indicator.is-default {
+    --translate-val: 100%;
+  }
+
+  .indicator {
+    transition: transform 0.3s ease;
+    transform: translateX(var(--translate-val));
+  }
+}
+
+/* lg */
+@media (width >= 64rem) {
+    
+}

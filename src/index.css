@@ -1,5 +1,232 @@
 @import "tailwindcss";
 
+:root {
+  --vacio: #0b0a0d;
+  --surface: #18151c;
+  --border: #2a242c;
+  --bones: #e3d7d9;
+  --gost: #c9b8d4;
+  --off: #8d7f99;
+  --color-darkvoid: #151419;
+  /* --color-ocean:    #00171f; */
+  --color-inkblack: #00151f;
+  --color-mypurple: #BC6cFF;
+  --color-pool:     #003459;
+  --color-vodka:    #C8B3F6;
+  --color-river:    #ADEBFF;
+  --color-wildsand: #E4EEF0;
+  --color-snow:     #FBFBFB;
+  --color-sea-foam: #FFFFFF;
+  --color-lava:     #F56E0F;
+
+
+  /* ================================
+   DARK THEME
+   ================================ */
+  /* Colores principales */
+  --color-primary:    #BC6CFF;
+  --color-accent:     #D8A4FF;
+
+  /* Colores para fondos */
+  --color-background: #0b0b10;
+  --color-void:       #0b0a0d;
+  --color-secondary:  #181A20;
+  --color-hover:      #21242B;
+  --color-inkblack:   #0B0C0F;
+
+  /* Colores para bordes */
+  --color-border:     #2A2D36;
+  --color-divider:    #202229;
+
+  /* Colores para textos */
+  --color-snow:       #FBFBFB;
+  --color-bone:       #e3d7d9;
+  --color-ghost:      #c9b8d4;
+  --color-muted:      #8d7f99;
+
+  /* Colores extras (Solo usar en ocaciones muy concretas) */
+  --color-vodka:      #C8B3F6;
+  --color-dim:        #3E3347;
+  --color-hover2:     #1C1E24;
+
+  /* text sizes */
+  --text-xs:          0.75rem;
+  --text-sm:          0.875rem;
+  --text-base:        1rem;
+  --text-lg:          1.125rem;
+  --text-xl:          1.25rem;
+  --text-2xl:         1.5rem;
+  --text-3xl:         1.875rem;
+  --text-4xl:         2.25rem;
+  --text-5xl:         3rem;
+  --text-6xl:         4.5rem;
+  --text-7xl:         6rem;
+
+  /* Shared responsive layout tokens (mobile first). */
+  --content-max:      72rem;
+  --page-gutter:      1rem;
+  --section-space:    4rem;
+  --focus-ring:       #d8a4ff;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    /* 768px: tablet layouts gain a little more breathing room. */
+    --page-gutter:   1.5rem;
+    --section-space: 5.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    /* 1024px: desktop content remains centered and intentionally bounded. */
+    --page-gutter:   2rem;
+    --section-space: 7rem;
+  }
+}
+
+/* ================================
+   LIGHT THEME
+   ================================ */
+[data-theme="light"] {
+ /* Colores principales */
+  --color-primary:    #6C2FBF;
+  --color-accent:     #C084FC;
+
+  /* Colores para fondos */
+  --color-background: #F3EEFA;
+  --color-void:       #FFF9FF;
+  --color-secondary:  #E6D8F2;
+  --color-hover:      #D8C5E8;
+  --color-inkblack:   #C7B0DB;
+
+  /* Colores para bordes */
+  --color-border:     #BFA8D0;
+  --color-divider:    #D9CBE4;
+
+  /* Colores para textos */
+  --color-snow:       #1B1024;
+  --color-bone:       #382442;
+  --color-ghost:      #5F4870;
+  --color-muted:      #695572;
+
+  /* Colores extras */
+  --color-vodka:      #7D4DB2;
+  --color-dim:        #BFA8CE; 
+  --focus-ring:       #6C2FBF;
+}
+
+@theme {
+  --color-darkvoid: #151419;
+  /* --color-ocean:    #00171f; */
+  --color-inkblack: #00151f;
+  --color-mypurple: #BC6cFF;
+  --color-pool:     #003459;
+  --color-vodka:    #C8B3F6;
+  --color-river:    #ADEBFF;
+  --color-wildsand: #E4EEF0;
+  --color-snow:     #FBFBFB;
+  --color-ghost:     #c9b8d4;
+  --color-sea-foam: #FFFFFF;
+  --color-lava:     #F56E0F;
+
+  /* Colores principales */
+  --color-primary:    #BC6CFF;
+  --color-accent:     #D8A4FF;
+
+  /* Colores para fondos */
+  --color-background: #0b0b10;
+  --color-void:       #0b0a0d;
+  --color-secondary:  #181A20;
+  --color-hover:      #21242B;
+  --color-inkblack:   #0B0C0F;
+
+  /* Colores para bordes */
+  --color-border:     #2A2D36;
+  --color-divider:    #202229;
+
+  /* Colores para textos */
+  --color-snow:       #FBFBFB;
+  --color-bone:       #e3d7d9;
+  --color-ghost:      #B9BDC8;
+  --color-muted:      #8d7f99;
+
+  /* Colores extras (Solo usar en ocaciones muy concretas) */
+  --color-vodka:      #C8B3F6;
+  --color-dim:        #3E3347;
+  --color-hover2:     #1C1E24;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+  }
+
+  body {
+    /* @apply bg-background text-ghost */
+    background-color: var(--color-background);
+    color: var(--color-ghost);
+    position: relative;
+    min-width: 20rem;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: clip;
+    font-family: Inter, Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--color-dim) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
+
+  :focus-visible {
+    outline: 0.1875rem solid var(--focus-ring);
+    outline-offset: 0.1875rem;
+  }
+}
+
+@utility text-glow {
+  text-shadow: 0 0 28px color-mix(in oklch, var(--brand) 45%, transparent);
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
@@ -8,4 +235,38 @@
 
 .main-content {
   flex: 1;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--color-snow);
+  color: var(--color-background);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
