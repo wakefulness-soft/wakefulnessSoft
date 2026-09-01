@@ -12,9 +12,9 @@ import AboutSection from "../About/About";
 export const HomePage = () => {
   return (
     <main id="main-content" className="main-content" tabIndex={-1}>
-      <Hero3AMFocus />
+      {/* <Hero3AMFocus />
       <HeroEspresso />
-      <HeroSleepingCode />
+      <HeroSleepingCode /> */}
       <HeroMidnightTerminal />
       {/* <ServicesSection /> */}
       <AboutSection />

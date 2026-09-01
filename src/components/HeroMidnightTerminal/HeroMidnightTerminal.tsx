@@ -90,12 +90,11 @@ export const HeroMidnightTerminal = () => {
 
       <div className={s.inner}>
         <div className={s.heading}>
-          <p className={s.conceptLabel}>
-            <span>04</span> {t("heroConcepts.terminal.label")}
-          </p>
           <h2 id="terminal-hero-title" className={s.title}>
-            {t("heroConcepts.terminal.titleLine1")}
-            <em>{t("heroConcepts.terminal.titleAccent")}</em>
+            
+            {t("heroConcepts.focus.titleLine1")}
+            <em>{t("heroConcepts.focus.titleAccent")}</em>
+            {t("heroConcepts.focus.titleLine2")}
           </h2>
           <p className={s.description}>{t("heroConcepts.terminal.description")}</p>
         </div>
