@@ -249,6 +249,71 @@
         "desc": "Command-line tool to automate deployments and audit dependencies across monorepos."
       }
     }
+  },
+
+  "heroConcepts": {
+    "common": {
+      "startProject": "Start a project",
+      "exploreWork": "Explore our work",
+      "compareLabel": "Compare hero concepts"
+    },
+    "focus": {
+      "label": "3 AM Focus",
+      "eyebrow": "For ideas worth staying awake for",
+      "titleLine1": "The quietest hours create",
+      "titleAccent": "the clearest thinking.",
+      "titleLine2": "",
+      "description": "We turn ambitious ideas into resilient digital products — with curiosity, clean architecture, and craftsmanship over shortcuts.",
+      "hint": "Move your cursor. There is more in the dark."
+    },
+    "espresso": {
+      "label": "Espresso Extraction",
+      "eyebrow": "A careful process. A reliable result.",
+      "titleLine1": "Bold ideas,",
+      "titleAccent": "perfectly extracted.",
+      "description": "From the first conversation to the final deployment, every detail is measured, refined, and built to hold up under pressure.",
+      "replay": "Brew again",
+      "progressLabel": "Project preparation progress",
+      "waiting": "Good software takes a deliberate minute.",
+      "stages": {
+        "0": "Grinding the beans...",
+        "1": "Heating the water...",
+        "2": "Brewing your solution...",
+        "3": "Wakefulness Ready."
+      },
+      "stepLabels": {
+        "0": "Discover",
+        "1": "Architect",
+        "2": "Build",
+        "3": "Deliver"
+      }
+    },
+    "sleepingCode": {
+      "label": "Sleeping Code",
+      "titleLine1": "Code that",
+      "titleAccent": "doesn't sleep.",
+      "description": "Clean, living systems engineered at night and ready to create momentum by morning.",
+      "night": "Night work · deliberate craft",
+      "day": "Morning delivery · real momentum",
+      "cardLabel": "Interactive code sample. Move your pointer to tilt the card and reveal day mode."
+    },
+    "terminal": {
+      "label": "Midnight Terminal",
+      "titleLine1": "Let's build",
+      "titleAccent": "something alive.",
+      "description": "Have a problem worth solving — or just want to talk code at 2 am? The terminal is open.",
+      "prompt": "> Initialize project?",
+      "inputLabel": "Enter a terminal command",
+      "executeLabel": "Execute command",
+      "demo": "Or run the demo command",
+      "building": "Building Nebula Platform...",
+      "checking": "Checking architecture and performance...",
+      "compiling": "Compiling awake code...",
+      "success": "Success. Your idea is awake.",
+      "revealEyebrow": "Build complete · 0 errors",
+      "revealTitle": "Your next product is ready to wake up.",
+      "reset": "Run again"
+    }
   }
 }
 

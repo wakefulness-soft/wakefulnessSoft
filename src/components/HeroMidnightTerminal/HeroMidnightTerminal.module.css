@@ -1,0 +1,454 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: max(52rem, 100svh);
+  overflow: hidden;
+  padding: 7.25rem var(--page-gutter) 5rem;
+  background:
+    radial-gradient(
+      circle at 50% 58%,
+      rgb(200 179 246 / 0.08),
+      transparent 34%
+    ),
+    radial-gradient(circle at 80% 10%, rgb(188 108 255 / 0.1), transparent 29%),
+    color-mix(in srgb, var(--color-void) 25%, transparent);
+  color: var(--color-bone);
+}
+
+.scanlines {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgb(216 164 255 / 0.014) 4px
+  );
+  pointer-events: none;
+}
+
+.glow {
+  position: absolute;
+  z-index: -2;
+  top: 45%;
+  left: 50%;
+  width: min(55rem, 90vw);
+  height: 28rem;
+  border-radius: 50%;
+  background: rgb(188 108 255 / 0.075);
+  filter: blur(6rem);
+  transform: translate(-50%, -50%);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: auto;
+}
+
+.heading {
+  max-width: 47rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.conceptLabel {
+  margin: 0 0 1.15rem;
+  color: #6d7b78;
+  font:
+    600 0.68rem ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.conceptLabel span {
+  margin-right: 0.6rem;
+  color: #60d8aa;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-bone);
+  font-size: clamp(2.9rem, 6.4vw, 6rem);
+  font-weight: 650;
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+  text-wrap: balance;
+}
+
+.title em {
+  display: block;
+  color: var(--color-accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  text-shadow: 0 0 2rem rgb(216 164 255 / 0.14);
+}
+
+.description {
+  max-width: 37rem;
+  margin: 1.3rem auto 0;
+  color: var(--color-muted);
+}
+
+.terminalStage {
+  display: grid;
+  width: min(100%, 52rem);
+  min-height: 26rem;
+  margin: clamp(2.5rem, 6vh, 4rem) auto 0;
+  place-items: center;
+}
+
+.terminalWindow,
+.reveal {
+  grid-area: 1 / 1;
+  width: 100%;
+}
+
+.terminalWindow {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border: 1px solid rgb(216 164 255 / 0.2);
+  border-radius: 0.9rem;
+  background: var(--color-background);/*rgb(11 10 13 / 0.95);*/
+  box-shadow:
+    0 2.6rem 7rem rgb(0 0 0 / 0.52),
+    0 0 0 0.35rem rgb(200 179 246 / 0.025),
+    inset 0 0 5rem rgb(188 108 255 / 0.025);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 650ms ease;
+}
+
+.windowBar {
+  display: grid;
+  min-height: 2.75rem;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-inline: 0.9rem;
+  border-bottom: 1px solid rgb(251 251 251 / 0.07);
+  background: var(--color-secondary);
+  color: var(--color-muted);
+  font:
+    0.64rem ui-monospace,
+    monospace;
+}
+
+.windowDots {
+  display: flex;
+  gap: 0.38rem;
+}
+
+.windowDots i {
+  width: 0.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.windowDots i:nth-child(1) {
+  background: #ff5f57;
+}
+.windowDots i:nth-child(2) {
+  background: #febc2e;
+}
+.windowDots i:nth-child(3) {
+  background: #28c840;
+}
+
+.windowTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-muted);
+}
+
+.secure {
+  justify-self: end;
+  color: #4e8e75;
+}
+
+.terminalBody {
+  min-height: 17.5rem;
+  padding: clamp(1.15rem, 3vw, 1.7rem);
+  cursor: text;
+  font:
+    0.78rem/1.72 ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+}
+
+.systemLine {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+}
+
+.introLine {
+  display: flex;
+  min-height: 1.4rem;
+  align-items: center;
+  margin: 0 0 0.75rem;
+  color: #54ae8b;
+}
+
+.blockCursor,
+.caret {
+  display: inline-block;
+  width: 0.5rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+  background: #6ad7ae;
+  animation: cursorBlink 900ms steps(1) infinite;
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.commandForm {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  color: #a39baa;
+}
+
+.commandForm label {
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.commandForm input {
+  min-width: 0;
+  height: 2.2rem;
+  padding: 0 0.5rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-muted);
+  caret-color: transparent;
+  font: inherit;
+}
+
+.commandForm input::placeholder {
+  color: #36413e;
+}
+
+.commandForm button {
+  display: grid;
+  width: 2rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgb(216 164 255 / 0.13);
+  border-radius: 0.35rem;
+  background: rgb(188 108 255 / 0.05);
+  color: #6ed3ad;
+  cursor: pointer;
+}
+
+.commandForm button:hover {
+  background: rgb(188 108 255 / 0.12);
+}
+
+.output {
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgb(251 251 251 / 0.06);
+  color: #64716d;
+}
+
+.output p {
+  margin: 0.18rem 0;
+}
+.output p span {
+  color: #6a9e8b;
+}
+.output .successLine {
+  color: #83dfbb;
+}
+.output .successLine span {
+  color: #8df6cd;
+}
+.pendingLine {
+  animation: pending 900ms ease-in-out infinite alternate;
+}
+
+@keyframes pending {
+  to {
+    opacity: 0.45;
+  }
+}
+
+.demoButton {
+  display: flex;
+  width: 100%;
+  min-height: 3.3rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1.4rem;
+  border: 0;
+  border-top: 1px solid rgb(251 251 251 / 0.07);
+  background: rgb(188 108 255 / 0.045);
+  color: var(--color-muted);
+  font:
+    0.7rem ui-monospace,
+    monospace;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.demoButton:hover {
+  background: rgb(188 108 255 / 0.1);
+}
+
+.loadingBar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  overflow: hidden;
+  background: rgb(251 251 251 / 0.03);
+}
+
+.loadingBar i {
+  display: block;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #68d6ad, transparent);
+  animation: load 1s ease-in-out infinite;
+}
+
+@keyframes load {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+
+.reveal {
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(2rem) scale(0.96);
+  text-align: center;
+  transition:
+    opacity 550ms 220ms ease,
+    transform 650ms 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s 800ms;
+}
+
+.reveal > p {
+  margin: 0 0 0.8rem;
+  color: var(--color-ghost);
+  font:
+    650 0.68rem ui-monospace,
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.reveal h3 {
+  max-width: 39rem;
+  margin: 0 auto;
+  color: var(--color-bone);
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.reveal > div {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+}
+
+.reveal a,
+.reveal button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.reveal a {
+  background: var(--color-accent);
+  color: #07110d;
+  text-decoration: none;
+}
+
+.reveal button {
+  border: 1px solid rgb(251 251 251 / 0.13);
+  background: transparent;
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+.complete .terminalWindow {
+  z-index: 1;
+  opacity: 0.08;
+  filter: blur(5px);
+  transform: translateY(-2.5rem) scale(0.82);
+  pointer-events: none;
+}
+
+.complete .reveal {
+  z-index: 2;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 180ms;
+}
+
+@media (max-width: 47.99rem) {
+  .section {
+    min-height: 51rem;
+    padding-top: 6.5rem;
+  }
+
+  .terminalStage {
+    min-height: 25rem;
+  }
+  .windowBar {
+    grid-template-columns: 1fr auto;
+  }
+  .secure {
+    display: none;
+  }
+  .commandForm {
+    grid-template-columns: 1fr auto auto;
+  }
+  .commandForm label {
+    grid-column: 1 / -1;
+  }
+  .commandForm input {
+    padding-left: 0;
+  }
+  .terminalBody {
+    min-height: 18.5rem;
+    font-size: 0.69rem;
+  }
+  .reveal > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

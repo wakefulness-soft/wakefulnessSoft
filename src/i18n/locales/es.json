@@ -250,6 +250,71 @@
         "desc": "Herramienta de línea de comandos para automatizar deploys y auditar dependencias en monorepos."
       }
     }
+  },
+
+  "heroConcepts": {
+    "common": {
+      "startProject": "Iniciar un proyecto",
+      "exploreWork": "Explorar nuestro trabajo",
+      "compareLabel": "Comparar conceptos de hero"
+    },
+    "focus": {
+      "label": "Enfoque 3 AM",
+      "eyebrow": "Para ideas que merecen mantenernos despiertos",
+      "titleLine1": "Las horas más silenciosas crean",
+      "titleAccent": "las ideas más claras.",
+      "titleLine2": "",
+      "description": "Convertimos ideas ambiciosas en productos digitales resistentes, con curiosidad, arquitectura limpia y calidad por encima de los atajos.",
+      "hint": "Mueve el cursor. Hay más en la oscuridad."
+    },
+    "espresso": {
+      "label": "Extracción Espresso",
+      "eyebrow": "Un proceso cuidadoso. Un resultado confiable.",
+      "titleLine1": "Ideas audaces,",
+      "titleAccent": "perfectamente extraídas.",
+      "description": "Desde la primera conversación hasta el despliegue final, cada detalle se mide, se refina y se construye para resistir la presión.",
+      "replay": "Preparar otra vez",
+      "progressLabel": "Progreso de preparación del proyecto",
+      "waiting": "El buen software requiere un momento deliberado.",
+      "stages": {
+        "0": "Moliendo los granos...",
+        "1": "Calentando el agua...",
+        "2": "Preparando tu solución...",
+        "3": "Wakefulness listo."
+      },
+      "stepLabels": {
+        "0": "Descubrir",
+        "1": "Diseñar",
+        "2": "Construir",
+        "3": "Entregar"
+      }
+    },
+    "sleepingCode": {
+      "label": "Código Despierto",
+      "titleLine1": "Código que",
+      "titleAccent": "no duerme.",
+      "description": "Sistemas limpios y vivos, diseñados de noche y listos para crear impulso por la mañana.",
+      "night": "Trabajo nocturno · calidad deliberada",
+      "day": "Entrega matutina · impulso real",
+      "cardLabel": "Ejemplo de código interactivo. Mueve el cursor para inclinar la tarjeta y revelar el modo de día."
+    },
+    "terminal": {
+      "label": "Terminal de Medianoche",
+      "titleLine1": "Construyamos",
+      "titleAccent": "algo con vida.",
+      "description": "¿Tienes un problema que resolver, o solo quieres hablar de código a las 2 am? La terminal está abierta.",
+      "prompt": "> ¿Inicializar proyecto?",
+      "inputLabel": "Ingresa un comando en la terminal",
+      "executeLabel": "Ejecutar comando",
+      "demo": "O ejecuta el comando de demostración",
+      "building": "Construyendo Nebula Platform...",
+      "checking": "Revisando arquitectura y rendimiento...",
+      "compiling": "Compilando código despierto...",
+      "success": "Éxito. Tu idea está despierta.",
+      "revealEyebrow": "Compilación completa · 0 errores",
+      "revealTitle": "Tu próximo producto está listo para despertar.",
+      "reset": "Ejecutar de nuevo"
+    }
   }
 }
 
