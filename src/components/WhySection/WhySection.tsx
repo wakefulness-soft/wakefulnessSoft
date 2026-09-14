@@ -7,6 +7,7 @@ interface IPillar {
   displayId: string;
   title: string;
   content: string;
+  benefit: string;
 }
 
 export const WhySection = () => {
@@ -35,6 +36,10 @@ export const WhySection = () => {
                   <span className={s.pillarNumber}>{item.displayId}</span>
                   <h3 className={s.pillarTitle}>{item.title}</h3>
                   <p className={s.pillarContent}>{item.content}</p>
+                  <p className={s.pillarBenefit}>
+                    <span>{t("whySection.benefitLabel")}</span>
+                    {item.benefit}
+                  </p>
                 </div>
               ))}
           </div>

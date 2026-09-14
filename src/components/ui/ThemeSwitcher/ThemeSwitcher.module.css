@@ -196,3 +196,27 @@
 @media (width >= 64rem) {
     
 }
+
+.foatingComponent.embedded {
+    position: static;
+}
+
+.embedded .toggle {
+    width: 44px;
+    height: 44px;
+}
+
+.embedded .trackIcons { display: none; }
+
+.embedded .toggle label {
+    top: 4px;
+    left: 4px;
+    width: 34px;
+    height: 34px;
+    transform: none;
+}
+
+.embedded .toggleIcon {
+    width: 19px;
+    height: 19px;
+}

@@ -49,14 +49,14 @@
 }
 
 .heading {
-  max-width: 47rem;
+  max-width: 54rem;
   margin: 0 auto;
   text-align: center;
 }
 
-.conceptLabel {
+.eyebrow {
   margin: 0 0 1.15rem;
-  color: #6d7b78;
+  color: var(--color-primary);
   font:
     600 0.68rem ui-monospace,
     SFMono-Regular,
@@ -66,18 +66,13 @@
   text-transform: uppercase;
 }
 
-.conceptLabel span {
-  margin-right: 0.6rem;
-  color: #60d8aa;
-}
-
 .title {
   margin: 0;
   color: var(--color-bone);
-  font-size: clamp(2.9rem, 6.4vw, 6rem);
+  font-size: clamp(2.45rem, 6vw, 5.5rem);
   font-weight: 650;
-  line-height: 0.92;
-  letter-spacing: -0.065em;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
   text-wrap: balance;
 }
 
@@ -91,9 +86,52 @@
 }
 
 .description {
-  max-width: 37rem;
+  max-width: 46rem;
   margin: 1.3rem auto 0;
-  color: var(--color-muted);
+  color: var(--color-ghost);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  min-height: 3rem;
+  padding: 0.7rem 1.15rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.65rem;
+  font-size: var(--text-sm);
+  font-weight: 800;
+  text-decoration: none;
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.primaryAction {
+  background: var(--color-accent);
+  color: var(--color-void);
+}
+
+.secondaryAction {
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-secondary) 78%, transparent);
+  color: var(--color-bone);
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 60%, var(--color-border));
+  box-shadow: 0 0 1.75rem color-mix(in srgb, var(--color-primary) 22%, transparent);
+  transform: translateY(-0.0625rem);
 }
 
 .terminalStage {
@@ -361,7 +399,7 @@
   text-transform: uppercase;
 }
 
-.reveal h3 {
+.revealTitle {
   max-width: 39rem;
   margin: 0 auto;
   color: var(--color-bone);
@@ -428,6 +466,10 @@
   .terminalStage {
     min-height: 25rem;
   }
+  .description { font-size: var(--text-base); }
+  .actions { align-items: stretch; }
+  .primaryAction,
+  .secondaryAction { flex: 1 1 12rem; }
   .windowBar {
     grid-template-columns: 1fr auto;
   }
@@ -451,4 +493,16 @@
     flex-direction: column;
     align-items: stretch;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blockCursor,
+  .caret,
+  .pendingLine,
+  .loadingBar i { animation: none; }
+
+  .terminalWindow,
+  .reveal,
+  .primaryAction,
+  .secondaryAction { transition: none; }
 }

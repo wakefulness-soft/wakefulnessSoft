@@ -123,3 +123,31 @@
 @media (width >= 64rem) {
     
 }
+
+.switcher.embedded {
+  position: static;
+}
+
+.embedded .wisp { display: none; }
+
+.embedded .track {
+  width: 82px;
+  height: 44px;
+}
+
+.embedded .indicator {
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  transition: transform 0.3s ease;
+  transform: translateX(var(--translate-val));
+}
+
+.embedded .indicator.is-es { --translate-val: 0%; }
+.embedded .indicator.is-default { --translate-val: 100%; }
+
+.embedded .option {
+  display: block;
+  color: var(--color-muted);
+}
+
+.embedded .option.active { color: var(--color-void); }

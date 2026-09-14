@@ -6,13 +6,17 @@ const LANGS = [
   { code: "en", label: "EN" },
 ] as const;
 
-export default function LanguageSwitcher() {
+type LanguageSwitcherProps = {
+  embedded?: boolean;
+};
+
+export default function LanguageSwitcher({ embedded = false }: LanguageSwitcherProps) {
   const { i18n, t } = useTranslation();
   const current = i18n.language.startsWith("es") ? "es" : "en";
 
   return (
     <div
-      className={styles.switcher}
+      className={`${styles.switcher} ${embedded ? styles.embedded : ""}`}
       role="group"
       aria-label={t('languageSwitcher.label')}
     >

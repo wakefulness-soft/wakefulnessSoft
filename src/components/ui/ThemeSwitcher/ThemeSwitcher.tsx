@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useId } from "react";
 
 import { Moon, Sun } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -6,19 +6,24 @@ import { useTranslation } from "react-i18next";
 import s from "./ThemeSwitcher.module.css";
 import { ThemeContext } from "../../../context/ThemeContext";
 
-export const ThemeSwitcher = () => {
+type ThemeSwitcherProps = {
+  embedded?: boolean;
+};
+
+export const ThemeSwitcher = ({ embedded = false }: ThemeSwitcherProps) => {
   const { isLight, toggleTheme } = use(ThemeContext);
   const { t } = useTranslation();
+  const inputId = useId();
   const handleThemeChange = () => {
     toggleTheme();
   };
 
   return (
-    <div className={`${s.foatingComponent}`}>
+    <div className={`${s.foatingComponent} ${embedded ? s.embedded : ""}`}>
       <div className={`${s.toggle} ${isLight ? s.light : s.dark}`}>
         <input
           type="checkbox"
-          id="theme-toggle"
+          id={inputId}
           checked={isLight}
           onChange={handleThemeChange}
           aria-label={t(isLight ? "themeSwitcher.toDark" : "themeSwitcher.toLight")}
@@ -27,7 +32,7 @@ export const ThemeSwitcher = () => {
           <Sun className={s.sunIcon} aria-hidden="true" />
           <Moon className={s.moonIcon} aria-hidden="true" />
         </div>
-        <label htmlFor="theme-toggle">
+        <label htmlFor={inputId}>
           {isLight ? (
             <Sun className={s.toggleIcon} aria-hidden="true" />
           ) : (
