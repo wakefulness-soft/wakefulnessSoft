@@ -97,12 +97,12 @@ Los cambios se realizaron sobre la arquitectura existente. No se cambió el fram
 | Accesibilidad | Parcialmente cumplido | H1 único, secuencia H1/H2/H3, skip link, labels, errores accesibles, foco, teclado, objetivos táctiles y movimiento reducido. Auditoría automatizada: cero controles sin nombre, imágenes sin alt y objetivos menores de 24 px. | Falta una auditoría formal de contraste y una prueba con lector de pantalla/axe en navegadores y dispositivos reales. |
 | Responsive | Cumplido en laboratorio | 320, 375, 425, 768, 1024 y 1440 px: ancho de documento igual al viewport, sin overflow detectado; capturas completas y por sección revisadas. | Confirmar en Safari/iOS y dispositivos físicos, especialmente teclado virtual del formulario. |
 | SEO técnico | Parcialmente cumplido | Title/description bilingües, viewport, theme color, Open Graph básico, H1 y texto indexable, enlaces válidos y `robots.txt`. `lang` cambia con i18next. | Canonical, `og:url`, `og:image`, sitemap y datos estructurados requieren dominio, imagen social e identidad legal confirmados. |
-| Rendimiento | Cumplido en laboratorio local | EmailJS se carga solo al enviar; favicon reducido a 622 bytes; no hay recursos externos activos; CLS 0 y LCP de 92 a 256 ms en el recorrido local. | INP necesita interacciones representativas; repetir Lighthouse/Web Vitals en el hosting real con red y CPU limitadas. |
+| Rendimiento | Cumplido en laboratorio local | EmailJS se carga solo al enviar; el favicon reutiliza el logo de taza de 5.85 KB del navbar; no hay recursos externos activos; CLS 0 y LCP de 92 a 256 ms en el recorrido local. | INP necesita interacciones representativas; repetir Lighthouse/Web Vitals en el hosting real con red y CPU limitadas. |
 | Calidad de código | Cumplido | Lint y build pasan; el entry point apunta a `main.tsx`; no hay errores de consola en los seis viewports; no se agregaron dependencias. | El proyecto no tiene pruebas automatizadas ni script `test`. |
 
 ## Archivos modificados y creados
 
-- Configuración y documento: `.gitignore`, `package.json`, `index.html`, `public/favicon.svg`, `public/robots.txt`, `src/App.tsx`, `src/i18n/index.ts`, `src/i18n/locales/en.json` y `src/i18n/locales/es.json`.
+- Configuración y documento: `.gitignore`, `package.json`, `index.html`, `public/robots.txt`, `src/App.tsx`, `src/i18n/index.ts`, `src/i18n/locales/en.json` y `src/i18n/locales/es.json`.
 - Composición: `src/pages/Home/HomePage.tsx`, `src/pages/About/About.tsx` y `src/pages/About/About.module.css`.
 - Navegación: `src/components/Navbar/Navbar.tsx`, su CSS Module y los componentes `ThemeSwitcher` y `LanguageSwitcher` con sus CSS Modules.
 - Contenido y conversión: `HeroMidnightTerminal`, `ServicesSection`, `WhySection`, `ProjectsSection`, `CtaSection`, `Footer` y `FooterLink`, con los CSS Modules correspondientes.
@@ -133,8 +133,8 @@ Los cambios se realizaron sobre la arquitectura existente. No se cambió el fram
 
 - Metadatos base y Open Graph describen el servicio; el title y la description cambian entre español e inglés, al igual que `html[lang]`.
 - Se corrigió `/src/main.jsx` a `/src/main.tsx` y se añadió `robots.txt` sin inventar un sitemap.
-- El favicon pasó de 1,375,536 a 622 bytes. Los PNG grandes no usados permanecen en el repositorio por seguridad, pero no forman parte del bundle activo.
-- Build final: JS principal 326.63 KB/102.30 KB gzip, chunk diferido de EmailJS 3.49 KB/1.49 KB gzip y CSS 63.86 KB/13.06 KB gzip. Frente a la línea base, el contenido y los componentes nuevos aumentan modestamente JS/CSS; la integración de correo queda fuera de la carga inicial y el favicon elimina aproximadamente 1.31 MiB de transferencia potencial.
+- El favicon activo reutiliza exactamente `src/assets/logo-64.png`, la taza que aparece en el navbar, con un peso de 5.85 KB. El SVG original de 1,375,536 bytes permanece sin cambios en el repositorio, pero ya no se solicita durante la carga. Los demás PNG grandes no usados tampoco forman parte del bundle activo.
+- Build final: JS principal 326.63 KB/102.30 KB gzip, chunk diferido de EmailJS 3.49 KB/1.49 KB gzip y CSS 63.86 KB/13.06 KB gzip. Frente a la línea base, el contenido y los componentes nuevos aumentan modestamente JS/CSS; la integración de correo queda fuera de la carga inicial y reutilizar el logo ligero como favicon evita aproximadamente 1.31 MiB de transferencia potencial.
 
 ## Comandos y resultados finales
 
