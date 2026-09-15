@@ -36,10 +36,10 @@ export const ServicesSection = () => {
               <h3>{t(`services.items.${key}.name`)}</h3>
               <p className={s.description}>{t(`services.items.${key}.description`)}</p>
               <dl className={s.details}>
-                <div>
+                {/* <div>
                   <dt>{t("services.needLabel")}</dt>
                   <dd>{t(`services.items.${key}.need`)}</dd>
-                </div>
+                </div> */}
                 <div>
                   <dt>{t("services.benefitLabel")}</dt>
                   <dd>{t(`services.items.${key}.benefit`)}</dd>
@@ -53,7 +53,7 @@ export const ServicesSection = () => {
           ))}
         </div>
 
-        <p className={s.scopeNote}>{t("services.scopeNote")}</p>
+        {/* <p className={s.scopeNote}>{t("services.scopeNote")}</p> */}
       </div>
     </section>
   );

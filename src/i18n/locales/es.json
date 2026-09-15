@@ -65,8 +65,8 @@
   },
   "services": {
     "eyebrow": "En qué podemos ayudarte",
-    "headline": "Servicios de software, explicados con claridad.",
-    "intro": "Empieza por el resultado que necesitas. Te ayudamos a convertirlo en una dirección de producto clara, un alcance técnico apropiado y software que las personas realmente puedan usar.",
+    "headline": "Nuestros principales servicios.",
+    "intro": "Transformamos tus ideas en soluciones digitales claras, funcionales y sostenibles, acompañandote desde la definición de la estrategia y alcance técnico hasta el desarrollo, implementación y evolución del software que tu negocio necesita.",
     "needLabel": "Cuándo ayuda",
     "benefitLabel": "Beneficio principal",
     "action": "Consultar este servicio",
@@ -115,8 +115,8 @@
   "whySection": {
     "eyebrow": "Por qué Wakefulness",
     "headline": "Principios claros. Beneficios prácticos.",
-    "paragraph1": "La personalidad nocturna permanece, pero el trabajo parte de una idea sencilla: el buen software comienza con un problema comprendido y decisiones deliberadas.",
-    "paragraph2": "Estos principios describen cómo buscamos mantener la conversación útil para quienes dirigen el negocio y técnicamente creíble para quienes trabajarán con el software.",
+    "paragraph1": "El buen software comienza con un problema comprendido y decisiones deliberadas.",
+    "paragraph2": "Buscamos que cada decisión de producto y tecnología tenga un propósito claro y un impacto real.",
     "contactLink": "Conversemos sobre tu proyecto",
     "benefitLabel": "Beneficio para tu proyecto",
     "pillars": [
@@ -161,7 +161,7 @@
   "processSection": {
     "eyebrow": "Cómo trabajamos",
     "headline": "Un camino enfocado de la necesidad al software.",
-    "body": "La metáfora del café añade sabor; el proceso se mantiene práctico. Cada etapa reduce incertidumbre antes de la siguiente y las actividades exactas se confirman para cada proyecto.",
+    "body": "Avanzamos de forma progresiva, reduciendo incertidumbre en cada etapa para convertir una necesidad en decisiones claras y, finalmente, en software útil.",
     "ariaLabel": "Ir al paso {{stepNumber}}: {{stepName}}",
     "steps": {
       "1": {
@@ -191,9 +191,9 @@
     }
   },
   "projects": {
-    "eyebrow": "Portafolio conceptual",
-    "headline": "Ideas en espera de casos verificables.",
-    "sub": "Las tarjetas creativas originales permanecen, ahora con un estado honesto y una estructura útil para futuros casos de estudio.",
+    "eyebrow": "Nuestro trabajo",
+    "headline": "Soluciones construidas con propósito.",
+    "sub": "Proyectos que muestran cómo abordamos problemas, tomamos decisiones y construimos software que cumple una función concreta.",
     "verificationNote": "Nebula Platform, Phantom API, Drift UI y Hollow CLI se presentan como conceptos de muestra. No están identificados como proyectos de clientes, sistemas en producción ni evidencia de resultados.",
     "status": {
       "concept": "concepto — no es un caso de cliente"
@@ -260,11 +260,11 @@
   },
   "cta": {
     "eyebrow": "Contacto",
-    "headline": "Trae el problema. Encontremos la respuesta de software adecuada.",
-    "sub": "Cuéntanos qué frena al negocio, qué quieres crear o qué producto existente necesita atención. Una primera conversación útil es suficiente para comenzar.",
+    "headline": "Definir el punto de partida.",
+    "sub": "Un punto de partida claro comienza con entender tu situación real. Describe brevemente tu objetivo para trazar el camino a seguir.",
     "directLabel": "// ¿prefieres un canal directo?",
     "formTitle": "consulta_proyecto.ts",
-    "formIntro": "Comparte el contexto suficiente para recibir una primera respuesta enfocada. El formulario indica los campos obligatorios.",
+    "formIntro": "Cuéntanos qué necesitas resolver para definir juntos el siguiente paso.",
     "labels": {
       "name": "nombre",
       "email": "correo",

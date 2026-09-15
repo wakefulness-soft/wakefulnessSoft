@@ -65,8 +65,8 @@
   },
   "services": {
     "eyebrow": "What we can help with",
-    "headline": "Software services, explained without the fog.",
-    "intro": "Start with the outcome you need. We help turn it into a clear product direction, an appropriate technical scope, and software people can actually use.",
+    "headline": "Our main services.",
+    "intro": "We transform your ideas into clear, functional and sustainable digital solutions, accompanying you from the definition of the strategy and technical scope to the development, implementation and evolution of the software that your business needs.",
     "needLabel": "When it helps",
     "benefitLabel": "Main benefit",
     "action": "Discuss this service",
@@ -115,8 +115,8 @@
   "whySection": {
     "eyebrow": "Why Wakefulness",
     "headline": "Clear principles. Practical benefits.",
-    "paragraph1": "The midnight personality stays, but the work is grounded in a simple idea: good software starts with an understood problem and deliberate choices.",
-    "paragraph2": "These principles describe how we aim to keep the conversation useful for business stakeholders and technically credible for the people who will work with the software.",
+    "paragraph1": "Good software starts with an understood problem and deliberate choices.",
+    "paragraph2": "We aim for every product and technology decision to have a clear purpose and a real impact.",
     "contactLink": "Talk through your project",
     "benefitLabel": "Benefit for your project",
     "pillars": [
@@ -161,7 +161,7 @@
   "processSection": {
     "eyebrow": "How we work",
     "headline": "A focused path from need to software.",
-    "body": "The coffee metaphor adds flavor; the process stays practical. Each stage reduces uncertainty before the next one begins, and the exact activities are confirmed for the project.",
+    "body": "We move forward progressively, reducing uncertainty at each stage to transform a need into clear decisions and, ultimately, into useful software.",
     "ariaLabel": "Go to step {{stepNumber}}: {{stepName}}",
     "steps": {
       "1": {
@@ -191,9 +191,9 @@
     }
   },
   "projects": {
-    "eyebrow": "Concept portfolio",
-    "headline": "Ideas waiting for verified case studies.",
-    "sub": "The original creative project cards remain, now with an honest status and a useful case-study structure.",
+    "eyebrow": "Our work",
+    "headline": "Purpose-built solutions.",
+    "sub": "Projects that show how we approach problems, make decisions, and build software that serves a specific purpose.",
     "verificationNote": "Nebula Platform, Phantom API, Drift UI, and Hollow CLI are presented as concept placeholders. They are not identified as client projects, production systems, or proof of results.",
     "status": {
       "concept": "concept — not a client case study"
@@ -260,11 +260,11 @@
   },
   "cta": {
     "eyebrow": "Contact",
-    "headline": "Bring the problem. Let's find the right software response.",
-    "sub": "Tell us what is slowing the business down, what you want to create, or what existing product needs attention. A useful first conversation is enough to begin.",
+    "headline": "Define the starting point.",
+    "sub": "A clear starting point begins with understanding your actual situation. Briefly describe your goal to map out the path forward.",
     "directLabel": "// prefer a direct channel?",
     "formTitle": "project_inquiry.ts",
-    "formIntro": "Share enough context for a focused first reply. Required fields are marked by the form.",
+    "formIntro": "Tell us what you need to resolve so we can define the next step together.",
     "labels": {
       "name": "name",
       "email": "email",
