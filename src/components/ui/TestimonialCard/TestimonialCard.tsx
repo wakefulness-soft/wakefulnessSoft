@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, User } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import s from "./TestimonialCard.module.css";
 import type { ITestimonials } from "./../../../types/testimonial.interface";
 import { useState } from "react";
@@ -10,17 +10,16 @@ type TestimonialCarouselProps = {
 
 type TestimonialCardProps = {
   testimonial: ITestimonials;
-  moveNext: () => void;
-  movePrev: () => void;
 };
 
 export const TestimonialCarousel = ({
   testimonials,
 }: TestimonialCarouselProps) => {
-  // TestimonialCarousel handles navigation
   const [currentIdx, setCurrentIdx] = useState(0);
+  const { t } = useTranslation();
 
   const currentTestimonial = testimonials[currentIdx];
+  const canNavigate = testimonials.length > 1;
 
   const handleNext = () => {
     setCurrentIdx((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
@@ -30,45 +29,66 @@ export const TestimonialCarousel = ({
     setCurrentIdx((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
+  if (!currentTestimonial) return null;
+
   return (
-    <div>
-      <TestimonialCard
-        testimonial={currentTestimonial}
-        moveNext={handleNext}
-        movePrev={handlePrev}
-      />
+    <div className={s.carouselShell}>
+      <div className={s.windowBar} aria-hidden="true">
+        <span className={s.windowDots}>
+          <span />
+          <span />
+          <span />
+        </span>
+        <span className={s.filename}>{t("testimonials.panelLabel")}</span>
+        <span className={s.ready}>● ready</span>
+      </div>
+
+      <TestimonialCard testimonial={currentTestimonial} />
+
+      <div className={s.carouselToolbar}>
+        <span className={s.counter}>
+          {t("testimonials.counter", {
+            current: String(currentIdx + 1).padStart(2, "0"),
+            total: String(testimonials.length).padStart(2, "0"),
+          })}
+        </span>
+        <div className={s.carouselActions}>
+          <button
+            type="button"
+            onClick={handlePrev}
+            aria-label={t("testimonials.actions.previous")}
+            disabled={!canNavigate}
+          >
+            <ChevronLeft aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={handleNext}
+            aria-label={t("testimonials.actions.next")}
+            disabled={!canNavigate}
+          >
+            <ChevronRight aria-hidden="true" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
 
-const TestimonialCard = ({
-  testimonial,
-  moveNext,
-  movePrev,
-}: TestimonialCardProps) => {
-  const { t } = useTranslation();
-
+const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
     <article className={s.testimonialCard}>
-      <figure className={s.cardFigure}>
-        <div className={s.score}>
-          <User className={s.scoreIcon} />
-        </div>
-      </figure>
-      <div className={s.cardContent} aria-live="polite">
-        <time>{testimonial.date}</time>
-
-        <h3>{testimonial.name}</h3>
-
-        <p>{testimonial.content}</p>
-      </div>
-      <div className={s.carouselActions}>
-        <button type="button" onClick={movePrev} aria-label={t("testimonials.actions.previous")}>
-          <ChevronLeft aria-hidden="true" />
-        </button>
-        <button type="button" onClick={moveNext} aria-label={t("testimonials.actions.next")}>
-          <ChevronRight aria-hidden="true" />
-        </button>
+      <Quote className={s.quoteIcon} aria-hidden="true" />
+      <div className={s.cardContent} aria-live="polite" aria-atomic="true">
+        <blockquote>
+          <p>{testimonial.content}</p>
+        </blockquote>
+        <footer className={s.attribution}>
+          <strong>{testimonial.name}</strong>
+          {testimonial.date ? (
+            <time dateTime={testimonial.date}>{testimonial.date}</time>
+          ) : null}
+        </footer>
       </div>
     </article>
   );

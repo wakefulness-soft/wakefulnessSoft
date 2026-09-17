@@ -92,12 +92,12 @@ Los cambios se realizaron sobre la arquitectura existente. No se cambió el fram
 | Formulario | Cumplido para el estado actual | Cuatro campos obligatorios, labels visibles, errores vinculados, foco al primer error, carga, éxito/error reales y estado no configurado. Sin credenciales, conserva los datos y declara que no se envió nada. | Configurar las tres variables de EmailJS o sustituirlo por un endpoint propio para habilitar envío real. |
 | Principios y proceso | Cumplido | Cada principio separa explicación y beneficio; el proceso usa seis etapas comprensibles y evita garantizar prácticas no confirmadas. | Sustituir texto general por evidencia operativa cuando el equipo la documente. |
 | Proyectos | Cumplido con contenido pendiente | Nebula, Phantom API, Drift UI y Hollow CLI se muestran explícitamente como conceptos, no como casos de cliente; se retiraron estados, enlaces, resultados y stacks no verificables. | Se necesitan fichas autorizadas para convertirlos o reemplazarlos por casos reales. |
-| Testimonios | Cumplido para la evidencia disponible | El carrusel no verificable se retiró de la landing activa y se reemplazó por capacidades demostrables en este repositorio. | Publicar testimonios solo con texto, atribución, empresa y autorización confirmados. |
-| Credibilidad técnica | Cumplido con alcance acotado | `CapabilitiesSection` diferencia el beneficio comprensible de la evidencia técnica visible: React/TypeScript, CSS Modules/Vite, i18n, responsive, teclado, lint y build. | APIs, bases de datos, seguridad, despliegue, pruebas y otros lenguajes quedan expresamente sujetos a evidencia del equipo. |
+| Testimonios | Parcialmente cumplido | Por solicitud posterior, `TestimonialSection` vuelve a la landing con el contenido original, ahora dentro de un carrusel responsive y accesible coherente con el nuevo diseño. | Confirmar documentalmente la atribución y autorización de las cinco reseñas antes de producción. |
+| Credibilidad técnica | Parcialmente cumplido | Los principios y servicios mantienen detalle técnico secundario, pero `CapabilitiesSection` ya no forma parte del recorrido activo. | Decidir si la credibilidad técnica necesita otra ubicación y publicar solo capacidades respaldadas por evidencia del equipo. |
 | Accesibilidad | Parcialmente cumplido | H1 único, secuencia H1/H2/H3, skip link, labels, errores accesibles, foco, teclado, objetivos táctiles y movimiento reducido. Auditoría automatizada: cero controles sin nombre, imágenes sin alt y objetivos menores de 24 px. | Falta una auditoría formal de contraste y una prueba con lector de pantalla/axe en navegadores y dispositivos reales. |
 | Responsive | Cumplido en laboratorio | 320, 375, 425, 768, 1024 y 1440 px: ancho de documento igual al viewport, sin overflow detectado; capturas completas y por sección revisadas. | Confirmar en Safari/iOS y dispositivos físicos, especialmente teclado virtual del formulario. |
 | SEO técnico | Parcialmente cumplido | Title/description bilingües, viewport, theme color, Open Graph básico, H1 y texto indexable, enlaces válidos y `robots.txt`. `lang` cambia con i18next. | Canonical, `og:url`, `og:image`, sitemap y datos estructurados requieren dominio, imagen social e identidad legal confirmados. |
-| Rendimiento | Cumplido en laboratorio local | EmailJS se carga solo al enviar; el favicon reutiliza el logo de taza de 5.85 KB del navbar; no hay recursos externos activos; CLS 0 y LCP de 92 a 256 ms en el recorrido local. | INP necesita interacciones representativas; repetir Lighthouse/Web Vitals en el hosting real con red y CPU limitadas. |
+| Rendimiento | Cumplido en laboratorio local | EmailJS se carga solo al enviar; el favicon reutiliza el logo de taza de 5.85 KB del navbar; no hay recursos externos activos; CLS 0 y LCP de 156 a 964 ms en la última ejecución local. | INP necesita interacciones representativas; repetir Lighthouse/Web Vitals en el hosting real con red y CPU limitadas. |
 | Calidad de código | Cumplido | Lint y build pasan; el entry point apunta a `main.tsx`; no hay errores de consola en los seis viewports; no se agregaron dependencias. | El proyecto no tiene pruebas automatizadas ni script `test`. |
 
 ## Archivos modificados y creados
@@ -109,14 +109,14 @@ Los cambios se realizaron sobre la arquitectura existente. No se cambió el fram
 - Nuevos componentes: `src/components/CapabilitiesSection/CapabilitiesSection.tsx`, `src/components/CapabilitiesSection/CapabilitiesSection.module.css` y `src/components/ServicesSection/ServicesSection.module.css`.
 - Auditoría: `scripts/ui-audit.mjs` y este informe. Los resultados y capturas se generan en `.artifacts/ui-audit` y están excluidos de Git.
 
-`ProcessSection` se conservó estructuralmente y se mejoró mediante el contenido bilingüe. `TestimonialSection` y sus piezas siguen disponibles en el código para una futura fuente verificada, pero ya no se montan en `HomePage`.
+`ProcessSection` se conservó estructuralmente y se mejoró mediante el contenido bilingüe. `TestimonialSection` vuelve a montarse en `HomePage`; su carrusel fue adaptado al lenguaje visual actual. `CapabilitiesSection` permanece disponible en el código, pero ya no se monta.
 
 ## Cambios por área
 
 ### Contenido, UX y conversión
 
 - Se convirtió la promesa conceptual del hero en una explicación inmediata de qué construye la empresa y para qué sirve, conservando la terminal interactiva.
-- Se agregó el recorrido `Hero → Servicios → Nosotros → Principios → Proceso → Conceptos → Capacidades → Contacto`.
+- Se agregó el recorrido `Hero → Servicios → Nosotros → Principios → Proceso → Conceptos → Testimonios → Contacto`.
 - Los principios muestran el beneficio para el proyecto y los conceptos declaran sus límites de evidencia.
 - Se unificó la acción principal en iniciar/hablar sobre un proyecto. El correo confirmado y la organización de GitHub son los únicos destinos externos publicados; se retiraron teléfono y perfiles de marcador.
 - El formulario ya no simula éxito. EmailJS se importa dinámicamente solo después de validar y únicamente si existen service ID, template ID y public key.
@@ -134,21 +134,21 @@ Los cambios se realizaron sobre la arquitectura existente. No se cambió el fram
 - Metadatos base y Open Graph describen el servicio; el title y la description cambian entre español e inglés, al igual que `html[lang]`.
 - Se corrigió `/src/main.jsx` a `/src/main.tsx` y se añadió `robots.txt` sin inventar un sitemap.
 - El favicon activo reutiliza exactamente `src/assets/logo-64.png`, la taza que aparece en el navbar, con un peso de 5.85 KB. El SVG original de 1,375,536 bytes permanece sin cambios en el repositorio, pero ya no se solicita durante la carga. Los demás PNG grandes no usados tampoco forman parte del bundle activo.
-- Build final: JS principal 326.63 KB/102.30 KB gzip, chunk diferido de EmailJS 3.49 KB/1.49 KB gzip y CSS 63.86 KB/13.06 KB gzip. Frente a la línea base, el contenido y los componentes nuevos aumentan modestamente JS/CSS; la integración de correo queda fuera de la carga inicial y reutilizar el logo ligero como favicon evita aproximadamente 1.31 MiB de transferencia potencial.
+- Build final: JS principal 329.70 KB/103.25 KB gzip, chunk diferido de EmailJS 3.49 KB/1.49 KB gzip y CSS 66.07 KB/13.50 KB gzip. Frente a la línea base, el contenido y los componentes nuevos aumentan modestamente JS/CSS; la integración de correo queda fuera de la carga inicial y reutilizar el logo ligero como favicon evita aproximadamente 1.31 MiB de transferencia potencial.
 
 ## Comandos y resultados finales
 
 - `npm ls --depth=0`: stack instalado inspeccionado; se observaron dependencias transitivas `extraneous` ya presentes en `node_modules`.
 - `npm run lint`: aprobado, 0 errores.
-- `npm run build`: aprobado con Vite 8.0.16; 1,878 módulos transformados en la ejecución final.
+- `npm run build`: aprobado con Vite 8.0.16; 1,880 módulos transformados en la ejecución final.
 - `npm run preview -- --host 127.0.0.1 --port 4173`: build de producción servido para inspección.
 - `npm run audit:ui`: auditor CDP/Edge aprobado en 320, 375, 425, 768, 1024 y 1440 px.
 - `git diff --check`: aprobado; solo se informan advertencias de normalización LF/CRLF en Windows, sin errores de whitespace.
 - Pruebas automatizadas: no ejecutadas porque `package.json` no contiene script `test` y no se localizaron archivos de prueba.
 
-El auditor de navegador registró en todos los anchos: un H1, cero overflow horizontal, cero anclas internas rotas, cero controles sin label/nombre, cero imágenes sin alt, cero objetivos interactivos menores de 24 px y cero errores de consola. En 375 px también verificó el menú y retorno de foco, el cambio de idioma/tema, cuatro errores del formulario vacío y el estado honesto del formulario no configurado conservando el mensaje.
+El auditor de navegador registró en todos los anchos: un H1, cero overflow horizontal, cero anclas internas rotas, cero controles sin label/nombre, cero imágenes sin alt, cero objetivos interactivos menores de 24 px y cero errores de consola. En 375 px también verificó el menú y retorno de foco, el cambio de idioma/tema, el avance funcional del carrusel de `01 de 05` a `02 de 05`, cuatro errores del formulario vacío y el estado honesto del formulario no configurado conservando el mensaje.
 
-Medición local sin throttling: FCP/LCP entre 92 y 256 ms, CLS 0, transferencia total entre 121,862 y 122,784 bytes, scripts 101,546 bytes, CSS 13,376 bytes e imágenes 6,158 bytes. Estos son datos de laboratorio local, no garantías de producción. INP no se reporta porque necesita una secuencia representativa de interacciones. Lighthouse no está instalado en el proyecto, por lo que se utilizó CDP y `PerformanceObserver` sin añadir dependencias.
+Medición local sin throttling: FCP/LCP entre 156 y 964 ms, CLS 0, transferencia total entre 123,216 y 129,374 bytes, scripts 102,465 bytes, CSS 13,784 bytes e imágenes 6,158 bytes. Estos son datos de laboratorio local, no garantías de producción. INP no se reporta porque necesita una secuencia representativa de interacciones. Lighthouse no está instalado en el proyecto, por lo que se utilizó CDP y `PerformanceObserver` sin añadir dependencias.
 
 ## Decisiones pendientes del propietario
 
@@ -158,7 +158,7 @@ Medición local sin throttling: FCP/LCP entre 92 y 256 ms, CLS 0, transferencia 
 4. Decidir entre configurar EmailJS existente o implementar posteriormente un endpoint propio; mientras tanto el correo directo es la conversión real.
 5. Entregar casos de estudio verificables: tipo, problema, solución, capacidades, tecnologías autorizadas, estado, enlaces y resultados demostrables.
 6. Confirmar si los cuatro conceptos actuales deben conservarse, desarrollarse o reemplazarse.
-7. Proporcionar testimonios autorizados y verificables antes de volver a montar el carrusel.
+7. Confirmar la procedencia, atribución y autorización de los cinco testimonios restaurados antes de producción.
 8. Documentar capacidades operativas reales de backend, datos, arquitectura, pruebas, seguridad, CI/CD, despliegue y mantenimiento antes de publicarlas.
 
 ## Recomendaciones para la siguiente iteración

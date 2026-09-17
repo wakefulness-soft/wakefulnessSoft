@@ -301,18 +301,40 @@
     }
   },
   "testimonials": {
-    "eyebrow": "References",
-    "headline": "Verified testimonials will appear here.",
-    "sub": "No customer quote is published without owner confirmation and permission.",
+    "eyebrow": "Testimonials",
+    "headline": "What they say about us.",
+    "sub": "Our work speaks for us even when we are not in the room.",
+    "panelLabel": "client-feedback.log",
+    "counter": "{{current}} of {{total}}",
     "actions": {
-      "previous": "Previous reference",
-      "next": "Next reference"
+      "previous": "Previous testimonial",
+      "next": "Next testimonial"
     },
     "slides": [
       {
-        "name": "Verification pending",
-        "date": "",
-        "content": "This reserved space is not a customer testimonial."
+        "name": "Elena Rodríguez",
+        "date": "2026-08-19",
+        "content": "Hiring Wakefulness Soft was the best decision. They understood our SaaS needed solid architecture. Clean code that maintenance teams love."
+      },
+      {
+        "name": "Miguel Ángel Torres",
+        "date": "2026-08-21",
+        "content": "The Phantom API is incredibly fast and stable. Rate limiting and smart cache exceeded expectations. Specialists in building strong foundations."
+      },
+      {
+        "name": "Sofía Méndez",
+        "date": "2026-08-23",
+        "content": "We value their craftsmanship over shortcuts. They delivered the Drift UI component system, accessible and without unnecessary dependencies."
+      },
+      {
+        "name": "Carlos Vega",
+        "date": "2026-08-25",
+        "content": "Smooth collaboration from requirements to deployment. Hollow CLI saved hours of automation. Developers prioritizing predictable execution are refreshing."
+      },
+      {
+        "name": "Ana Belén Cruz",
+        "date": "2026-08-27",
+        "content": "Attention to detail in every commit is impressive. They understood our scalability and performance needs from day one."
       }
     ]
   },

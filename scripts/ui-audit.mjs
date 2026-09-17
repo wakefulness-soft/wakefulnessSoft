@@ -284,7 +284,7 @@ async function run() {
     writeFileSync(join(outputDirectory, `${width}.png`), Buffer.from(screenshot.data, "base64"));
 
     const captureSections = width === 375 || width === 1440
-      ? ["top", "services", "us", "why", "process", "projects", "capabilities", "contact"]
+      ? ["top", "services", "us", "why", "process", "projects", "testimonial", "contact"]
       : ["top"];
     for (const sectionId of captureSections) {
         await client.send("Runtime.evaluate", {
@@ -366,6 +366,22 @@ async function run() {
         returnByValue: true,
       });
 
+      const testimonialBefore = await client.send("Runtime.evaluate", {
+        expression: `document.querySelector('#testimonial blockquote p')?.textContent.trim() ?? ''`,
+        returnByValue: true,
+      });
+      await client.send("Runtime.evaluate", {
+        expression: `document.querySelectorAll('#testimonial button')[1]?.click()`,
+      });
+      await delay(100);
+      const testimonialAfter = await client.send("Runtime.evaluate", {
+        expression: `(() => ({
+          content: document.querySelector('#testimonial blockquote p')?.textContent.trim() ?? '',
+          counter: document.querySelector('#testimonial article + div span')?.textContent.trim() ?? '',
+        }))()`,
+        returnByValue: true,
+      });
+
       await client.send("Runtime.evaluate", {
         expression: `document.querySelector('#contact button[type="submit"]')?.click()`,
       });
@@ -408,6 +424,10 @@ async function run() {
         menuOpen: menuOpen.result.value,
         preferenceState: preferenceState.result.value,
         menuClosed: menuClosed.result.value,
+        testimonialCarousel: {
+          changed: testimonialBefore.result.value !== testimonialAfter.result.value.content,
+          counter: testimonialAfter.result.value.counter,
+        },
         emptyForm: emptyForm.result.value,
         unconfiguredForm: configuredForm.result.value,
         preferenceActionCompleted: preferences.result.value,

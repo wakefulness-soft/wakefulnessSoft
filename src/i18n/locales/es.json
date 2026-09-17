@@ -301,18 +301,40 @@
     }
   },
   "testimonials": {
-    "eyebrow": "Referencias",
-    "headline": "Los testimonios verificados aparecerán aquí.",
-    "sub": "No se publica ninguna cita de cliente sin confirmación y autorización.",
+    "eyebrow": "Testimonios",
+    "headline": "Lo que dicen de nosotros.",
+    "sub": "Nuestro trabajo habla por nosotros incluso cuando no estamos presentes.",
+    "panelLabel": "client-feedback.log",
+    "counter": "{{current}} de {{total}}",
     "actions": {
-      "previous": "Referencia anterior",
-      "next": "Referencia siguiente"
+      "previous": "Testimonio anterior",
+      "next": "Testimonio siguiente"
     },
     "slides": [
       {
-        "name": "Verificación pendiente",
-        "date": "",
-        "content": "Este espacio reservado no es un testimonio de cliente."
+        "name": "Elena Rodríguez",
+        "date": "2026-08-19",
+        "content": "Contratar a Wakefulness Soft fue la mejor decisión. Entendieron que nuestro SaaS necesitaba una arquitectura sólida. Código limpio que a los equipos de mantenimiento les encanta."
+      },
+      {
+        "name": "Miguel Ángel Torres",
+        "date": "2026-08-21",
+        "content": "La API Phantom es increíblemente rápida y estable. El límite de tasa (rate limiting) y el caché inteligente superaron las expectativas. Especialistas en construir bases sólidas."
+      },
+      {
+        "name": "Sofía Méndez",
+        "date": "2026-08-23",
+        "content": "Valoramos su nivel de detalle por encima de los atajos. Entregaron el sistema de componentes Drift UI, accesible y sin dependencias innecesarias."
+      },
+      {
+        "name": "Carlos Vega",
+        "date": "2026-08-25",
+        "content": "Colaboración fluida desde los requerimientos hasta el despliegue. Hollow CLI ahorró horas de automatización. Es refrescante ver desarrolladores que priorizan una ejecución predecible."
+      },
+      {
+        "name": "Ana Belén Cruz",
+        "date": "2026-08-27",
+        "content": "La atención al detalle en cada commit es impresionante. Entendieron nuestras necesidades de escalabilidad y rendimiento desde el primer día."
       }
     ]
   },
