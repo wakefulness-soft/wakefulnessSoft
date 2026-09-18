@@ -235,6 +235,8 @@
       }
     }
   },
+
+
   "capabilities": {
     "eyebrow": "Credibilidad técnica",
     "headline": "Útil hoy. Más fácil de evolucionar mañana.",
@@ -258,6 +260,8 @@
     },
     "disclosure": "Las afirmaciones sobre APIs, bases de datos, pruebas automatizadas, despliegue, seguridad y lenguajes adicionales deben añadirse solo cuando el propietario confirme evidencia operativa real."
   },
+
+
   "cta": {
     "eyebrow": "Contacto",
     "headline": "Definir el punto de partida.",
