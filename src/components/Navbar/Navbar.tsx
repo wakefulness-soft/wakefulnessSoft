@@ -2,13 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import logo64 from "../../assets/logo-64.png";
 import logo128 from "../../assets/logo-128.png";
+import LanguageSwitcher from "../ui/LanguageSwitcher/LanguageSwitcher";
+import { ThemeSwitcher } from "../ui/ThemeSwitcher/ThemeSwitcher";
 import styles from "./Navbar.module.css";
 
 const linkKeys = [
   { key: "home", href: "#top" },
+  { key: "services", href: "#services" },
   { key: "about", href: "#us" },
   { key: "projects", href: "#projects" },
-  { key: "contact", href: "#contact" },
 ] as const;
 
 const mobileMenuId = "primary-mobile-menu";
@@ -129,6 +131,11 @@ export default function Navbar() {
 
         <a href="#contact" className={styles.ctaButton}>{t("navbar.cta")}</a>
 
+        <div className={styles.desktopPreferences}>
+          <ThemeSwitcher embedded />
+          <LanguageSwitcher embedded />
+        </div>
+
         <button
           ref={toggleRef}
           type="button"
@@ -182,6 +189,10 @@ export default function Navbar() {
               </ul>
             </nav>
 
+            <div className={styles.mobilePreferences}>
+              <ThemeSwitcher embedded />
+              <LanguageSwitcher embedded />
+            </div>
             <a href="#contact" onClick={closeMenu} className={styles.mobileCta}>{t("navbar.cta")}</a>
           </div>
         </div>

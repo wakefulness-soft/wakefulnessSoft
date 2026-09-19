@@ -122,6 +122,13 @@
   gap: 1.25rem;
 }
 
+.formIntro {
+  margin: 0;
+  color: var(--color-ghost);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+
 .row {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -170,6 +177,19 @@
 .select:focus {
   border-color: color-mix(in srgb, var(--color-ghost) 65%, transparent);
   box-shadow: 0 0 0 0.1875rem color-mix(in srgb, var(--color-primary) 14%, transparent);
+}
+
+.input[aria-invalid="true"],
+.textarea[aria-invalid="true"],
+.select[aria-invalid="true"] {
+  border-color: #ff7770;
+}
+
+.fieldError {
+  margin: 0;
+  color: #ff8d87;
+  font-size: var(--text-xs);
+  line-height: 1.5;
 }
 
 .textarea {
@@ -242,6 +262,24 @@
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
   font-size: var(--text-xs);
   text-align: center;
+}
+
+.statusArea {
+  min-height: 1.5rem;
+  text-align: center;
+}
+
+.statusArea p { margin: 0; }
+
+.statusArea a {
+  color: inherit;
+  font-weight: 750;
+}
+
+.success {
+  color: #77df91;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: var(--text-sm);
 }
 
 .blink { animation: blink 900ms step-end infinite; }

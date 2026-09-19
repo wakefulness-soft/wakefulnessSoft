@@ -1,131 +1,174 @@
-.testimonialCard {
-  position: relative;
-  display: flex;
-  width: 100%;
-  max-width: 52rem;
-  margin: 2rem auto 0;
-  padding: 0 1.25rem 1rem;
-  flex-direction: column;
-  align-items: center;
+.carouselShell {
+  overflow: hidden;
   border: 1px solid var(--color-border);
   border-radius: 1rem;
-  background: var(--color-secondary);
+  background: color-mix(in srgb, var(--color-secondary) 88%, var(--color-void));
+  box-shadow: 0 1.5rem 4rem -2.5rem color-mix(in srgb, var(--color-primary) 35%, transparent);
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.carouselShell:focus-within,
+.carouselShell:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+  box-shadow: 0 1.75rem 4.5rem -2.25rem color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+.windowBar {
+  display: grid;
+  min-height: 2.8rem;
+  padding: 0.65rem 0.9rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-void) 72%, var(--color-secondary));
   color: var(--color-muted);
-  transition: border-color 250ms ease, box-shadow 250ms ease;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: var(--text-xs);
 }
 
-.testimonialCard:hover,
-.testimonialCard:focus-within {
-  border-color: var(--color-dim);
-  box-shadow: 0 0 2.5rem -0.5rem color-mix(in srgb, var(--color-ghost) 20%, transparent);
+.windowDots {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
-.cardFigure {
-  position: relative;
-  top: -2rem;
-  display: grid;
-  width: 6rem;
-  height: 6rem;
-  margin: 0 0 -1.25rem;
+.windowDots span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.windowDots span:nth-child(2) { background: #febc2e; }
+.windowDots span:nth-child(3) { background: #28c840; }
+
+.filename {
   overflow: hidden;
-  place-items: center;
-  border-radius: 1rem;
-  background: var(--color-hover);
-  box-shadow: 0 0 1.25rem -0.5rem color-mix(in srgb, var(--color-ghost) 20%, transparent);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.score {
+.ready {
+  color: #62d6a9;
+  white-space: nowrap;
+}
+
+.testimonialCard {
+  position: relative;
   display: grid;
-  width: 100%;
-  height: 100%;
-  place-items: center;
+  min-height: 19rem;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  align-content: center;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 7%, transparent), transparent 58%);
 }
 
-.scoreIcon {
-  width: var(--text-5xl);
-  height: var(--text-5xl);
+.quoteIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-primary);
+  opacity: 0.9;
 }
 
 .cardContent {
-  width: 100%;
   min-width: 0;
-  padding: 1rem 0 1.5rem;
-  text-align: left;
 }
 
-.cardContent time {
-  font-size: var(--text-sm);
-  font-weight: 500;
-}
-
-.cardContent h3 {
-  margin: 0.35rem 0 0.75rem;
-  color: var(--color-bone);
-  font-size: var(--text-xl);
-  font-weight: 650;
-  letter-spacing: 0.02em;
-  line-height: 1.25;
-}
-
-.cardContent p {
+.cardContent blockquote {
   margin: 0;
-  font-size: var(--text-base);
-  line-height: 1.65;
+}
+
+.cardContent blockquote p {
+  margin: 0;
+  color: var(--color-bone);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.attribution {
+  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 1rem;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: var(--text-sm);
+}
+
+.attribution strong {
+  color: var(--color-ghost);
+  font-weight: 650;
+}
+
+.attribution time {
+  color: var(--color-muted);
+}
+
+.carouselToolbar {
+  display: flex;
+  min-height: 4.5rem;
+  padding: 0.7rem 0.9rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-void) 45%, var(--color-secondary));
+}
+
+.counter {
+  color: var(--color-muted);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
 }
 
 .carouselActions {
   display: flex;
-  margin-top: auto;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  gap: 0.65rem;
 }
 
 .carouselActions button {
-  display: inline-flex;
+  display: inline-grid;
   width: 2.75rem;
   height: 2.75rem;
-  align-items: center;
-  justify-content: center;
+  padding: 0;
+  place-items: center;
   border: 1px solid var(--color-border);
-  border-radius: 50%;
+  border-radius: 0.7rem;
   background: var(--color-void);
   color: var(--color-bone);
   cursor: pointer;
-  transition: background-color 180ms ease, box-shadow 180ms ease;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
 }
 
-.carouselActions button:hover {
+.carouselActions button:hover:not(:disabled) {
+  border-color: var(--color-primary);
   background: var(--color-hover);
-  box-shadow: 0 0 1.25rem color-mix(in srgb, var(--color-primary) 25%, transparent);
+  transform: translateY(-1px);
 }
 
-@media (min-width: 48rem) {
-  .testimonialCard {
-    min-height: 18rem;
-    margin-top: 0;
-    padding: 2rem 2rem 2rem 10rem;
-    align-items: flex-start;
-  }
+.carouselActions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
 
-  .cardFigure {
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    width: 8rem;
-    height: 8rem;
-    margin: 0;
-    transform: translateY(-50%);
-  }
+.carouselActions svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
 
-  .cardContent { padding: 0 0 1.5rem; }
-
-  .cardContent h3 { font-size: var(--text-2xl); }
-
-  .carouselActions { justify-content: flex-start; }
+@media (max-width: 30rem) {
+  .ready { display: none; }
+  .windowBar { grid-template-columns: auto minmax(0, 1fr); }
+  .testimonialCard { min-height: 22rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .testimonialCard,
+  .carouselShell,
   .carouselActions button { transition: none; }
 }

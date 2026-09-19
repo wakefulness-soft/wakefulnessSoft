@@ -5,7 +5,7 @@ import s from "./HeroMidnightTerminal.module.css";
 
 type TerminalStatus = "idle" | "typing" | "running" | "success";
 
-const DEMO_COMMAND = "run --project";
+const DEMO_COMMAND = "plan --project";
 
 export const HeroMidnightTerminal = () => {
   const { t } = useTranslation();
@@ -81,7 +81,7 @@ export const HeroMidnightTerminal = () => {
 
   return (
     <section
-      id="terminal-hero"
+      id="top"
       className={s.section}
       aria-labelledby="terminal-hero-title"
     >
@@ -90,13 +90,21 @@ export const HeroMidnightTerminal = () => {
 
       <div className={s.inner}>
         <div className={s.heading}>
-          <h2 id="terminal-hero-title" className={s.title}>
-            
-            {t("heroConcepts.focus.titleLine1")}
-            <em>{t("heroConcepts.focus.titleAccent")}</em>
-            {t("heroConcepts.focus.titleLine2")}
-          </h2>
-          <p className={s.description}>{t("heroConcepts.terminal.description")}</p>
+          <p className={s.eyebrow}>{t("hero.eyebrow")}</p>
+          <h1 id="terminal-hero-title" className={s.title}>
+            {t("hero.titleLine1")}{" "}
+            <em>{t("hero.titleAccent")}</em>
+          </h1>
+          <p className={s.description}>{t("hero.description")}</p>
+          <div className={s.actions}>
+            <a className={s.primaryAction} href="#contact">
+              {t("hero.actions.startProject")}
+              <ArrowRight size={17} aria-hidden="true" />
+            </a>
+            <a className={s.secondaryAction} href="#services">
+              {t("hero.actions.exploreServices")}
+            </a>
+          </div>
         </div>
 
         <div className={`${s.terminalStage} ${status === "success" ? s.complete : ""}`}>
@@ -104,13 +112,13 @@ export const HeroMidnightTerminal = () => {
             <div className={s.windowBar}>
               <span className={s.windowDots}><i /><i /><i /></span>
               <span className={s.windowTitle}>
-                <Terminal size={14} aria-hidden="true" /> wakefulness — zsh
+                <Terminal size={14} aria-hidden="true" /> wakefulness — discovery
               </span>
-              <span className={s.secure}>● secure</span>
+              <span className={s.secure}>● ready</span>
             </div>
 
             <div className={s.terminalBody} onClick={() => inputRef.current?.focus()}>
-              <p className={s.systemLine}>Wakefulness OS v3.0.0 · GDL · 02:14:07</p>
+              <p className={s.systemLine}>{t("heroConcepts.terminal.systemLine")}</p>
               <p className={s.introLine}>
                 <span>{intro}</span>
                 {intro.length < introText.length && <i className={s.blockCursor} />}
@@ -140,7 +148,7 @@ export const HeroMidnightTerminal = () => {
                   <p><span>›</span> {t("heroConcepts.terminal.building")}</p>
                   <p><span>›</span> {t("heroConcepts.terminal.checking")}</p>
                   <p className={status === "success" ? s.successLine : s.pendingLine}>
-                    <span>{status === "success" ? "✓" : "◌"}</span>{" "}
+                    <span>{status === "success" ? "✓" : "○"}</span>{" "}
                     {status === "success"
                       ? t("heroConcepts.terminal.success")
                       : t("heroConcepts.terminal.compiling")}
@@ -160,10 +168,10 @@ export const HeroMidnightTerminal = () => {
 
           <div className={s.reveal} aria-hidden={status !== "success"}>
             <p>{t("heroConcepts.terminal.revealEyebrow")}</p>
-            <h3>{t("heroConcepts.terminal.revealTitle")}</h3>
+            <p className={s.revealTitle}>{t("heroConcepts.terminal.revealTitle")}</p>
             <div>
-              <a href="#projects">
-                {t("heroConcepts.common.exploreWork")}
+              <a href="#contact">
+                {t("hero.actions.startProject")}
                 <ArrowRight size={17} aria-hidden="true" />
               </a>
               <button type="button" onClick={reset}>

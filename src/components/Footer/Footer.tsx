@@ -7,15 +7,14 @@ import styles from "./Footer.module.css";
 
 const navLinkKeys = [
   { key: "home", href: "#top" },
+  { key: "services", href: "#services" },
   { key: "about", href: "#us" },
   { key: "projects", href: "#projects" },
   { key: "contact", href: "#contact" },
 ] as const;
 
 const socials: Array<ILink> = [
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "LinkedIn", href: "https://linkedin.com/" },
-  { label: "X", href: "https://x.com/" },
+  { label: "GitHub", href: "https://github.com/wakefulness-soft" },
 ];
 
 const serviceKeys = ["web", "mobile", "consulting", "support"] as const;
@@ -119,8 +118,9 @@ export default function Footer() {
         <div>
           <h3 className={styles.sectionTitle}>{t('footer.sections.contact')}</h3>
           <ul className={styles.contactList}>
-            <li>hello@wakefulnesssoft.com</li>
-            <li>+52 33 0000 0000</li>
+            <li>
+              <a href="mailto:wakefulnesssoft@gmail.com">wakefulnesssoft@gmail.com</a>
+            </li>
             <li>{t('footer.contactInfo.location')}</li>
           </ul>
         </div>

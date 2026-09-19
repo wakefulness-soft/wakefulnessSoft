@@ -13,8 +13,12 @@ i18n
       en: { translation: enTranslation },
       es: { translation: esTranslation },
     },
-    lng: 'en', // Idioma inicial predeterminado
+    supportedLngs: ['en', 'es'],
     fallbackLng: 'en',
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+    },
     interpolation: {
       escapeValue: false,
     },

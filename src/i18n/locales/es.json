@@ -1,39 +1,44 @@
 {
+  "meta": {
+    "title": "Wakefulness Soft | Software creado con ideas claras",
+    "description": "Wakefulness Soft diseña y desarrolla aplicaciones web, apps móviles y soluciones de software a la medida de necesidades reales de negocio."
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal"
+  },
   "navbar": {
     "links": {
       "home": "Inicio",
       "services": "Servicios",
-      "projects": "Proyectos",
+      "projects": "Conceptos",
       "about": "Nosotros",
       "contact": "Contacto"
     },
-    "cta": "Hablemos",
+    "cta": "Iniciar un proyecto",
     "menu": {
       "open": "Abrir menú",
       "close": "Cerrar menú"
     }
   },
-
-
   "footer": {
-    "brandDescription": "Construimos software mientras el resto del mundo duerme: código despierto, ideas cafeinadas.",
+    "brandDescription": "Ideas claras para software útil, con un poco de enfoque nocturno y mucho menos ruido.",
     "sections": {
       "navigation": "Navegación",
       "services": "Servicios",
       "contact": "Contacto"
     },
     "services": {
-      "web": "Desarrollo Web",
-      "mobile": "Aplicaciones Móviles",
-      "consulting": "Consultoría Técnica",
-      "support": "Mantenimiento y Soporte"
+      "web": "Desarrollo de aplicaciones web",
+      "mobile": "Desarrollo de aplicaciones móviles",
+      "consulting": "Consultoría técnica",
+      "support": "Mantenimiento y soporte"
     },
     "contactInfo": {
       "location": "Guadalajara, Jalisco, México"
     },
     "bottom": {
       "copyright": "© {{year}} Wakefulness Soft. Todos los derechos reservados.",
-      "madeWith": "Hecho con ☕ y líneas de código a medianoche."
+      "madeWith": "Hecho con ☕ y líneas de código enfocadas."
     }
   },
   "languageSwitcher": {
@@ -43,152 +48,268 @@
     "toDark": "Usar tema oscuro",
     "toLight": "Usar tema claro"
   },
-
-
-
   "hero": {
-    "titleLine1": "Convertimos ideas audaces en",
+    "eyebrow": "Soluciones de software · Guadalajara, México",
+    "titleLine1": "Software a la medida que",
+    "titleAccent": "impulsa tu negocio.",
+    "description": "Wakefulness Soft diseña y desarrolla aplicaciones web, apps móviles y soluciones digitales a la medida que convierten necesidades complejas en experiencias claras y útiles.",
     "titleHighlight": "software que despierta",
     "titleLine3": "tu negocio.",
-    "slogan": "Diseñar tu sueño es nuestra tarea más preciada",
+    "slogan": "Ideas claras para productos digitales útiles.",
     "actions": {
-    "requestQuote": "Solicita una Cotización",
-    "viewOurWork": "Ve Nuestro Trabajo"
-  }
-},
-
-
-  "about": {
-    "hero": {
-      "headline": "Código que no duerme.",
-      "description": "Wakefulness Soft es un estudio de desarrollo de software fundado por desarrolladores que prefieren las primeras horas y el café negro. Construimos productos digitales de los que estaríamos orgullosos de poner nuestros nombres detrás — incluso si el commit fue hecho a las 3 de la mañana."
-    },
-    "lines": {
-      "init": "Software personalizado construido para resolver problemas del mundo real",
-      "quality": "Código limpio, revisado y bien documentado",
-      "speed": "Entrega rápida sin comprometer la confiabilidad",
-      "transparency": "Comunicación clara en cada etapa del proyecto",
-      "innovation": "Adoptamos lo que tiene sentido, no solo lo que está de moda"
-    },
-    "stats": {
-      "years": "Años en producción",
-      "projects": "Proyectos entregados",
-      "coffee": "Tazas de café"
+      "startProject": "Hablemos de tu proyecto",
+      "exploreServices": "Explorar nuestros servicios",
+      "requestQuote": "Hablemos de tu proyecto",
+      "viewOurWork": "Explorar nuestros conceptos"
     }
   },
-
+  "services": {
+    "eyebrow": "En qué podemos ayudarte",
+    "headline": "Nuestros principales servicios.",
+    "intro": "Transformamos tus ideas en soluciones digitales claras, funcionales y sostenibles, acompañandote desde la definición de la estrategia y alcance técnico hasta el desarrollo, implementación y evolución del software que tu negocio necesita.",
+    "needLabel": "Cuándo ayuda",
+    "benefitLabel": "Beneficio principal",
+    "action": "Consultar este servicio",
+    "scopeNote": "Estas áreas de servicio son puntos de partida para conversar, no una promesa de que toda capacidad aplica a cada proyecto. El alcance, las necesidades técnicas y las condiciones de entrega se confirman antes de comenzar.",
+    "items": {
+      "web": {
+        "name": "Desarrollo de aplicaciones web",
+        "description": "Herramientas, portales y aplicaciones de negocio para navegador, diseñados alrededor de flujos reales.",
+        "need": "Cuando hojas de cálculo, herramientas desconectadas o pasos manuales complican el trabajo cotidiano.",
+        "benefit": "Una experiencia enfocada que reúne información y acciones esenciales en un mismo lugar."
+      },
+      "mobile": {
+        "name": "Desarrollo de aplicaciones móviles",
+        "description": "Experiencias móviles planeadas alrededor de las personas, el contexto y las tareas que deben resolver.",
+        "need": "Cuando clientes o equipos necesitan completar tareas importantes lejos de una computadora.",
+        "benefit": "Una ruta más clara desde el caso de uso móvil hasta un producto que se pueda navegar con confianza."
+      },
+      "consulting": {
+        "name": "Consultoría técnica",
+        "description": "Orientación estructurada para aclarar una idea, una mejora o una decisión técnica antes de comprometerse con el desarrollo.",
+        "need": "Cuando el problema está entendido, pero el alcance, las prioridades o el camino correcto aún no están claros.",
+        "benefit": "Decisiones mejor informadas y menos supuestos antes de comprometer tiempo y presupuesto."
+      },
+      "support": {
+        "name": "Mantenimiento y soporte de software",
+        "description": "Trabajo enfocado sobre software existente, desde mejoras planeadas hasta mantenimiento dentro de un alcance acordado.",
+        "need": "Cuando un producto actual necesita atención, prioridades más claras o un plan práctico para su siguiente etapa.",
+        "benefit": "Software que puede seguir apoyando al negocio mientras el cambio se gestiona de forma deliberada."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Sobre Wakefulness",
+    "hero": {
+      "headline": "Software reflexivo, sin neblina.",
+      "description": "Ayudamos a convertir una necesidad de negocio en una dirección de software clara. El trabajo comienza con las personas, los flujos, las restricciones y la definición de éxito, para que la tecnología apoye el objetivo en lugar de ocultarlo."
+    },
+    "lines": {
+      "init": "Definir el problema antes de elegir la solución",
+      "quality": "Estructurar el trabajo para entenderlo y evolucionarlo mejor",
+      "speed": "Enfocar el esfuerzo en las prioridades más importantes",
+      "transparency": "Explicar decisiones y compromisos en lenguaje claro",
+      "innovation": "Elegir tecnología por su adecuación, no por novedad"
+    }
+  },
   "whySection": {
     "eyebrow": "Por qué Wakefulness",
-    "headline": "Donde el gran software permanece despierto.",
-    "paragraph1": "Creemos que las mejores ideas no surgen por ser tarde en la noche, sino porque a alguien le importa lo suficiente seguir perfeccionándolas.",
-    "paragraph2": "Cada proyecto que construimos se trata como un producto del que nos sentiríamos orgullosos de firmar, combinando excelencia técnica con colaboración reflexiva desde la primera conversación hasta el despliegue final.",
-    "contactLink": "Iniciar una conversación",
+    "headline": "Principios claros. Beneficios prácticos.",
+    "paragraph1": "El buen software comienza con un problema comprendido y decisiones deliberadas.",
+    "paragraph2": "Buscamos que cada decisión de producto y tecnología tenga un propósito claro y un impacto real.",
+    "contactLink": "Conversemos sobre tu proyecto",
+    "benefitLabel": "Beneficio para tu proyecto",
     "pillars": [
       {
         "displayId": "01",
         "title": "Artesanía sobre atajos",
-        "content": "No buscamos soluciones rápidas. Cada funcionalidad está diseñada para ser mantenible, escalable y creada pensando en la calidad a largo plazo."
+        "content": "Miramos más allá de la respuesta más rápida y consideramos lo que el software deberá sostener con el tiempo.",
+        "benefit": "Una solución pensada para ser útil por más tiempo, no solo conveniente al inicio."
       },
       {
         "displayId": "02",
-        "title": "Perspectiva fresca",
-        "content": "Las horas más silenciosas a menudo producen el pensamiento más claro. Abordamos los problemas con curiosidad e ingeniería reflexiva en lugar de apresurarnos hacia la primera solución."
+        "title": "Perspectivas humanas",
+        "content": "El contexto del negocio y las necesidades de los usuarios permanecen visibles al discutir decisiones de producto y tecnología.",
+        "benefit": "Las personas involucradas pueden entender la dirección y tomar mejores decisiones."
       },
       {
         "displayId": "03",
         "title": "Bases sólidas",
-        "content": "Como un buen espresso, el gran software comienza con ingredientes de calidad. La arquitectura limpia, el código mantenible y el diseño escalable son la base de todo lo que construimos."
+        "content": "La estructura y los cambios futuros se consideran al definir la solución, no solo cuando aparece la complejidad.",
+        "benefit": "Una base más clara para la siguiente mejora útil."
       },
       {
         "displayId": "04",
         "title": "Rendimiento por diseño",
-        "content": "El software rápido crea mejores experiencias. Desde las consultas a la base de datos hasta las interacciones frontend, el rendimiento se considera desde el primer día."
+        "content": "Las necesidades de rendimiento se discuten según usuarios, dispositivos, datos y restricciones reales.",
+        "benefit": "La atención se concentra en las interacciones donde la velocidad importa más."
       },
       {
         "displayId": "05",
-        "title": "Calidad en cada commit",
-        "content": "Cada entrega refleja nuestros estándares. Probamos, revisamos, refinamos y pulimos porque los detalles importan."
+        "title": "Calidad en cada detalle",
+        "content": "El comportamiento esperado y los casos importantes se hacen visibles antes de considerar lista una funcionalidad.",
+        "benefit": "Menos sorpresas entre la necesidad acordada y la experiencia entregada."
       },
       {
         "displayId": "06",
         "title": "Entrega confiable",
-        "content": "Las ideas solo importan cuando se convierten en realidad. Nos enfocamos en una ejecución predecible, un progreso constante y la entrega de software en el que puedas confiar plenamente."
+        "content": "Las prioridades, decisiones y avances se mantienen comprensibles durante la colaboración.",
+        "benefit": "Una visión más clara de qué se está trabajando y por qué."
       }
     ]
   },
-
   "processSection": {
     "eyebrow": "Cómo trabajamos",
-    "headline": "Tu hora de dormir, nuestro check-in.",
-    "body": "Al igual que en un proceso de extracción perfecto, trabajamos con calma, eliminando el ruido para lograr el mejor resultado.",
+    "headline": "Un camino enfocado de la necesidad al software.",
+    "body": "Avanzamos de forma progresiva, reduciendo incertidumbre en cada etapa para convertir una necesidad en decisiones claras y, finalmente, en software útil.",
     "ariaLabel": "Ir al paso {{stepNumber}}: {{stepName}}",
     "steps": {
       "1": {
-        "stepName": "Selección de granos",
-        "description": "Reunión de requerimientos y comprensión de objetivos del proyecto para elegir las tecnologías y el enfoque adecuados."
+        "stepName": "Entender la necesidad",
+        "description": "Conversar sobre el problema, las personas afectadas, el flujo actual y cómo se vería un resultado útil."
       },
       "2": {
-        "stepName": "Molienda del café",
-        "description": "Desglose del proyecto en módulos, servicios o componentes para un desarrollo estructurado."
+        "stepName": "Definir el alcance",
+        "description": "Convertir la necesidad en prioridades, límites, supuestos y una primera versión acordada del trabajo."
       },
       "3": {
-        "stepName": "Calentamiento del agua",
-        "description": "Configuración del entorno de desarrollo, bases de datos e infraestructura necesarias para ejecutar el sistema."
+        "stepName": "Diseñar el enfoque",
+        "description": "Mapear la experiencia y la dirección técnica que requiere el alcance, incluyendo las decisiones que aún deben validarse."
       },
       "4": {
-        "stepName": "Extracción del café",
-        "description": "Escritura e integración del código real, conexión de componentes e implementación de la lógica."
+        "stepName": "Construir por etapas",
+        "description": "Implementar las prioridades acordadas en incrementos comprensibles para recibir retroalimentación mientras sigue siendo útil."
       },
       "5": {
-        "stepName": "Filtrado del café",
-        "description": "Revisión de código, refactorización y eliminación de deuda técnica o ineficiencias."
+        "stepName": "Validar el resultado",
+        "description": "Revisar el comportamiento frente a objetivos, flujos y criterios acordados mediante los métodos de validación elegidos para el proyecto."
       },
       "6": {
-        "stepName": "Leche y azúcar al gusto",
-        "description": "Pulido de la interfaz de usuario, incorporación de características finales y optimización del rendimiento previo al despliegue."
+        "stepName": "Entregar y evolucionar",
+        "description": "Preparar la entrega o publicación acordada e identificar mejoras posteriores sin convertir cada idea en alcance inmediato."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Nuestro trabajo",
+    "headline": "Soluciones construidas con propósito.",
+    "sub": "Proyectos que muestran cómo abordamos problemas, tomamos decisiones y construimos software que cumple una función concreta.",
+    "verificationNote": "Nebula Platform, Phantom API, Drift UI y Hollow CLI se presentan como conceptos de muestra. No están identificados como proyectos de clientes, sistemas en producción ni evidencia de resultados.",
+    "status": {
+      "concept": "concepto — no es un caso de cliente"
+    },
+    "labels": {
+      "type": "Tipo de concepto",
+      "objective": "Objetivo",
+      "direction": "Dirección propuesta",
+      "capability": "Área de capacidad"
+    },
+    "actions": {
+      "discuss": "Consultar una necesidad similar",
+      "conceptPreview": "// visualización conceptual"
+    },
+    "items": {
+      "nebula": {
+        "type": "Concepto de plataforma de negocio",
+        "objective": "Explorar cómo un equipo podría reunir trabajo distribuido, permisos y visibilidad operativa en una sola experiencia.",
+        "direction": "Una dirección de producto basada en dashboards, cuyos flujos y datos todavía requieren validación.",
+        "capability": "Ilustra pensamiento de producto e interfaces con mucha información; la evidencia de entrega espera revisión del propietario."
+      },
+      "phantom-api": {
+        "type": "Concepto de API e integración",
+        "objective": "Explorar una interfaz confiable entre sistemas con expectativas de acceso y uso claramente definidas.",
+        "direction": "Un ejercicio de diseño de API; la arquitectura, metas de rendimiento y tecnología de implementación no se afirman.",
+        "capability": "Ilustra definición de APIs e integraciones; la evidencia de entrega espera revisión del propietario."
+      },
+      "drift-ui": {
+        "type": "Concepto de sistema de interfaz",
+        "objective": "Explorar patrones consistentes para una experiencia oscura y enfocada en producto.",
+        "direction": "Un concepto de lenguaje visual reutilizable cuya cobertura y validación todavía deben definirse.",
+        "capability": "Ilustra pensamiento de componentes e interacción; la evidencia de entrega espera revisión del propietario."
+      },
+      "hollow-cli": {
+        "type": "Concepto de herramientas para desarrollo",
+        "objective": "Explorar cómo tareas repetibles de proyecto podrían hacerse más claras mediante un flujo de línea de comandos.",
+        "direction": "Un concepto de herramienta cuyos entornos, protecciones e implementación aún deben especificarse.",
+        "capability": "Ilustra pensamiento de automatización de flujos; la evidencia de entrega espera revisión del propietario."
       }
     }
   },
 
-  "cta": {
-    "eyebrow": "Contacto",
-    "headline": "Construyamos algo con vida.",
-    "sub": "¿Tienes un proyecto en mente? ¿Un problema que resolver? ¿O solo quieres hablar de código a las 2 am? Escríbenos — de todos modos no dormimos.",
-    "directLabel": "// o contáctanos directamente",
-    "formTitle": "nuevo_mensaje.ts",
-    "labels": {
-      "name": "nombre",
-      "email": "email",
-      "service": "servicio",
-      "message": "mensaje"
+
+  "capabilities": {
+    "eyebrow": "Credibilidad técnica",
+    "headline": "Útil hoy. Más fácil de evolucionar mañana.",
+    "intro": "El detalle técnico debe generar confianza, no decorar una página. Lo siguiente se limita a capacidades demostradas directamente por la implementación de este sitio.",
+    "items": {
+      "frontend": {
+        "title": "Bases frontend tipadas",
+        "description": "La landing está organizada en componentes reutilizables de React y TypeScript con estilos aislados por componente.",
+        "details": ["React y TypeScript", "CSS Modules y tokens compartidos", "Build de producción con Vite"]
+      },
+      "experience": {
+        "title": "Experiencia responsive y bilingüe",
+        "description": "La interfaz contempla distintos tamaños, dos idiomas, uso por teclado y preferencias de movimiento reducido.",
+        "details": ["Inglés y español con i18next", "Layouts mobile-first", "Patrones de teclado y movimiento reducido"]
+      },
+      "delivery": {
+        "title": "Línea base de calidad visible",
+        "description": "El repositorio ofrece compilación tipada, lint y un build de producción que puede revisarse antes de la entrega.",
+        "details": ["Comprobaciones de TypeScript", "Reglas de ESLint", "Recursos de producción medidos"]
+      }
     },
-    "placeholders": {
-      "name": "Juan Pérez",
-      "email": "juan@empresa.com",
-      "selectService": "// selecciona un servicio",
-      "message": "// cuéntanos sobre tu proyecto..."
-    },
-    "services": {
-      "webDev": "Desarrollo web",
-      "mobileApp": "Aplicación móvil",
-      "consulting": "Consultoría técnica",
-      "maintenance": "Mantenimiento y soporte",
-      "other": "Otro asunto"
-    },
-    "buttons": {
-      "sending": "enviando...",
-      "sent": "✓ mensaje enviado",
-      "send": "> enviar_mensaje"
-    },
-    "error": "// error — intenta de nuevo o escríbenos directamente"
+    "disclosure": "Las afirmaciones sobre APIs, bases de datos, pruebas automatizadas, despliegue, seguridad y lenguajes adicionales deben añadirse solo cuando el propietario confirme evidencia operativa real."
   },
 
 
-
+  "cta": {
+    "eyebrow": "Contacto",
+    "headline": "Definir el punto de partida.",
+    "sub": "Un punto de partida claro comienza con entender tu situación real. Describe brevemente tu objetivo para trazar el camino a seguir.",
+    "directLabel": "// ¿prefieres un canal directo?",
+    "formTitle": "consulta_proyecto.ts",
+    "formIntro": "Cuéntanos qué necesitas resolver para definir juntos el siguiente paso.",
+    "labels": {
+      "name": "nombre",
+      "email": "correo",
+      "service": "tipo de proyecto",
+      "message": "¿qué necesitas?"
+    },
+    "placeholders": {
+      "name": "Tu nombre",
+      "email": "tu@empresa.com",
+      "selectService": "Selecciona la opción más cercana",
+      "message": "Describe el problema, a quién afecta y cómo se vería un mejor resultado."
+    },
+    "services": {
+      "webDev": "Aplicación web",
+      "mobileApp": "Aplicación móvil",
+      "consulting": "Consultoría técnica",
+      "maintenance": "Mantenimiento o mejora",
+      "other": "Otro tipo de necesidad"
+    },
+    "validation": {
+      "name": "Escribe al menos 2 caracteres para tu nombre.",
+      "email": "Escribe un correo electrónico válido.",
+      "service": "Selecciona el tipo de proyecto más cercano.",
+      "message": "Cuéntanos un poco más: usa al menos 20 caracteres."
+    },
+    "buttons": {
+      "sending": "Enviando consulta...",
+      "send": "Enviar consulta de proyecto"
+    },
+    "status": {
+      "sent": "Tu consulta se envió correctamente. Responderemos por correo.",
+      "error": "No fue posible enviar la consulta. Inténtalo de nuevo o utiliza el correo que aparece abajo.",
+      "unavailable": "El envío en línea todavía no está configurado. No se envió ningún mensaje. Escríbenos a"
+    }
+  },
   "testimonials": {
     "eyebrow": "Testimonios",
     "headline": "Lo que dicen de nosotros.",
     "sub": "Nuestro trabajo habla por nosotros incluso cuando no estamos presentes.",
+    "panelLabel": "client-feedback.log",
+    "counter": "{{current}} de {{total}}",
     "actions": {
       "previous": "Testimonio anterior",
       "next": "Testimonio siguiente"
@@ -221,106 +342,59 @@
       }
     ]
   },
-
-
-
-  "projects": {
-    "eyebrow": "Proyectos",
-    "headline": "Lo que hemos construido.",
-    "sub": "Cada proyecto comenzó desde cero en la hora cero. Estos son los que sobrevivieron.",
-    "status": {
-      "live": "en producción",
-      "wip": "en desarrollo"
-    },
-    "actions": {
-      "viewProject": "> ver proyecto",
-      "previewSoon": "// preview disponible pronto"
-    },
-    "items": {
-      "nebula": {
-        "desc": "Plataforma SaaS para gestión de equipos remotos con dashboards en tiempo real, control de permisos y analítica integrada. Diseñada para sobrevivir a la madrugada del lunes."
-      },
-      "phantom-api": {
-        "desc": "REST API de alta disponibilidad con autenticación JWT, rate limiting y caché inteligente. Levanta en frío en menos de 200 ms."
-      },
-      "drift-ui": {
-        "desc": "Sistema de componentes oscuros para React. Sin dependencias de runtime, 100% accesible."
-      },
-      "hollow-cli": {
-        "desc": "Herramienta de línea de comandos para automatizar deploys y auditar dependencias en monorepos."
-      }
-    }
-  },
-
   "heroConcepts": {
     "common": {
-      "startProject": "Iniciar un proyecto",
-      "exploreWork": "Explorar nuestro trabajo",
+      "startProject": "Hablemos de tu proyecto",
+      "exploreWork": "Explorar nuestros conceptos",
       "compareLabel": "Comparar conceptos de hero"
     },
     "focus": {
       "label": "Enfoque 3 AM",
-      "eyebrow": "Para ideas que merecen mantenernos despiertos",
-      "titleLine1": "Las horas más silenciosas crean",
-      "titleAccent": "las ideas más claras.",
+      "eyebrow": "Para problemas que merecen pensarse",
+      "titleLine1": "Ideas claras para",
+      "titleAccent": "software útil.",
       "titleLine2": "",
-      "description": "Convertimos ideas ambiciosas en productos digitales resistentes, con curiosidad, arquitectura limpia y calidad por encima de los atajos.",
+      "description": "Convierte una necesidad real en una dirección de producto digital enfocada.",
       "hint": "Mueve el cursor. Hay más en la oscuridad."
     },
     "espresso": {
       "label": "Extracción Espresso",
-      "eyebrow": "Un proceso cuidadoso. Un resultado confiable.",
-      "titleLine1": "Ideas audaces,",
-      "titleAccent": "perfectamente extraídas.",
-      "description": "Desde la primera conversación hasta el despliegue final, cada detalle se mide, se refina y se construye para resistir la presión.",
-      "replay": "Preparar otra vez",
-      "progressLabel": "Progreso de preparación del proyecto",
-      "waiting": "El buen software requiere un momento deliberado.",
-      "stages": {
-        "0": "Moliendo los granos...",
-        "1": "Calentando el agua...",
-        "2": "Preparando tu solución...",
-        "3": "Wakefulness listo."
-      },
-      "stepLabels": {
-        "0": "Descubrir",
-        "1": "Diseñar",
-        "2": "Construir",
-        "3": "Entregar"
-      }
+      "eyebrow": "Un proceso cuidadoso. Un resultado útil.",
+      "titleLine1": "Necesidades claras,",
+      "titleAccent": "bien extraídas.",
+      "description": "Reduce la incertidumbre antes de comprometerte con un desarrollo.",
+      "replay": "Preparar de nuevo",
+      "progressLabel": "Progreso de descubrimiento del proyecto",
+      "waiting": "Las buenas decisiones merecen un minuto deliberado.",
+      "stages": { "0": "Entendiendo la necesidad...", "1": "Aclarando prioridades...", "2": "Dando forma al enfoque...", "3": "Listo para conversar." },
+      "stepLabels": { "0": "Entender", "1": "Priorizar", "2": "Definir", "3": "Conversar" }
     },
     "sleepingCode": {
-      "label": "Código Despierto",
-      "titleLine1": "Código que",
-      "titleAccent": "no duerme.",
-      "description": "Sistemas limpios y vivos, diseñados de noche y listos para crear impulso por la mañana.",
-      "night": "Trabajo nocturno · calidad deliberada",
-      "day": "Entrega matutina · impulso real",
+      "label": "Código despierto",
+      "titleLine1": "Software con",
+      "titleAccent": "un propósito claro.",
+      "description": "Pensamiento de producto enfocado con una base técnica que se puede explicar.",
+      "night": "Enfoque nocturno · decisiones deliberadas",
+      "day": "Claridad de día · dirección útil",
       "cardLabel": "Ejemplo de código interactivo. Mueve el cursor para inclinar la tarjeta y revelar el modo de día."
     },
     "terminal": {
       "label": "Terminal de Medianoche",
-      "titleLine1": "Construyamos",
-      "titleAccent": "algo con vida.",
-      "description": "¿Tienes un problema que resolver, o solo quieres hablar de código a las 2 am? La terminal está abierta.",
-      "prompt": "> ¿Inicializar proyecto?",
-      "inputLabel": "Ingresa un comando en la terminal",
-      "executeLabel": "Ejecutar comando",
-      "demo": "O ejecuta el comando de demostración",
-      "building": "Construyendo Nebula Platform...",
-      "checking": "Revisando arquitectura y rendimiento...",
-      "compiling": "Compilando código despierto...",
-      "success": "Éxito. Tu idea está despierta.",
-      "revealEyebrow": "Compilación completa · 0 errores",
-      "revealTitle": "Tu próximo producto está listo para despertar.",
+      "titleLine1": "Definamos",
+      "titleAccent": "la solución correcta.",
+      "description": "Comienza por la necesidad de negocio; la tecnología viene después.",
+      "systemLine": "Terminal Wakefulness · modo descubrimiento · Guadalajara",
+      "prompt": "> ¿Listo para aclarar tu proyecto?",
+      "inputLabel": "Escribe un comando de muestra en la terminal",
+      "executeLabel": "Ejecutar comando de muestra",
+      "demo": "Ejecutar un comando de descubrimiento",
+      "building": "Leyendo el contexto del proyecto...",
+      "checking": "Mapeando necesidades, usuarios y restricciones...",
+      "compiling": "Preparando una primera conversación enfocada...",
+      "success": "Guía de descubrimiento lista. No se creó ningún proyecto.",
+      "revealEyebrow": "Descubrimiento listo · el alcance sigue siendo tuyo",
+      "revealTitle": "Trae el problema. Te ayudaremos a definir la respuesta de software adecuada.",
       "reset": "Ejecutar de nuevo"
     }
   }
 }
-
-
-
-
-
-
-

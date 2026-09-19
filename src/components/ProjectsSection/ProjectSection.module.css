@@ -16,7 +16,7 @@
 
 .header {
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   flex-direction: column;
   gap: 0.25rem;
 }
@@ -35,6 +35,18 @@
   gap: 1rem;
 }
 
+.verificationNote {
+  max-width: 54rem;
+  margin: 0 0 2rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 25%, var(--color-border));
+  border-radius: 0.65rem;
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  color: var(--color-ghost);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+
 .cardFeatured { grid-column: 1 / -1; }
 
 .card {
@@ -46,10 +58,8 @@
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   background: var(--color-secondary);
-  opacity: 0;
   transform: translateY(0.875rem);
   transition:
-    opacity 500ms ease,
     transform 500ms ease,
     border-color 300ms ease,
     box-shadow 300ms ease;
@@ -96,12 +106,15 @@
   background: linear-gradient(to top, var(--color-primary), transparent);
 }
 
-.featuredContent {
+.featuredContent,
+.cardContent {
   display: flex;
   min-width: 0;
-  flex: 1.4;
+  flex: 1;
   flex-direction: column;
 }
+
+.featuredContent { flex: 1.4; }
 
 .cardBar {
   display: flex;
@@ -201,8 +214,8 @@
   height: 0.375rem;
   flex: 0 0 auto;
   border-radius: 50%;
-  background: #28c840;
-  box-shadow: 0 0 0.375rem #28c840;
+  background: var(--color-primary);
+  box-shadow: 0 0 0.375rem color-mix(in srgb, var(--color-primary) 75%, transparent);
 }
 
 .statusDot.wip {
@@ -225,6 +238,34 @@
 .featuredName em {
   color: var(--color-primary);
   font-style: normal;
+}
+
+.projectDetails {
+  display: grid;
+  margin: 0;
+  gap: 0.85rem;
+}
+
+.projectDetails div {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-divider);
+}
+
+.projectDetails dt {
+  margin-bottom: 0.2rem;
+  color: var(--color-primary);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.projectDetails dd {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  line-height: 1.65;
 }
 
 .desc {

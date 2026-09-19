@@ -10,20 +10,9 @@ interface Line {
   desc: string;
 }
 
-interface Stat {
-  number: string;
-  label: string;
-}
-
 type SparkCoord = [number, number];
 
 const LINE_KEYS = ["init", "quality", "speed", "transparency", "innovation"] as const;
-
-const STAT_KEYS = [
-  { key: "years", number: "5+" },
-  { key: "projects", number: "40+" },
-  { key: "coffee", number: "∞" },
-] as const;
 
 const SPARKS: SparkCoord[] = [
   [80, 180], [240, 150], [100, 100], [210, 240], [155, 280],
@@ -91,11 +80,6 @@ export default function About(){
     desc: t(`about.lines.${key}`),
   }));
 
-  const STATS: Stat[] = STAT_KEYS.map(({ key, number }) => ({
-    number,
-    label: t(`about.stats.${key}`),
-  }));
-
   
   const linesRef = useRef<(HTMLDivElement | null)[]>(
     Array(LINES.length + 1).fill(null)
@@ -124,7 +108,7 @@ export default function About(){
         {/* ── hero ── */}
         <div className={s.hero}>
           <div>
-            <EyebrowComponent text="Us" />
+            <EyebrowComponent text={t("about.eyebrow")} />
             <HeadlineComponent title={t("about.hero.headline")} />
             <p className={s.body}>
               {t("about.hero.description")}
@@ -172,21 +156,6 @@ export default function About(){
               </span>
             </div>
           </div>
-        </div>
-
-        {/* ── stats ── */}
-        <div className={s.stats}>
-          {STATS.map((stat) => (
-            <div key={stat.label} className={s.stat}>
-              <span className={s.statNumber}>
-                {stat.number.replace(/[+∞]/g, "")}
-                {(stat.number.includes("+") || stat.number === "∞") && (
-                  <span>{stat.number.includes("+") ? "+" : "∞"}</span>
-                )}
-              </span>
-              <span className={s.statLabel}>{stat.label}</span>
-            </div>
-          ))}
         </div>
 
       </div>
